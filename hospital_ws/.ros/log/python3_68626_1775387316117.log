@@ -1,0 +1,668 @@
+[INFO] [1775387316.241761342] [fleet_scheduler]: Fleet scheduler initialized with enhanced AI and periodic scheduling
+[INFO] [1775387316.242867540] [fleet_scheduler]: Fleet scheduler node started
+[INFO] [1775387346.243933480] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387346.247703142] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.249445659] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.251633865] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.253932700] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.256052180] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387346.258365932] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387346.258928827] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.259461126] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.259959254] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387346.261070737] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387346.262261170] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=1.0, congestion=0.0, predicted=7.03
+[INFO] [1775387346.263423378] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387346.264495319] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.265387077] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387346.265971040] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.266632149] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387346.267195771] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387346.268538511] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387346.269710201] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.270735442] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.271466337] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=1.0, congestion=0.0, predicted=7.03
+[INFO] [1775387346.272760801] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387346.274572825] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387346.275848804] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387346.277410045] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=1.0, congestion=0.0, predicted=7.03
+[INFO] [1775387346.279184190] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387346.281139613] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.281962820] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387346.282835982] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387346.283688156] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387346.284641278] [fleet_scheduler]: Published assignment: robot_1: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387346.286002567] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387346.287855721] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387346.289439053] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387346.290893833] [fleet_scheduler]: Published assignment: robot_5: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387346.292510874] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387376.242993593] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387376.243984712] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387376.244723760] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.245520670] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387376.246253097] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387376.247230026] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.248007680] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387376.248806298] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.249538300] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387376.250223557] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387376.250874093] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.251525695] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.252214836] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387376.252917518] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387376.253604778] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.254278620] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.254987782] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387376.255691357] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387376.256357844] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.257275975] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.257983654] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.258651070] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.259326120] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387376.260024530] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387376.260685587] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387376.261282528] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.261927889] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387376.262589419] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387376.263274114] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387376.263957023] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387376.264605995] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387376.265285935] [fleet_scheduler]: Published assignment: robot_1: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387376.266239906] [fleet_scheduler]: Published assignment: robot_2: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387376.267531864] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387376.268829945] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387376.270261552] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387376.271722986] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387406.243085052] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387406.244142069] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.244907104] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387406.245585713] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387406.246242415] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.246924094] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.247646663] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387406.248347825] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.249071883] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387406.249954908] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387406.250984715] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.251976306] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.253081700] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387406.254459061] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387406.255739380] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.256645999] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.257309955] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387406.257947218] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387406.258607381] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.259351195] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.260090203] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387406.260784365] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.261471252] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387406.262179549] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387406.262883987] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387406.263623128] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387406.264369541] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.265094246] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387406.265766460] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387406.266471407] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387406.267255158] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387406.268595749] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387406.269757097] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387406.270322404] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387406.270909125] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387406.272016851] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387406.273224208] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387436.243006252] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387436.244164292] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.245099320] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387436.245988077] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387436.246733004] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.247365942] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.248020721] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387436.248567007] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387436.249021678] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.249461054] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387436.250076642] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387436.250631032] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.251124373] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387436.251599754] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387436.252075937] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.252494483] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.252903483] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387436.253269999] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387436.253667978] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.255313859] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.256179954] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.256847298] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.257393968] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387436.257865957] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387436.258354133] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387436.258829402] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.259336721] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387436.259816156] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387436.260266024] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387436.260777193] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387436.261273763] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387436.261779466] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387436.262265234] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387436.262698622] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387436.263069662] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387436.263449244] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387436.263818455] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387466.242973470] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387466.244036076] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.244770554] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387466.245430315] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387466.246128025] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.246891591] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.247855596] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387466.249150369] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.250733796] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387466.252421726] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387466.254234092] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.256081710] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.257935497] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387466.258949575] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387466.259615952] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.260412448] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.260810757] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387466.261157684] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387466.261548274] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.262124755] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.262582278] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387466.262899280] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.263413420] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387466.263922059] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387466.264487556] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387466.264910450] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387466.265256696] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.265617269] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387466.265955500] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387466.266288315] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387466.266635650] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387466.266976181] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387466.267253027] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387466.267591412] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387466.268199132] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387466.269674618] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387466.270414523] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387496.242838619] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387496.243642855] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.244546822] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387496.245556039] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387496.246483194] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.247523605] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.248533960] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387496.249548548] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387496.250684093] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.251847601] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387496.253005223] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387496.254204683] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.255481101] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387496.256653318] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387496.257765936] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.258945138] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.260041358] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387496.261111119] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387496.262153623] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.263310025] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.264365787] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.265387394] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.266398045] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387496.267384968] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387496.268360363] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387496.269283954] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.270222995] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387496.271175753] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387496.271682850] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387496.272009100] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387496.272347360] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387496.272699726] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387496.272985675] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387496.273224199] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387496.273461140] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387496.273724085] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387496.273971963] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387526.242936633] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387526.243795027] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.244417265] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387526.244817472] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387526.245171750] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.245508088] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.245846052] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387526.246168622] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.246498068] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387526.246820881] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387526.247156017] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.247487494] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.247827529] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387526.248218695] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387526.248569683] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.248902528] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.249342532] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387526.249817958] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387526.250158824] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.250479831] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.250776906] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387526.251070794] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.251393246] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387526.251696204] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387526.251988111] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387526.252313519] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387526.252649821] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.252970751] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387526.253287959] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387526.253635442] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387526.254009737] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387526.254484973] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387526.255047229] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387526.255367126] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387526.255703705] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387526.256077439] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387526.256455757] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387556.242871804] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387556.244372538] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.245302236] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387556.246077400] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387556.246822875] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.247523899] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.248203700] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387556.248977435] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387556.249813909] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.250725711] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387556.251560389] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387556.252351490] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.253159101] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387556.253963625] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387556.254712899] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.255434553] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.256112435] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387556.256785260] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387556.257454695] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.258081369] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.258708416] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.259325350] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.259965710] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387556.260590061] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387556.261243570] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387556.261906081] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.262607855] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387556.263215699] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387556.263930755] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387556.265155657] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387556.266737611] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387556.268221631] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387556.269619366] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387556.271149967] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387556.272609321] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387556.274047290] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387556.275240394] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387586.243060337] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387586.244158953] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.244993691] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387586.245738560] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387586.246432051] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.247073534] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.247756874] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387586.248446191] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.249097112] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387586.249717876] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387586.250348994] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.250975748] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.251659632] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387586.252355940] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387586.253003683] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.253621101] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.254236444] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387586.254899279] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387586.255559706] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.256205958] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.256844512] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387586.257524843] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.258248078] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387586.258930856] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387586.259649852] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387586.260346906] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387586.261010443] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.261660246] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387586.262348879] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387586.262974413] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387586.263587008] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387586.264165506] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387586.264750652] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387586.265361337] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387586.265950131] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387586.266511921] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387586.267015642] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387616.243111189] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387616.244047951] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.244688135] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387616.245353286] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387616.246061223] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.246825794] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.247589870] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387616.248355327] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387616.249037755] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.249696392] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387616.250466192] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387616.250951537] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.251392764] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387616.251780161] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387616.252165402] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.252531414] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.252932252] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387616.253324658] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387616.253806986] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.254870673] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.255756106] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.256530931] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.257217627] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387616.257860856] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387616.258477115] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387616.259623474] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.260634077] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387616.261460577] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387616.262158136] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387616.262815697] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387616.263572268] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387616.264366508] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387616.264796449] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387616.265049074] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387616.265287222] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387616.265547324] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387616.265778727] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387646.243857232] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387646.245499191] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.247065395] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387646.248646415] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387646.250261578] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.251736753] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.253229535] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387646.254670264] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.256067589] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387646.257462343] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387646.258862772] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.260318320] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.261741226] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387646.263048183] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387646.264350319] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.265717146] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.267884957] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387646.269654411] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387646.270709633] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.271651579] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.274346258] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387646.275558605] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.278541231] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387646.279824067] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387646.280825897] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387646.282446728] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387646.284121696] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.285142764] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387646.285654150] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387646.286057061] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387646.286420720] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387646.286851741] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387646.287285458] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387646.287662286] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387646.288006741] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387646.288361257] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387646.288784812] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387676.242973583] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387676.243991070] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.244713910] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387676.245343300] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387676.245869557] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.246412346] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.246964052] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387676.247379062] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387676.247818456] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.248175924] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387676.248522818] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387676.248837115] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.249174602] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387676.249520592] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387676.249839787] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.250156103] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.250494863] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387676.250820658] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387676.251128448] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.251439808] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.251833804] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.252151355] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.252479977] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387676.252793681] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387676.253120671] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387676.253466496] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.253989803] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387676.254466088] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387676.254932103] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387676.255391033] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387676.255891313] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387676.256284580] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387676.256664683] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387676.257041658] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387676.257451226] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387676.257905951] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387676.258284204] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387706.243044673] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387706.244045019] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.244758072] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387706.245463383] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387706.246175600] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.246885008] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.247559136] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387706.248158089] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.248762188] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387706.249395787] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387706.250148594] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.250833044] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.251482037] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387706.252086417] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387706.252694335] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.253289919] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.253924959] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387706.254581816] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387706.255223668] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.255893852] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.256556508] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387706.257234417] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.258017009] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387706.258706879] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387706.259451368] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387706.260174857] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387706.260871170] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.261595683] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387706.262342426] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387706.263020058] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387706.263687909] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387706.264371378] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387706.264950710] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387706.265467665] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387706.265989686] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387706.266663646] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387706.267163780] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387736.243986460] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387736.245959860] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.247420744] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387736.248811310] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387736.250190833] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.251557060] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.253173043] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387736.254634268] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387736.255968915] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.257336264] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387736.258754991] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387736.260059160] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.261439847] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387736.262476521] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387736.263418350] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.264332550] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.265225780] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387736.266173587] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387736.267152531] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.268111527] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.269058302] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.270132909] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.271556432] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387736.272928513] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387736.275228469] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387736.277273844] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.279409519] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387736.281485438] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387736.283605357] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387736.285743214] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387736.287870390] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387736.289718111] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387736.291368261] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387736.292906420] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387736.294446327] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387736.295973407] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387736.297624518] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387766.244665499] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387766.247269531] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.249110479] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387766.250455397] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387766.251800179] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.253548996] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.255136860] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387766.256654375] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.258317240] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387766.259926319] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387766.261525950] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.263177804] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.264906245] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387766.266528363] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387766.268069279] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.269911952] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.271800992] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387766.273502222] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387766.275656967] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.278033007] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.280597268] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387766.282774947] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.284985099] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387766.287121294] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387766.289240786] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387766.291654820] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387766.293939170] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.296206732] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387766.298485671] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387766.300827313] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387766.302986677] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387766.304903607] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387766.306702105] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387766.308492285] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387766.310124582] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387766.312045714] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387766.313903414] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387796.244397474] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387796.246856456] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.248524455] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387796.249941821] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387796.251420957] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.252862418] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.254001164] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387796.254982000] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387796.255925366] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.256815303] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387796.257700659] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387796.258593084] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.259550500] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387796.260832850] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387796.262117043] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.263521869] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.265018051] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387796.266291306] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387796.267942585] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.269743504] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.271650472] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.273428588] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.275593925] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387796.278021803] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387796.280212158] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387796.282385057] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.284590408] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387796.286977145] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387796.289232838] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387796.291427565] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387796.293561477] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387796.295405739] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387796.297333629] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387796.298907789] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387796.300584337] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387796.302081677] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387796.303606458] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387826.244352949] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387826.247363803] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.250388969] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387826.253259618] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387826.256005656] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.258831823] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.261591109] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387826.264334083] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.267237292] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387826.272986212] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387826.277819750] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.280643649] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.285418380] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387826.288429954] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387826.291419449] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.294189065] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.296906042] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387826.299624513] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387826.302360703] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.304904461] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.307618716] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387826.310083039] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.312714359] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387826.315215083] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387826.317457724] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387826.319635285] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387826.321781948] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.324092341] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387826.326215879] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387826.328374927] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387826.330183044] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387826.331768617] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387826.333663480] [fleet_scheduler]: Published assignment: robot_2: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387826.335152342] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387826.336658538] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387826.338221310] [fleet_scheduler]: Published assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387826.339426639] [fleet_scheduler]: Scheduler cycle completed
+[INFO] [1775387856.245198134] [fleet_scheduler]: Starting scheduler cycle
+[INFO] [1775387856.247210993] [fleet_scheduler]: Cost for robot_1 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.248528177] [fleet_scheduler]: Cost for robot_1 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387856.249571337] [fleet_scheduler]: Cost for robot_1 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387856.250495502] [fleet_scheduler]: Cost for robot_1 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.251303093] [fleet_scheduler]: Cost for robot_1 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.252132026] [fleet_scheduler]: Cost for robot_1 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387856.252991831] [fleet_scheduler]: Cost for robot_2 -> deliver_meds_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387856.253829851] [fleet_scheduler]: Cost for robot_2 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.254684550] [fleet_scheduler]: Cost for robot_2 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387856.255543705] [fleet_scheduler]: Cost for robot_2 -> deliver_food_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387856.256400817] [fleet_scheduler]: Cost for robot_2 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.257260553] [fleet_scheduler]: Cost for robot_2 -> transport_equipment_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387856.258423389] [fleet_scheduler]: Cost for robot_3 -> deliver_meds_1: distance=6.0, congestion=4.0, predicted=33.01
+[INFO] [1775387856.259714598] [fleet_scheduler]: Cost for robot_3 -> pickup_samples_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.260997085] [fleet_scheduler]: Cost for robot_3 -> assist_patient_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.262386436] [fleet_scheduler]: Cost for robot_3 -> deliver_food_1: distance=8.0, congestion=6.0, predicted=45.00
+[INFO] [1775387856.264468234] [fleet_scheduler]: Cost for robot_3 -> clean_room_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387856.265100609] [fleet_scheduler]: Cost for robot_3 -> transport_equipment_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.265745316] [fleet_scheduler]: Cost for robot_4 -> deliver_meds_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.266239235] [fleet_scheduler]: Cost for robot_4 -> pickup_samples_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.266722454] [fleet_scheduler]: Cost for robot_4 -> assist_patient_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.267196718] [fleet_scheduler]: Cost for robot_4 -> deliver_food_1: distance=7.0, congestion=5.0, predicted=39.01
+[INFO] [1775387856.267710877] [fleet_scheduler]: Cost for robot_4 -> clean_room_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387856.268245842] [fleet_scheduler]: Cost for robot_4 -> transport_equipment_1: distance=10.0, congestion=8.0, predicted=56.99
+[INFO] [1775387856.268733771] [fleet_scheduler]: Cost for robot_5 -> deliver_meds_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.269202359] [fleet_scheduler]: Cost for robot_5 -> pickup_samples_1: distance=4.0, congestion=2.0, predicted=21.02
+[INFO] [1775387856.269727751] [fleet_scheduler]: Cost for robot_5 -> assist_patient_1: distance=3.0, congestion=1.0, predicted=15.02
+[INFO] [1775387856.270267310] [fleet_scheduler]: Cost for robot_5 -> deliver_food_1: distance=5.0, congestion=3.0, predicted=27.01
+[INFO] [1775387856.270761351] [fleet_scheduler]: Cost for robot_5 -> clean_room_1: distance=2.0, congestion=0.0, predicted=9.03
+[INFO] [1775387856.271241278] [fleet_scheduler]: Cost for robot_5 -> transport_equipment_1: distance=9.0, congestion=7.0, predicted=51.00
+[INFO] [1775387856.271699673] [fleet_scheduler]: Published assignment: robot_1: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775387856.272033080] [fleet_scheduler]: Published assignment: robot_2: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775387856.272360495] [fleet_scheduler]: Published assignment: robot_3: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775387856.272680326] [fleet_scheduler]: Published assignment: robot_4: assist_patient_1 (ER -> ICU)
+[INFO] [1775387856.272962882] [fleet_scheduler]: Published assignment: robot_5: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775387856.273196753] [fleet_scheduler]: Scheduler cycle completed
