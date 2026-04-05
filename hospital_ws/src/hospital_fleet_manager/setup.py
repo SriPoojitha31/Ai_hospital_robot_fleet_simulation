@@ -13,9 +13,17 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob(os.path.join('resource', package_name))),
     ],
-    install_requires=['setuptools'],
+    install_requires=[
+        'setuptools',
+        'numpy',
+        'scipy',
+        'networkx',
+        'scikit-learn',
+        'joblib',
+        'pyyaml',
+        'flask',
+    ],
     zip_safe=True,
     author='AI Hospital Team',
     description='AI-Based Hospital Robot Fleet Simulation package',
 )
-

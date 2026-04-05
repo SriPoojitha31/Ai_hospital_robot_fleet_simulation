@@ -1,5 +1,6 @@
 import pytest
 import rclpy
+import os
 from unittest.mock import MagicMock
 
 import hospital_fleet_manager.fleet_scheduler as fleet_scheduler
@@ -8,6 +9,9 @@ from hospital_fleet_manager.fleet_scheduler import FleetScheduler
 
 @pytest.fixture(scope='session', autouse=True)
 def init_rclpy():
+    ros_log_dir = '/tmp/ai_hospital_ros_logs'
+    os.makedirs(ros_log_dir, exist_ok=True)
+    os.environ.setdefault('ROS_LOG_DIR', ros_log_dir)
     if not rclpy.ok():
         rclpy.init()
     yield

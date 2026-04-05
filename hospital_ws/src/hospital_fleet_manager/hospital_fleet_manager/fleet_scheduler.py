@@ -4,6 +4,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 import rclpy
 from rclpy.node import Node
+from rclpy.executors import ExternalShutdownException
 from std_msgs.msg import String
 from scipy.optimize import linear_sum_assignment
 
@@ -136,13 +137,13 @@ def main(args=None):
     node.get_logger().info('Fleet scheduler node started')
     try:
         rclpy.spin(node)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == '__main__':
     main()
-
