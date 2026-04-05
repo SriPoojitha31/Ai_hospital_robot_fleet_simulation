@@ -1,0 +1,1 @@
+"""Hospital fleet manager package"""

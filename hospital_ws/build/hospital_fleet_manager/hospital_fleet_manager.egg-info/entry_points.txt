@@ -1,0 +1,3 @@
+[console_scripts]
+fleet_scheduler = hospital_fleet_manager.fleet_scheduler:main
+robot_simulator = hospital_fleet_manager.robot_simulator:main

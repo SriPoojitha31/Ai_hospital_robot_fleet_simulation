@@ -1,0 +1,1 @@
+#!/bin/bash&#10;# Launch Flask dashboard&#10;&#10;source /opt/ros/jazzy/setup.bash&#10;cd hospital_ws&#10;source install/setup.bash&#10;&#10;pip install flask  # ensure&#10;&#10;python3 -m hospital_fleet_manager.hospital_fleet_manager.dashboard
