@@ -1,1 +1,21 @@
-import pytest&#10;&#10;from hospital_fleet_manager.hospital_map import build_hospital_map, shortest_path_length&#10;&#10;&#10;def test_build_hospital_map():&#10;    g = build_hospital_map()&#10;    assert len(g.nodes) == 10&#10;    assert len(g.edges) == 20  # bidirectional&#10;&#10;&#10;def test_shortest_path_length():&#10;    g = build_hospital_map()&#10;    assert shortest_path_length(g, &#39;Lobby&#39;, &#39;NurseStation&#39;) == 1&#10;    assert shortest_path_length(g, &#39;Lobby&#39;, &#39;ER&#39;) == 2&#10;&#10;&#10;def test_invalid_node():&#10;    g = build_hospital_map()&#10;    with pytest.raises(ValueError):&#10;        shortest_path_length(g, &#39;invalid&#39;, &#39;Lobby&#39;)
+import pytest
+
+from hospital_fleet_manager.hospital_map import build_hospital_map, shortest_path_length
+
+
+def test_build_hospital_map():
+    g = build_hospital_map()
+    assert len(g.nodes) == 10
+    assert len(g.edges) == 10  # undirected graph has unique edges
+
+
+def test_shortest_path_length():
+    g = build_hospital_map()
+    assert shortest_path_length(g, 'Lobby', 'NurseStation') == 1
+    assert shortest_path_length(g, 'Lobby', 'ER') == 2
+
+
+def test_invalid_node():
+    g = build_hospital_map()
+    with pytest.raises(ValueError):
+        shortest_path_length(g, 'Invalid', 'Lobby')

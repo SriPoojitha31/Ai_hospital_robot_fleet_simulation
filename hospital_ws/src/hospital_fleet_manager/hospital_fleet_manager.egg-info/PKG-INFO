@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: hospital_fleet_manager
+Version: 0.1.0
+Summary: AI-Based Hospital Robot Fleet Simulation package
+Author: AI Hospital Team
+Requires-Dist: setuptools
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

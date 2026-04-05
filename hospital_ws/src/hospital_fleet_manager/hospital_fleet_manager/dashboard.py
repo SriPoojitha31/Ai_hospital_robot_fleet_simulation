@@ -1,1 +1,58 @@
-import rclpy&#10;from rclpy.node import Node&#10;from std_msgs.msg import String&#10;import threading&#10;import json&#10;from flask import Flask, render_template_string&#10;&#10;app = Flask(__name__)&#10;robot_status = {}&#10;&#10;def ros_spin():&#10;    rclpy.init()&#10;    node = Node(&#39;dashboard_bridge&#39;)&#10;    sub = node.create_subscription(String, &#39;robot_status&#39;, lambda msg: update_status(msg.data), 10)&#10;    rclpy.spin(node)&#10;&#10;def update_status(data):&#10;    global robot_status&#10;    robot_status = json.loads(data)&#10;&#10;HTML_TEMPLATE = &#34;&#34;&#34;&#10;<!DOCTYPE html>&#10;<html>&#10;<head>&#10;<title>Hospital Robot Fleet Dashboard</title>&#10;<script>&#10;function updateTable() {&#10;    fetch(&#39;/status&#39;).then(r => r.json()).then(data => {&#10;        let table = &#39;<table border=1><tr><th>Robot</th><th>Status</th><th>Task</th><th>Location</th></tr>&#39;;&#10;        for (let robot in data) {&#10;            table += `<tr><td>${robot}</td><td>${data[robot].status}</td><td>${data[robot].current_task || &#39;-&#39;}</td><td>${data[robot].location || &#39;unknown&#39;}</td></tr>`;&#10;        }&#10;        table += &#39;</table>&#39;;&#10;        document.getElementById(&#39;table&#39;).innerHTML = table;&#10;    });&#10;}&#10;setInterval(updateTable, 5000);&#10;updateTable();&#10;</script>&#10;</head>&#10;<body>&#10;<h1>AI Hospital Robot Fleet Status</h1>&#10;<div id=&#39;table&#39;>Loading...</div>&#10;</body>&#10;</html>&#34;&#34;&#34;&#10;&#10;@app.route(&#39;/&#39;)&#10;def index():&#10;    return render_template_string(HTML_TEMPLATE)&#10;&#10;@app.route(&#39;/status&#39;)&#10;def status():&#10;    return robot_status&#10;&#10;if __name__ == &#39;__main__&#39;:&#10;    ros_thread = threading.Thread(target=ros_spin, daemon=True)&#10;    ros_thread.start()&#10;    app.run(host=&#39;0.0.0.0&#39;, port=5000, debug=False)
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import threading
+import json
+from flask import Flask, render_template_string
+
+app = Flask(__name__)
+robot_status = {}
+
+def ros_spin():
+    rclpy.init()
+    node = Node('dashboard_bridge')
+    sub = node.create_subscription(String, 'robot_status', lambda msg: update_status(msg.data), 10)
+    rclpy.spin(node)
+
+def update_status(data):
+    global robot_status
+    robot_status = json.loads(data)
+
+HTML_TEMPLATE = &#34;&#34;&#34;
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospital Robot Fleet Dashboard</title>
+<script>
+function updateTable() {
+    fetch('/status').then(r => r.json()).then(data => {
+        let table = '<table border=1><tr><th>Robot</th><th>Status</th><th>Task</th><th>Location</th></tr>';
+        for (let robot in data) {
+            table += `<tr><td>${robot}</td><td>${data[robot].status}</td><td>${data[robot].current_task || '-'}</td><td>${data[robot].location || 'unknown'}</td></tr>`;
+        }
+        table += '</table>';
+        document.getElementById('table').innerHTML = table;
+    });
+}
+setInterval(updateTable, 5000);
+updateTable();
+</script>
+</head>
+<body>
+<h1>AI Hospital Robot Fleet Status</h1>
+<div id='table'>Loading...</div>
+</body>
+</html>&#34;&#34;&#34;
+
+@app.route('/')
+def index():
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/status')
+def status():
+    return robot_status
+
+if __name__ == '__main__':
+    ros_thread = threading.Thread(target=ros_spin, daemon=True)
+    ros_thread.start()
+    app.run(host='0.0.0.0', port=5000, debug=False)

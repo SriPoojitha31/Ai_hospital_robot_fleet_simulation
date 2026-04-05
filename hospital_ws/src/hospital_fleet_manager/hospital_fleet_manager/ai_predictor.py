@@ -1,1 +1,51 @@
-import numpy as np&#10;from sklearn.linear_model import LinearRegression&#10;import joblib&#10;import os&#10;from ament_index_python.packages import get_package_share_directory&#10;&#10;class EnhancedAIPredictor:&#10;    """ML-based AI module using trained LinearRegression for task duration prediction."""&#10;&#10;    MODEL_PATH = None&#10;&#10;    def __init__(self):&#10;        if EnhancedAIPredictor.MODEL_PATH is None:&#10;            EnhancedAIPredictor.MODEL_PATH = os.path.join(get_package_share_directory(&#39;hospital_fleet_manager&#39;), &#39;models&#39;, &#39;ai_model.joblib&#39;)&#10;        self.model_path = EnhancedAIPredictor.MODEL_PATH&#10;        if os.path.exists(self.model_path):&#10;            self.model = joblib.load(self.model_path)&#10;        else:&#10;            self.train_model()&#10;&#10;    def train_model(self):&#10;        print(&#39;Training new AI model...&#39;)&#10;        np.random.seed(42)&#10;        n_samples = 1000&#10;        distance = np.random.uniform(1, 10, n_samples)&#10;        congestion = np.random.uniform(0, 5, n_samples)&#10;        noise = np.random.normal(0, 1.0, n_samples)&#10;        X = np.column_stack((distance, congestion))&#10;        y = 5.0 + 2.0 * distance + 4.0 * congestion + noise&#10;        self.model = LinearRegression().fit(X, y)&#10;        os.makedirs(os.path.dirname(self.model_path), exist_ok=True)&#10;        joblib.dump(self.model, self.model_path)&#10;        print(f&#39;Model saved to {self.model_path}&#39;)&#10;&#10;    def predict(self, distance, congestion):&#10;        if distance < 0 or congestion < 0:&#10;            raise ValueError(&#39;Distance and congestion must be non-negative&#39;)&#10;        return float(self.model.predict([[distance, congestion]])[0])
+import numpy as np
+from sklearn.linear_model import LinearRegression
+import joblib
+import os
+
+try:
+    from ament_index_python.packages import get_package_share_directory
+except ImportError:
+    get_package_share_directory = None
+
+
+class EnhancedAIPredictor:
+    """ML-based AI module using trained LinearRegression for task duration prediction."""
+
+    MODEL_PATH = None
+
+    def __init__(self):
+        if EnhancedAIPredictor.MODEL_PATH is None:
+            if get_package_share_directory is not None:
+                try:
+                    base_dir = get_package_share_directory('hospital_fleet_manager')
+                except Exception:
+                    base_dir = os.path.dirname(__file__)
+            else:
+                base_dir = os.path.dirname(__file__)
+            EnhancedAIPredictor.MODEL_PATH = os.path.join(base_dir, 'models', 'ai_model.joblib')
+        self.model_path = EnhancedAIPredictor.MODEL_PATH
+        if os.path.exists(self.model_path):
+            self.model = joblib.load(self.model_path)
+        else:
+            self.train_model()
+
+    def train_model(self):
+        print('Training new AI model...')
+        np.random.seed(42)
+        n_samples = 1000
+        distance = np.random.uniform(1, 10, n_samples)
+        congestion = np.random.uniform(0, 5, n_samples)
+        noise = np.random.normal(0, 1.0, n_samples)
+        X = np.column_stack((distance, congestion))
+        y = 5.0 + 2.0 * distance + 4.0 * congestion + noise
+        self.model = LinearRegression().fit(X, y)
+        os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
+        joblib.dump(self.model, self.model_path)
+        print(f'Model saved to {self.model_path}')
+
+    def predict(self, distance, congestion):
+        if distance < 0 or congestion < 0:
+            raise ValueError('Distance and congestion must be non-negative')
+        return float(self.model.predict([[distance, congestion]])[0])
+

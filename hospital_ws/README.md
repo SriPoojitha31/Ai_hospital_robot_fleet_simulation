@@ -73,38 +73,49 @@ colcon build --symlink-install
 
 ## 🚀 Run the System
 
-### Option A: Using Convenience Scripts (Recommended)
+### Recommended: Use convenience scripts
 
-**Terminal 1: Robot Simulator**
+**Terminal 1: start the simulator**
 ```bash
 cd ~/Documents/ai-hospital/hospital_ws
 bash run_simulator.sh
 ```
 
-**Terminal 2: Fleet Scheduler**
+**Terminal 2: start the fleet scheduler**
 ```bash
 cd ~/Documents/ai-hospital/hospital_ws
 bash run_scheduler.sh
 ```
 
-### Option B: Manual Run
+### Manual launch (if needed)
 
-**Terminal 1: Robot Simulator**
+> Note: the Python package root must point to `src/hospital_fleet_manager`, because the actual Python package is nested under that directory.
+
+**Terminal 1: simulator**
 ```bash
 source ~/venv-ai-hospital/bin/activate
 source /opt/ros/jazzy/setup.bash
 cd ~/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager
-export PYTHONPATH=~/Documents/ai-hospital/hospital_ws/src:$PYTHONPATH
-python3 hospital_fleet_manager/robot_simulator.py
+export PYTHONPATH=~/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager:$PYTHONPATH
+python3 -m hospital_fleet_manager.robot_simulator
 ```
 
-**Terminal 2: Fleet Scheduler**
+**Terminal 2: scheduler**
 ```bash
 source ~/venv-ai-hospital/bin/activate
 source /opt/ros/jazzy/setup.bash
 cd ~/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager
-export PYTHONPATH=~/Documents/ai-hospital/hospital_ws/src:$PYTHONPATH
-python3 hospital_fleet_manager/fleet_scheduler.py
+export PYTHONPATH=~/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager:$PYTHONPATH
+python3 -m hospital_fleet_manager.fleet_scheduler
+```
+
+### Verify topics
+
+```bash
+source ~/venv-ai-hospital/bin/activate
+source /opt/ros/jazzy/setup.bash
+cd ~/Documents/ai-hospital/hospital_ws
+ros2 topic list | grep -E 'task_assignments|robot_status'
 ```
 
 ---
