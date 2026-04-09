@@ -1,1 +1,8 @@
-robots:&#10;  robot_1: Lobby&#10;  robot_2: NurseStation&#10;  robot_3: WardA&#10;  robot_4: Pharmacy&#10;  robot_5: Radiology
+robots:
+  robot_1: Lobby
+  robot_2: NurseStation
+  robot_3: WardA
+  robot_4: ER
+  robot_5: Pharmacy
+  robot_6: WardC
+  robot_7: Supply

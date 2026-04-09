@@ -1,0 +1,170 @@
+[INFO] [1775717387.349297408] [robot_simulator]: Robot simulator initialized with Gazebo integration
+[INFO] [1775717387.349559917] [robot_simulator]: Robot simulator node started
+[INFO] [1775717418.993726734] [robot_simulator]: Received assignment: robot_1: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775717418.996592156] [robot_simulator]: [robot_1] starts task: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775717418.997761153] [robot_simulator]: Received assignment: robot_2: assist_patient_1 (ER -> ICU)
+[INFO] [1775717419.001540010] [robot_simulator]: [robot_2] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717419.001858832] [robot_simulator]: Received assignment: robot_3: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717419.005669777] [robot_simulator]: Received assignment: robot_4: move_patient_1 (ER -> WardC)
+[INFO] [1775717419.006089642] [robot_simulator]: [robot_3] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717419.009299856] [robot_simulator]: [robot_4] starts task: move_patient_1 (ER -> WardC)
+[INFO] [1775717419.010040444] [robot_simulator]: Received assignment: robot_5: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717419.013058033] [robot_simulator]: [robot_5] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717419.014046723] [robot_simulator]: Received assignment: robot_6: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717419.017406110] [robot_simulator]: [robot_6] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717419.018033064] [robot_simulator]: Received assignment: robot_7: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717419.019537883] [robot_simulator]: [robot_7] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717422.008672785] [robot_simulator]: [robot_1] moved to WardA
+[INFO] [1775717422.013839025] [robot_simulator]: [robot_2] moved to ICU
+[INFO] [1775717422.017747666] [robot_simulator]: [robot_3] moved to WardB
+[INFO] [1775717422.022362450] [robot_simulator]: [robot_4] moved to WardC
+[INFO] [1775717422.023247011] [robot_simulator]: [robot_5] moved to WardB
+[INFO] [1775717422.027490911] [robot_simulator]: [robot_6] moved to MRI
+[INFO] [1775717422.030321085] [robot_simulator]: [robot_7] moved to Pharmacy
+[INFO] [1775717427.024671497] [robot_simulator]: [robot_5] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717427.031676965] [robot_simulator]: [robot_7] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717428.023574019] [robot_simulator]: [robot_4] completed task: move_patient_1 (ER -> WardC)
+[INFO] [1775717430.010228144] [robot_simulator]: [robot_1] completed task: deliver_food_1 (Cafeteria -> WardA)
+[INFO] [1775717430.015856563] [robot_simulator]: [robot_2] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717431.019556209] [robot_simulator]: [robot_3] completed task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717431.029088684] [robot_simulator]: [robot_6] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717448.994440699] [robot_simulator]: Received assignment: robot_1: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717448.998444210] [robot_simulator]: [robot_1] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717449.000049893] [robot_simulator]: Received assignment: robot_2: assist_patient_1 (ER -> ICU)
+[INFO] [1775717449.004892768] [robot_simulator]: [robot_2] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717449.006344706] [robot_simulator]: Received assignment: robot_3: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717449.012775463] [robot_simulator]: Received assignment: robot_4: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717449.014504303] [robot_simulator]: [robot_3] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717449.016908044] [robot_simulator]: [robot_4] starts task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717449.019544048] [robot_simulator]: Received assignment: robot_5: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717449.021615382] [robot_simulator]: [robot_5] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717449.024734036] [robot_simulator]: Received assignment: robot_6: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717449.028062264] [robot_simulator]: [robot_6] starts task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717449.029523584] [robot_simulator]: Received assignment: robot_7: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717449.032646524] [robot_simulator]: [robot_7] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717452.013888830] [robot_simulator]: [robot_1] moved to MRI
+[INFO] [1775717452.016024072] [robot_simulator]: [robot_2] moved to ICU
+[INFO] [1775717452.028834920] [robot_simulator]: [robot_3] moved to Pharmacy
+[INFO] [1775717452.031354426] [robot_simulator]: [robot_4] moved to ICU
+[INFO] [1775717452.033841890] [robot_simulator]: [robot_5] moved to WardB
+[INFO] [1775717452.039131920] [robot_simulator]: [robot_6] moved to Radiology
+[INFO] [1775717452.047697396] [robot_simulator]: [robot_7] moved to WardB
+[INFO] [1775717457.030009839] [robot_simulator]: [robot_3] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717457.050088869] [robot_simulator]: [robot_7] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717459.033394525] [robot_simulator]: [robot_4] completed task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717460.018183803] [robot_simulator]: [robot_2] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717461.015788573] [robot_simulator]: [robot_1] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717461.035696900] [robot_simulator]: [robot_5] completed task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717461.040971866] [robot_simulator]: [robot_6] completed task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717479.004363437] [robot_simulator]: Received assignment: robot_1: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717479.008916238] [robot_simulator]: [robot_1] starts task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717479.011626646] [robot_simulator]: Received assignment: robot_2: assist_patient_1 (ER -> ICU)
+[INFO] [1775717479.017572671] [robot_simulator]: [robot_2] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717479.018781096] [robot_simulator]: Received assignment: robot_3: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717479.023371597] [robot_simulator]: Received assignment: robot_4: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717479.025137059] [robot_simulator]: [robot_3] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717479.027222372] [robot_simulator]: [robot_4] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717479.030177693] [robot_simulator]: Received assignment: robot_5: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717479.033398016] [robot_simulator]: [robot_5] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717479.034532794] [robot_simulator]: Received assignment: robot_6: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717479.038626117] [robot_simulator]: [robot_6] starts task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717479.039581161] [robot_simulator]: Received assignment: robot_7: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717479.042594070] [robot_simulator]: [robot_7] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717482.023513866] [robot_simulator]: [robot_1] moved to Radiology
+[INFO] [1775717482.030214975] [robot_simulator]: [robot_2] moved to ICU
+[INFO] [1775717482.038288820] [robot_simulator]: [robot_3] moved to WardB
+[INFO] [1775717482.039399572] [robot_simulator]: [robot_4] moved to MRI
+[INFO] [1775717482.043174700] [robot_simulator]: [robot_5] moved to Pharmacy
+[INFO] [1775717482.048544097] [robot_simulator]: [robot_6] moved to ICU
+[INFO] [1775717482.053899183] [robot_simulator]: [robot_7] moved to WardB
+[INFO] [1775717487.039753499] [robot_simulator]: [robot_3] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717487.045249209] [robot_simulator]: [robot_5] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717489.050105413] [robot_simulator]: [robot_6] completed task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717490.031938997] [robot_simulator]: [robot_2] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717491.024637856] [robot_simulator]: [robot_1] completed task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717491.040907378] [robot_simulator]: [robot_4] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717491.056468359] [robot_simulator]: [robot_7] completed task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717509.035672201] [robot_simulator]: Received assignment: robot_1: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717509.038249578] [robot_simulator]: [robot_1] starts task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717509.041685387] [robot_simulator]: Received assignment: robot_2: assist_patient_1 (ER -> ICU)
+[INFO] [1775717509.044030207] [robot_simulator]: [robot_2] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717509.046872660] [robot_simulator]: Received assignment: robot_3: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717509.048651517] [robot_simulator]: [robot_3] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717509.051208551] [robot_simulator]: Received assignment: robot_4: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717509.053309088] [robot_simulator]: [robot_4] starts task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717509.056352999] [robot_simulator]: Received assignment: robot_5: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717509.058375906] [robot_simulator]: [robot_5] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717509.061079978] [robot_simulator]: Received assignment: robot_6: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717509.062906964] [robot_simulator]: [robot_6] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717509.065023129] [robot_simulator]: Received assignment: robot_7: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717509.067258239] [robot_simulator]: [robot_7] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717512.053296701] [robot_simulator]: [robot_1] moved to ICU
+[INFO] [1775717512.057201931] [robot_simulator]: [robot_2] moved to ICU
+[INFO] [1775717512.060398120] [robot_simulator]: [robot_3] moved to Pharmacy
+[INFO] [1775717512.066755504] [robot_simulator]: [robot_4] moved to Radiology
+[INFO] [1775717512.069547532] [robot_simulator]: [robot_5] moved to WardB
+[INFO] [1775717512.078347221] [robot_simulator]: [robot_7] moved to WardB
+[INFO] [1775717512.079295558] [robot_simulator]: [robot_6] moved to MRI
+[INFO] [1775717517.061732195] [robot_simulator]: [robot_3] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717517.071741617] [robot_simulator]: [robot_5] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717519.055346803] [robot_simulator]: [robot_1] completed task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717520.058244398] [robot_simulator]: [robot_2] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717521.067957416] [robot_simulator]: [robot_4] completed task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717521.079375121] [robot_simulator]: [robot_7] completed task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717521.080925344] [robot_simulator]: [robot_6] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717539.012821107] [robot_simulator]: Received assignment: robot_1: assist_patient_1 (ER -> ICU)
+[INFO] [1775717539.015033169] [robot_simulator]: [robot_1] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717539.017871438] [robot_simulator]: Received assignment: robot_2: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717539.019704014] [robot_simulator]: [robot_2] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717539.022364732] [robot_simulator]: Received assignment: robot_3: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717539.026845872] [robot_simulator]: Received assignment: robot_4: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717539.027438004] [robot_simulator]: [robot_3] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717539.031216246] [robot_simulator]: Received assignment: robot_5: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717539.034353489] [robot_simulator]: [robot_4] starts task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717539.035146455] [robot_simulator]: [robot_5] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717539.036900640] [robot_simulator]: Received assignment: robot_6: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717539.039695373] [robot_simulator]: [robot_6] starts task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717539.040670319] [robot_simulator]: Received assignment: robot_7: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717539.043310430] [robot_simulator]: [robot_7] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717542.028634910] [robot_simulator]: [robot_1] moved to ICU
+[INFO] [1775717542.032834940] [robot_simulator]: [robot_2] moved to MRI
+[INFO] [1775717542.041097913] [robot_simulator]: [robot_3] moved to WardB
+[INFO] [1775717542.051303564] [robot_simulator]: [robot_5] moved to Pharmacy
+[INFO] [1775717542.052078027] [robot_simulator]: [robot_4] moved to ICU
+[INFO] [1775717542.054719381] [robot_simulator]: [robot_7] moved to WardB
+[INFO] [1775717542.056638142] [robot_simulator]: [robot_6] moved to Radiology
+[INFO] [1775717547.043568332] [robot_simulator]: [robot_3] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717547.052946313] [robot_simulator]: [robot_5] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717549.053644990] [robot_simulator]: [robot_4] completed task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717550.030652239] [robot_simulator]: [robot_1] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717551.034054600] [robot_simulator]: [robot_2] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717551.056463266] [robot_simulator]: [robot_7] completed task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717551.058683557] [robot_simulator]: [robot_6] completed task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717568.991906954] [robot_simulator]: Received assignment: robot_1: assist_patient_1 (ER -> ICU)
+[INFO] [1775717568.996112141] [robot_simulator]: [robot_1] starts task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717568.996661513] [robot_simulator]: Received assignment: robot_2: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717569.000929492] [robot_simulator]: Received assignment: robot_3: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717569.003721880] [robot_simulator]: [robot_2] starts task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717569.005669701] [robot_simulator]: [robot_3] starts task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717569.007091735] [robot_simulator]: Received assignment: robot_4: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717569.011047337] [robot_simulator]: [robot_4] starts task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717569.011978905] [robot_simulator]: Received assignment: robot_5: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717569.016676023] [robot_simulator]: Received assignment: robot_6: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717569.017261066] [robot_simulator]: [robot_5] starts task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717569.022165182] [robot_simulator]: Received assignment: robot_7: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717569.026974469] [robot_simulator]: [robot_6] starts task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717569.027844310] [robot_simulator]: [robot_7] starts task: clean_room_1 (NurseStation -> WardB)
+[INFO] [1775717572.009353122] [robot_simulator]: [robot_1] moved to ICU
+[INFO] [1775717572.020349507] [robot_simulator]: [robot_2] moved to Radiology
+[INFO] [1775717572.020616790] [robot_simulator]: [robot_3] moved to Pharmacy
+[INFO] [1775717572.022399792] [robot_simulator]: [robot_4] moved to MRI
+[INFO] [1775717572.032067166] [robot_simulator]: [robot_5] moved to WardB
+[INFO] [1775717572.040570629] [robot_simulator]: [robot_6] moved to ICU
+[INFO] [1775717572.041116116] [robot_simulator]: [robot_7] moved to WardB
+[INFO] [1775717577.022725517] [robot_simulator]: [robot_3] completed task: restock_supplies_1 (Supply -> Pharmacy)
+[INFO] [1775717577.034326354] [robot_simulator]: [robot_5] completed task: deliver_meds_1 (Pharmacy -> WardB)
+[INFO] [1775717579.042064441] [robot_simulator]: [robot_6] completed task: transport_equipment_1 (Radiology -> ICU)
+[INFO] [1775717580.010756427] [robot_simulator]: [robot_1] completed task: assist_patient_1 (ER -> ICU)
+[INFO] [1775717581.021978118] [robot_simulator]: [robot_2] completed task: pickup_samples_1 (Lab -> Radiology)
+[INFO] [1775717581.023921317] [robot_simulator]: [robot_4] completed task: support_mri_1 (Radiology -> MRI)
+[INFO] [1775717581.042945596] [robot_simulator]: [robot_7] completed task: clean_room_1 (NurseStation -> WardB)

@@ -7,7 +7,8 @@ def build_hospital_map():
 
     # Rooms and nodes
     rooms = [
-        'Lobby', 'NurseStation', 'ER', 'WardA', 'WardB', 'Pharmacy', 'Lab', 'Cafeteria', 'Radiology', 'ICU'
+        'Lobby', 'NurseStation', 'ER', 'WardA', 'WardB', 'WardC',
+        'Pharmacy', 'Lab', 'Cafeteria', 'Radiology', 'ICU', 'Supply', 'MRI'
     ]
     G.add_nodes_from(rooms)
 
@@ -17,12 +18,18 @@ def build_hospital_map():
         ('NurseStation', 'ER'),
         ('NurseStation', 'WardA'),
         ('NurseStation', 'WardB'),
+        ('NurseStation', 'Cafeteria'),
         ('ER', 'ICU'),
-        ('WardA', 'Lab'),
-        ('WardB', 'Pharmacy'),
+        ('WardA', 'WardC'),
+        ('WardB', 'Supply'),
+        ('WardC', 'Radiology'),
+        ('Supply', 'Pharmacy'),
         ('Lab', 'Radiology'),
+        ('Radiology', 'MRI'),
+        ('MRI', 'ICU'),
         ('Pharmacy', 'Cafeteria'),
         ('Cafeteria', 'Lobby'),
+        ('Lab', 'MRI'),
     ]
     G.add_edges_from(edges, weight=1.0)
 

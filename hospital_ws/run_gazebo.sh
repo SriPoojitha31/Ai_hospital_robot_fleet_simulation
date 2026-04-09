@@ -1,5 +1,5 @@
 #!/bin/bash
-# Launch Flask dashboard for the hospital fleet
+# Launch Gazebo hospital simulation
 set -eo pipefail
 
 WORKSPACE_ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -16,4 +16,6 @@ source /opt/ros/jazzy/setup.bash
 [[ -f "${WORKSPACE_ROOT}/install/setup.bash" ]] && source "${WORKSPACE_ROOT}/install/setup.bash"
 
 export PYTHONPATH="${PACKAGE_DIR}:${PYTHONPATH}"
-exec python3 -m hospital_fleet_manager.dashboard
+
+echo "Launching Gazebo hospital simulation..."
+exec ros2 launch hospital_fleet_manager gazebo_hospital.launch.py

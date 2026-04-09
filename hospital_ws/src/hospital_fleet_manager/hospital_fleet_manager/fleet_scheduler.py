@@ -35,6 +35,8 @@ class FleetScheduler(Node):
             'robot_3': 'WardA',
             'robot_4': 'ER',
             'robot_5': 'Pharmacy',
+            'robot_6': 'WardC',
+            'robot_7': 'Supply',
         }
 
         self.tasks = [
@@ -44,6 +46,10 @@ class FleetScheduler(Node):
             {'task_id': 'deliver_food_1', 'from': 'Cafeteria', 'to': 'WardA'},
             {'task_id': 'clean_room_1', 'from': 'NurseStation', 'to': 'WardB'},
             {'task_id': 'transport_equipment_1', 'from': 'Radiology', 'to': 'ICU'},
+            {'task_id': 'restock_supplies_1', 'from': 'Supply', 'to': 'Pharmacy'},
+            {'task_id': 'move_patient_1', 'from': 'ER', 'to': 'WardC'},
+            {'task_id': 'deliver_lab_results_1', 'from': 'Lab', 'to': 'ER'},
+            {'task_id': 'support_mri_1', 'from': 'Radiology', 'to': 'MRI'},
         ]
 
         self.get_logger().info('Fleet scheduler initialized with enhanced AI and periodic scheduling')

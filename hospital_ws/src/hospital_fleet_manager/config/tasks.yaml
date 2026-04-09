@@ -1,1 +1,31 @@
-tasks:&#10;  - task_id: deliver_meds_1&#10;    from: Pharmacy&#10;    to: WardB&#10;  - task_id: pickup_samples_1&#10;    from: Lab&#10;    to: Radiology&#10;  - task_id: assist_patient_1&#10;    from: ER&#10;    to: ICU&#10;  - task_id: clean_room_1&#10;    from: ICU&#10;    to: Lobby&#10;  - task_id: transport_patient_1&#10;    from: WardA&#10;    to: ER&#10;  - task_id: restock_supplies_1&#10;    from: Cafeteria&#10;    to: NurseStation
+tasks:
+  - task_id: deliver_meds_1
+    from: Pharmacy
+    to: WardB
+  - task_id: pickup_samples_1
+    from: Lab
+    to: Radiology
+  - task_id: assist_patient_1
+    from: ER
+    to: ICU
+  - task_id: deliver_food_1
+    from: Cafeteria
+    to: WardA
+  - task_id: clean_room_1
+    from: NurseStation
+    to: WardB
+  - task_id: transport_equipment_1
+    from: Radiology
+    to: ICU
+  - task_id: restock_supplies_1
+    from: Supply
+    to: Pharmacy
+  - task_id: move_patient_1
+    from: ER
+    to: WardC
+  - task_id: deliver_lab_results_1
+    from: Lab
+    to: ER
+  - task_id: support_mri_1
+    from: Radiology
+    to: MRI
