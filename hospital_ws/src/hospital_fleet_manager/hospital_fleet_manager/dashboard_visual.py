@@ -582,164 +582,207 @@ HTML_TEMPLATE = """
         let robotTrails = {};
         
         function drawHospitalMap(robots) {
+            console.log('🎯 drawHospitalMap called with robots:', robots);
+            
             const svg = document.getElementById('hospitalMap');
+            if (!svg) {
+                console.error('❌ SVG element #hospitalMap not found!');
+                return;
+            }
+            
             const roomsGroup = svg.querySelector('#rooms');
             const robotsGroup = svg.querySelector('#robots');
+            
+            if (!roomsGroup || !robotsGroup) {
+                console.error('❌ Room or robot groups not found in SVG');
+                return;
+            }
             
             // Clear previous content
             roomsGroup.innerHTML = '';
             robotsGroup.innerHTML = '';
             
+            console.log('📊 Fetching room data from /api/map-data ...');
+            
             // Fetch room data from server
             fetch('/api/map-data')
-                .then(r => r.json())
-                .then(data => {
-                    if (!data.error) {
-                        // Draw blueprint grid/scale lines
-                        const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                        gridGroup.innerHTML = `
-                            <defs>
-                                <pattern id="blueprint-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2C3E50" stroke-width="0.3" opacity="0.3"/>
-                                </pattern>
-                            </defs>
-                            <rect width="900" height="600" fill="url(#blueprint-grid)"/>
-                        `;
-                        if (roomsGroup.parentElement) {
-                            roomsGroup.parentElement.insertBefore(gridGroup, roomsGroup);
-                        }
-
-                        // Draw rooms with blueprint styling
-                        data.rooms.forEach((room, idx) => {
-                            const roomColor = ROOM_TYPE_COLORS[room.name] || '#BDC3C7';
-                            const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                            
-                            // Outer wall (darker blue)
-                            let wallColor = '#2C3E50';
-                            let fillColor = roomColor;
-                            
-                            roomGroup.innerHTML = `
-                                <!-- Room walls (blueprint style) -->
-                                <rect 
-                                    x="${room.x - 10}" 
-                                    y="${room.y - 10}" 
-                                    width="20" 
-                                    height="20"
-                                    fill="${fillColor}"
-                                    stroke="${wallColor}"
-                                    stroke-width="2"
-                                    rx="1"
-                                    opacity="0.8"
-                                />
-                                <!-- Inner wall detail -->
-                                <rect 
-                                    x="${room.x - 9}" 
-                                    y="${room.y - 9}" 
-                                    width="18" 
-                                    height="18"
-                                    fill="none"
-                                    stroke="${wallColor}"
-                                    stroke-width="0.5"
-                                    opacity="0.3"
-                                    rx="1"
-                                />
-                                <!-- Room label -->
-                                <text 
-                                    x="${room.x}" 
-                                    y="${room.y}" 
-                                    text-anchor="middle"
-                                    dominant-baseline="middle"
-                                    font-size="8"
-                                    fill="#1A252F"
-                                    font-weight="700"
-                                    letter-spacing="0.3"
-                                >${room.name.substring(0, 5)}</text>
-                                <text 
-                                    x="${room.x}" 
-                                    y="${room.y + 24}" 
-                                    text-anchor="middle"
-                                    font-size="7"
-                                    fill="#34495E"
-                                    font-weight="500"
-                                    opacity="0.7"
-                                >${room.name.substring(5)}</text>
-                            `;
-                            roomsGroup.appendChild(roomGroup);
-                        });
-                        
-                        // Draw robots with enhanced visualization
-                        Object.entries(robots).forEach(([robotId, status]) => {
-                            const room = data.rooms.find(r => r.name === status.location);
-                            if (room) {
-                                const color = ROBOT_COLORS[status.type] || '#6B7280';
-                                const battery = status.battery || 100;
-                                const getBatteryColor = (bat) => {
-                                    if (bat >= 75) return '#27AE60';  // Blueprint green
-                                    if (bat >= 50) return '#F39C12';  // Blueprint orange
-                                    if (bat >= 25) return '#E74C3C';  // Blueprint red
-                                    return '#C0392B';                  // Blueprint dark red
-                                };
-                                
-                                const robotGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                                robotGroup.innerHTML = `
-                                    <!-- Battery ring indicator (outer ring) -->
-                                    <circle 
-                                        cx="${room.x}" 
-                                        cy="${room.y}" 
-                                        r="9"
-                                        fill="none"
-                                        stroke="${getBatteryColor(battery)}"
-                                        stroke-width="2"
-                                        opacity="0.6"
-                                    />
-                                    <!-- Main robot circle -->
-                                    <circle 
-                                        cx="${room.x}" 
-                                        cy="${room.y}" 
-                                        r="6"
-                                        fill="${color}"
-                                        stroke="#FFFFFF"
-                                        stroke-width="1.5"
-                                        opacity="${status.status === 'busy' ? 1 : 0.8}"
-                                    />
-                                    <!-- Pulsing animation ring for active robots -->
-                                    ${status.status === 'busy' ? `
-                                    <circle 
-                                        cx="${room.x}" 
-                                        cy="${room.y}" 
-                                        r="6"
-                                        fill="none"
-                                        stroke="${color}"
-                                        stroke-width="1"
-                                        opacity="0.4"
-                                    >
-                                        <animate 
-                                            attributeName="r" 
-                                            from="6" 
-                                            to="13" 
-                                            dur="1.5s" 
-                                            repeatCount="indefinite"
-                                        />
-                                        <animate 
-                                            attributeName="opacity" 
-                                            from="0.6" 
-                                            to="0" 
-                                            dur="1.5s" 
-                                            repeatCount="indefinite"
-                                        />
-                                    </circle>
-                                    ` : ''}
-                                    <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status}</title>
-                                `;
-                                robotsGroup.appendChild(robotGroup);
-                            }
-                        });
-                        
-                        // Update legend
-                        updateLegend();
-                    }
+                .then(r => {
+                    console.log('✅ /api map-data response status:', r.status);
+                    return r.json();
                 })
-                .catch(console.error);
+                .then(data => {
+                    console.log('📍 Room data received:', data);
+                    
+                    if (!data.rooms || !Array.isArray(data.rooms)) {
+                        console.error('❌ Invalid room data:', data);
+                        return;
+                    }
+                    
+                    console.log(`✅ Drawing ${data.rooms.length} rooms...`);
+                    
+                    // Draw blueprint grid/scale lines
+                    const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    gridGroup.innerHTML = `
+                        <defs>
+                            <pattern id="blueprint-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2C3E50" stroke-width="0.3" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <rect width="900" height="600" fill="url(#blueprint-grid)"/>
+                    `;
+                    if (roomsGroup.parentElement) {
+                        roomsGroup.parentElement.insertBefore(gridGroup, roomsGroup);
+                    }
+
+                    // Draw rooms with blueprint styling
+                    data.rooms.forEach((room, idx) => {
+                        const roomColor = ROOM_TYPE_COLORS[room.name] || '#BDC3C7';
+                        const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                        
+                        // Outer wall (darker blue)
+                        let wallColor = '#2C3E50';
+                        let fillColor = roomColor;
+                        
+                        roomGroup.innerHTML = `
+                            <!-- Room walls (blueprint style) -->
+                            <rect 
+                                x="${room.x - 10}" 
+                                y="${room.y - 10}" 
+                                width="20" 
+                                height="20"
+                                fill="${fillColor}"
+                                stroke="${wallColor}"
+                                stroke-width="2"
+                                rx="1"
+                                opacity="0.8"
+                            />
+                            <!-- Inner wall detail -->
+                            <rect 
+                                x="${room.x - 9}" 
+                                y="${room.y - 9}" 
+                                width="18" 
+                                height="18"
+                                fill="none"
+                                stroke="${wallColor}"
+                                stroke-width="0.5"
+                                opacity="0.3"
+                                rx="1"
+                            />
+                            <!-- Room label -->
+                            <text 
+                                x="${room.x}" 
+                                y="${room.y}" 
+                                text-anchor="middle"
+                                dominant-baseline="middle"
+                                font-size="8"
+                                fill="#1A252F"
+                                font-weight="700"
+                                letter-spacing="0.3"
+                            >${room.name.substring(0, 5)}</text>
+                            <text 
+                                x="${room.x}" 
+                                y="${room.y + 24}" 
+                                text-anchor="middle"
+                                font-size="7"
+                                fill="#34495E"
+                                font-weight="500"
+                                opacity="0.7"
+                            >${room.name.substring(5)}</text>
+                        `;
+                        roomsGroup.appendChild(roomGroup);
+                    });
+                    
+                    // Draw robots with enhanced visualization
+                    console.log('🤖 Drawing robots:', Object.keys(robots).length, 'total');
+                    let robotsDrawn = 0;
+                    let robotsSkipped = 0;
+                    
+                    Object.entries(robots).forEach(([robotId, status]) => {
+                        if (!status.location) {
+                            console.warn(`⚠️ Robot ${robotId} has no location:`, status);
+                            robotsSkipped++;
+                            return;
+                        }
+                        
+                        const room = data.rooms.find(r => r.name === status.location);
+                        if (room) {
+                            const color = ROBOT_COLORS[status.type] || '#6B7280';
+                            const battery = status.battery || 100;
+                            const getBatteryColor = (bat) => {
+                                if (bat >= 75) return '#27AE60';  // Blueprint green
+                                if (bat >= 50) return '#F39C12';  // Blueprint orange
+                                if (bat >= 25) return '#E74C3C';  // Blueprint red
+                                return '#C0392B';                  // Blueprint dark red
+                            };
+                            
+                            const robotGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            robotGroup.innerHTML = `
+                                <!-- Battery ring indicator (outer ring) -->
+                                <circle 
+                                    cx="${room.x}" 
+                                    cy="${room.y}" 
+                                    r="9"
+                                    fill="none"
+                                    stroke="${getBatteryColor(battery)}"
+                                    stroke-width="2"
+                                    opacity="0.6"
+                                />
+                                <!-- Main robot circle -->
+                                <circle 
+                                    cx="${room.x}" 
+                                    cy="${room.y}" 
+                                    r="6"
+                                    fill="${color}"
+                                    stroke="#FFFFFF"
+                                    stroke-width="1.5"
+                                    opacity="${status.status === 'busy' ? 1 : 0.8}"
+                                />
+                                <!-- Pulsing animation ring for active robots -->
+                                ${status.status === 'busy' ? `
+                                <circle 
+                                    cx="${room.x}" 
+                                    cy="${room.y}" 
+                                    r="6"
+                                    fill="none"
+                                    stroke="${color}"
+                                    stroke-width="1"
+                                    opacity="0.4"
+                                >
+                                    <animate 
+                                        attributeName="r" 
+                                        from="6" 
+                                        to="13" 
+                                        dur="1.5s" 
+                                        repeatCount="indefinite"
+                                    />
+                                    <animate 
+                                        attributeName="opacity" 
+                                        from="0.6" 
+                                        to="0" 
+                                        dur="1.5s" 
+                                        repeatCount="indefinite"
+                                    />
+                                </circle>
+                                ` : ''}
+                                <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status}</title>
+                            `;
+                            robotsGroup.appendChild(robotGroup);
+                            robotsDrawn++;
+                            console.log(`✅ Robot ${robotId} drawn at ${status.location}`);
+                        } else {
+                            console.warn(`⚠️ Room "${status.location}" not found for robot ${robotId}`);
+                            robotsSkipped++;
+                        }
+                    });
+                    
+                    console.log(`🎨 Rendering complete: ${robotsDrawn} robots drawn, ${robotsSkipped} skipped`);
+                    
+                    // Update legend
+                    updateLegend();
+                })
+                .catch(err => {
+                    console.error('❌ Error fetching map data:', err);
+                });
         }
 
         function updateLegend() {
@@ -799,11 +842,17 @@ HTML_TEMPLATE = """
         }
         
         function updateDashboard() {
+            console.log('🔄 updateDashboard called at', new Date().toLocaleTimeString());
+            
             Promise.all([
                 fetch('/api/stats').then(r => r.json()),
                 fetch('/api/status').then(r => r.json()),
                 fetch('/api/history').then(r => r.json())
             ]).then(([stats, status, history]) => {
+                console.log('📊 Stats received:', stats);
+                console.log('📋 Status received:', status);
+                console.log('📜 History received:', history);
+                
                 if (!stats.error) {
                     document.getElementById('total-robots').textContent = stats.total_robots;
                     document.getElementById('busy-robots').textContent = stats.busy_robots;
@@ -814,17 +863,30 @@ HTML_TEMPLATE = """
                     document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
                     
                     updateCharts(stats);
+                } else {
+                    console.error('❌ Stats error:', stats.error);
                 }
                 
                 if (!status.error) {
+                    if (!status.robots || Object.keys(status.robots).length === 0) {
+                        console.warn('⚠️ No robots in status data!');
+                    } else {
+                        console.log(`✅ Drawing ${Object.keys(status.robots).length} robots`);
+                    }
                     drawHospitalMap(status.robots);
                     updateRobotList(status.robots);
+                } else {
+                    console.error('❌ Status error:', status.error);
                 }
                 
                 if (!history.error) {
                     updateActivityLog(history.history);
+                } else {
+                    console.error('❌ History error:', history.error);
                 }
-            }).catch(console.error);
+            }).catch(err => {
+                console.error('❌ Dashboard update error:', err);
+            });
         }
         
         function updateRobotList(robots) {
@@ -1006,6 +1068,7 @@ HTML_TEMPLATE = """
         }
         
         // Update dashboard every 2 seconds
+        console.log('🚀 Dashboard initialized. Starting update loop...');
         updateDashboard();
         setInterval(updateDashboard, 2000);
     </script>

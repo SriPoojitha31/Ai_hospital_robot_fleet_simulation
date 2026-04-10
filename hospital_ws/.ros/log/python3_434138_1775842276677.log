@@ -624,3 +624,1299 @@
 [INFO] [1775842679.523070616] [robot_simulator]: [emergency_1] completed task: cleaning_task_6 (WardD -> WardB)
 [INFO] [1775842679.523731092] [robot_simulator]: [patient_mover_1] completed task: lab_courier_task_5 (Lab -> Radiology)
 [INFO] [1775842679.525562374] [robot_simulator]: [general_2] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842697.569162878] [robot_simulator]: Received assignment: delivery_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842697.571706530] [robot_simulator]: [delivery_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842697.571899831] [robot_simulator]: Received assignment: delivery_2: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842697.573641622] [robot_simulator]: [delivery_2] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842697.574178210] [robot_simulator]: Received assignment: delivery_3: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842697.576129795] [robot_simulator]: Received assignment: cleaning_1: clean_ward_a (WardA -> WardA)
+[INFO] [1775842697.577888186] [robot_simulator]: [delivery_3] starts task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842697.578663721] [robot_simulator]: [cleaning_1] starts task: clean_ward_a (WardA -> WardA)
+[INFO] [1775842697.578961738] [robot_simulator]: Received assignment: cleaning_2: patient_move_1 (ER -> ICU)
+[INFO] [1775842697.580888099] [robot_simulator]: Received assignment: patient_mover_1: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842697.581088203] [robot_simulator]: [cleaning_2] starts task: patient_move_1 (ER -> ICU)
+[INFO] [1775842697.582604268] [robot_simulator]: [patient_mover_1] starts task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842697.582977452] [robot_simulator]: Received assignment: patient_mover_2: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842697.584820651] [robot_simulator]: Received assignment: heavy_supply_1: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842697.585121356] [robot_simulator]: [patient_mover_2] starts task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842697.588956143] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842697.593885936] [robot_simulator]: [heavy_supply_1] starts task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842697.596324071] [robot_simulator]: Received assignment: emergency_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842697.597751966] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842697.601476813] [robot_simulator]: Received assignment: general_1: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842697.607155613] [robot_simulator]: [emergency_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842697.608654020] [robot_simulator]: Received assignment: general_2: clean_er (ER -> ER)
+[INFO] [1775842697.612984521] [robot_simulator]: [general_1] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842697.614726758] [robot_simulator]: [general_2] starts task: clean_er (ER -> ER)
+[INFO] [1775842700.585533591] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775842700.585755565] [robot_simulator]: [delivery_1] moved to WardE
+[INFO] [1775842700.587916637] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775842700.590459555] [robot_simulator]: [cleaning_1] moved to WardA
+[INFO] [1775842700.593520583] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842700.593992570] [robot_simulator]: [patient_mover_1] moved to ICU
+[INFO] [1775842700.594594873] [robot_simulator]: [cleaning_2] moved to ICU
+[INFO] [1775842700.605650006] [robot_simulator]: [heavy_supply_1] moved to Pharmacy
+[INFO] [1775842700.608028441] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842700.616655464] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775842700.624000224] [robot_simulator]: [general_1] moved to Radiology
+[INFO] [1775842700.625005306] [robot_simulator]: [general_2] moved to ER
+[INFO] [1775842706.595933102] [robot_simulator]: [patient_mover_2] completed task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842706.609486501] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842706.618040969] [robot_simulator]: [emergency_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842707.588288334] [robot_simulator]: [delivery_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842708.589787619] [robot_simulator]: [delivery_3] completed task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842708.591879806] [robot_simulator]: [cleaning_1] completed task: clean_ward_a (WardA -> WardA)
+[INFO] [1775842708.596094538] [robot_simulator]: [cleaning_2] completed task: patient_move_1 (ER -> ICU)
+[INFO] [1775842708.606794540] [robot_simulator]: [heavy_supply_1] completed task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842708.626433042] [robot_simulator]: [general_2] completed task: clean_er (ER -> ER)
+[INFO] [1775842709.586736759] [robot_simulator]: [delivery_2] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842709.595236583] [robot_simulator]: [patient_mover_1] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842709.625107219] [robot_simulator]: [general_1] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842727.514732261] [robot_simulator]: Received assignment: delivery_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842727.515976224] [robot_simulator]: [delivery_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842727.516279765] [robot_simulator]: Received assignment: delivery_2: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842727.517122620] [robot_simulator]: Received assignment: delivery_3: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842727.517965591] [robot_simulator]: Received assignment: cleaning_1: clean_er (ER -> ER)
+[INFO] [1775842727.519461424] [robot_simulator]: [delivery_2] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842727.519828221] [robot_simulator]: [delivery_3] starts task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842727.520164060] [robot_simulator]: [cleaning_1] starts task: clean_er (ER -> ER)
+[INFO] [1775842727.520460678] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842727.521854524] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842727.522044375] [robot_simulator]: Received assignment: patient_mover_1: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842727.523158299] [robot_simulator]: [patient_mover_1] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842727.523367833] [robot_simulator]: Received assignment: patient_mover_2: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842727.524292399] [robot_simulator]: Received assignment: heavy_supply_1: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842727.525552725] [robot_simulator]: Received assignment: lab_courier_1: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842727.525625726] [robot_simulator]: [patient_mover_2] starts task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842727.526712317] [robot_simulator]: Received assignment: emergency_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842727.527626945] [robot_simulator]: Received assignment: general_1: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842727.528280064] [robot_simulator]: [heavy_supply_1] starts task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842727.528856039] [robot_simulator]: Received assignment: general_2: patient_move_1 (ER -> ICU)
+[INFO] [1775842727.529418363] [robot_simulator]: [lab_courier_1] starts task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842727.530351529] [robot_simulator]: [general_1] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842727.530443013] [robot_simulator]: [emergency_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842727.530565564] [robot_simulator]: [general_2] starts task: patient_move_1 (ER -> ICU)
+[INFO] [1775842730.529471653] [robot_simulator]: [delivery_1] moved to WardE
+[INFO] [1775842730.537049630] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842730.537337099] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842730.538148240] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775842730.538889963] [robot_simulator]: [patient_mover_1] moved to Recovery
+[INFO] [1775842730.540746617] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842730.541046438] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775842730.541377260] [robot_simulator]: [general_1] moved to Radiology
+[INFO] [1775842730.543438421] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775842730.544172590] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842730.544305944] [robot_simulator]: [heavy_supply_1] moved to Pharmacy
+[INFO] [1775842730.544615828] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775842736.542680909] [robot_simulator]: [general_1] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842736.544321603] [robot_simulator]: [delivery_2] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842736.545928878] [robot_simulator]: [patient_mover_2] completed task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842737.531248355] [robot_simulator]: [delivery_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842737.540150492] [robot_simulator]: [patient_mover_1] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842738.540437944] [robot_simulator]: [cleaning_1] completed task: clean_er (ER -> ER)
+[INFO] [1775842738.544570765] [robot_simulator]: [general_2] completed task: patient_move_1 (ER -> ICU)
+[INFO] [1775842738.545677035] [robot_simulator]: [lab_courier_1] completed task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842738.546998368] [robot_simulator]: [heavy_supply_1] completed task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842739.540185254] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842739.540941004] [robot_simulator]: [delivery_3] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842739.546244819] [robot_simulator]: [emergency_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842757.552048681] [robot_simulator]: Received assignment: delivery_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842757.553755790] [robot_simulator]: Received assignment: delivery_2: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842757.555670166] [robot_simulator]: Received assignment: delivery_3: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842757.557494324] [robot_simulator]: Received assignment: cleaning_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842757.558023691] [robot_simulator]: [delivery_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842757.558861231] [robot_simulator]: [delivery_2] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842757.559639238] [robot_simulator]: [cleaning_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842757.559798062] [robot_simulator]: [delivery_3] starts task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842757.560035071] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842757.560899015] [robot_simulator]: Received assignment: patient_mover_1: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842757.561909567] [robot_simulator]: Received assignment: patient_mover_2: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842757.562863040] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842757.563052343] [robot_simulator]: [patient_mover_1] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842757.563578610] [robot_simulator]: [patient_mover_2] starts task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842757.563700052] [robot_simulator]: Received assignment: heavy_supply_1: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842757.564474348] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842757.565557197] [robot_simulator]: [heavy_supply_1] starts task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842757.565684541] [robot_simulator]: Received assignment: emergency_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842757.566945894] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842757.567565985] [robot_simulator]: Received assignment: general_1: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842757.568315414] [robot_simulator]: [emergency_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842757.568716093] [robot_simulator]: Received assignment: general_2: lab_samples_2 (Lab -> ER)
+[INFO] [1775842757.570200744] [robot_simulator]: [general_1] starts task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842757.570912569] [robot_simulator]: [general_2] starts task: lab_samples_2 (Lab -> ER)
+[INFO] [1775842760.573780244] [robot_simulator]: [delivery_1] moved to WardE
+[INFO] [1775842760.578428964] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775842760.578956731] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775842760.580373540] [robot_simulator]: [patient_mover_1] moved to Recovery
+[INFO] [1775842760.580501325] [robot_simulator]: [cleaning_1] moved to WardA
+[INFO] [1775842760.580978382] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842760.583211056] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775842760.583964696] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842760.585009403] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775842760.585141383] [robot_simulator]: [heavy_supply_1] moved to Pharmacy
+[INFO] [1775842760.585419459] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842760.585761268] [robot_simulator]: [general_2] moved to ER
+[INFO] [1775842766.583101654] [robot_simulator]: [patient_mover_2] completed task: patient_move_2 (Trauma -> Recovery)
+[INFO] [1775842766.585286883] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842766.586978310] [robot_simulator]: [emergency_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842767.575873634] [robot_simulator]: [delivery_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842767.582275475] [robot_simulator]: [patient_mover_1] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842768.582228170] [robot_simulator]: [delivery_3] completed task: lab_samples_1 (Lab -> Radiology)
+[INFO] [1775842768.583891580] [robot_simulator]: [cleaning_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842768.587748722] [robot_simulator]: [heavy_supply_1] completed task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842769.580104644] [robot_simulator]: [delivery_2] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842769.585707647] [robot_simulator]: [general_1] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842769.589476366] [robot_simulator]: [general_2] completed task: lab_samples_2 (Lab -> ER)
+[INFO] [1775842769.590846228] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842787.502103830] [robot_simulator]: Received assignment: delivery_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842787.503192012] [robot_simulator]: Received assignment: delivery_2: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842787.504154265] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842787.505185809] [robot_simulator]: Received assignment: cleaning_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842787.505422416] [robot_simulator]: [delivery_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842787.506697016] [robot_simulator]: Received assignment: cleaning_2: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842787.508266159] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842787.508774923] [robot_simulator]: [cleaning_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842787.509473521] [robot_simulator]: [delivery_2] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842787.509778772] [robot_simulator]: [delivery_3] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842787.510176369] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842787.510413314] [robot_simulator]: [cleaning_2] starts task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842787.511355654] [robot_simulator]: Received assignment: heavy_supply_1: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842787.512450268] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842787.512529224] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842787.513593766] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842787.513766506] [robot_simulator]: Received assignment: emergency_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842787.514817159] [robot_simulator]: [heavy_supply_1] starts task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842787.514949598] [robot_simulator]: Received assignment: general_1: lab_samples_2 (Lab -> ER)
+[INFO] [1775842787.515722985] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842787.516207996] [robot_simulator]: Received assignment: general_2: patient_mover_task_18 (ER -> ICU)
+[INFO] [1775842787.517079017] [robot_simulator]: [emergency_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842787.517665441] [robot_simulator]: [general_2] starts task: patient_mover_task_18 (ER -> ICU)
+[INFO] [1775842787.517939561] [robot_simulator]: [general_1] starts task: lab_samples_2 (Lab -> ER)
+[INFO] [1775842790.519359017] [robot_simulator]: [delivery_1] moved to WardB
+[INFO] [1775842790.525191366] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842790.526039749] [robot_simulator]: [patient_mover_1] moved to WardE
+[INFO] [1775842790.527099522] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775842790.528731636] [robot_simulator]: [cleaning_2] moved to ICU
+[INFO] [1775842790.529106525] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775842790.529729908] [robot_simulator]: [general_1] moved to ER
+[INFO] [1775842790.531411107] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775842790.531499845] [robot_simulator]: [cleaning_1] moved to WardA
+[INFO] [1775842790.531677287] [robot_simulator]: [heavy_supply_1] moved to Pharmacy
+[INFO] [1775842790.532276782] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775842790.532513007] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842796.521457357] [robot_simulator]: [delivery_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842796.528386704] [robot_simulator]: [delivery_2] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842796.534087854] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842797.528139967] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842797.529858074] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842797.533544125] [robot_simulator]: [general_2] completed task: patient_mover_task_18 (ER -> ICU)
+[INFO] [1775842798.534492134] [robot_simulator]: [cleaning_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842798.534955664] [robot_simulator]: [heavy_supply_1] completed task: supply_stock_1 (Supply -> Pharmacy)
+[INFO] [1775842799.533667755] [robot_simulator]: [general_1] completed task: lab_samples_2 (Lab -> ER)
+[INFO] [1775842799.536725204] [robot_simulator]: [cleaning_2] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842799.537543271] [robot_simulator]: [emergency_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842799.538110749] [robot_simulator]: [delivery_3] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842817.505447120] [robot_simulator]: Received assignment: delivery_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842817.506674400] [robot_simulator]: Received assignment: delivery_2: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842817.507735948] [robot_simulator]: Received assignment: delivery_3: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842817.507925782] [robot_simulator]: [delivery_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842817.509268922] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842817.510290918] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842817.511562982] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842817.511839976] [robot_simulator]: [delivery_2] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842817.512784697] [robot_simulator]: [delivery_3] starts task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842817.513352237] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842817.513536242] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842817.514650831] [robot_simulator]: Received assignment: heavy_supply_1: supply_stock_2 (Supply -> OperatingRoom1)
+[INFO] [1775842817.515450213] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842817.515585540] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842817.516306743] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842817.517162564] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842817.517512861] [robot_simulator]: Received assignment: emergency_1: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842817.518513089] [robot_simulator]: Received assignment: general_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842817.519612327] [robot_simulator]: Received assignment: general_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842817.519916683] [robot_simulator]: [heavy_supply_1] starts task: supply_stock_2 (Supply -> OperatingRoom1)
+[INFO] [1775842817.521089511] [robot_simulator]: [general_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842817.521311270] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842817.521674286] [robot_simulator]: [general_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842817.521968359] [robot_simulator]: [emergency_1] starts task: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842820.520194994] [robot_simulator]: [delivery_1] moved to WardD
+[INFO] [1775842820.528882017] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842820.531257721] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775842820.533516047] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842820.533955357] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842820.534259439] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775842820.535884144] [robot_simulator]: [patient_mover_1] moved to WardE
+[INFO] [1775842820.536516499] [robot_simulator]: [general_1] moved to WardA
+[INFO] [1775842820.536871030] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842820.536952631] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775842820.537730162] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842820.537836865] [robot_simulator]: [emergency_1] moved to WardE
+[INFO] [1775842826.522007436] [robot_simulator]: [delivery_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842826.535438497] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842827.538289542] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842827.541259367] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842827.542005394] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842827.542484177] [robot_simulator]: [heavy_supply_1] completed task: supply_stock_2 (Supply -> OperatingRoom1)
+[INFO] [1775842828.539035801] [robot_simulator]: [general_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842829.529727307] [robot_simulator]: [delivery_3] completed task: equip_move_1 (Radiology -> ICU)
+[INFO] [1775842829.532688968] [robot_simulator]: [delivery_2] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842829.540427821] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842829.541124115] [robot_simulator]: [general_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842829.541977251] [robot_simulator]: [emergency_1] completed task: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842847.512839227] [robot_simulator]: Received assignment: delivery_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842847.514445766] [robot_simulator]: [delivery_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842847.514685819] [robot_simulator]: Received assignment: delivery_2: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842847.516061858] [robot_simulator]: [delivery_2] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842847.516231236] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842847.518245439] [robot_simulator]: [delivery_3] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842847.518418439] [robot_simulator]: Received assignment: cleaning_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842847.520239125] [robot_simulator]: [cleaning_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842847.520510887] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842847.521469734] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842847.521875617] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842847.522690594] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842847.523548744] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842847.524208689] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842847.524610800] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842847.525532961] [robot_simulator]: Received assignment: emergency_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842847.526336876] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842847.527050783] [robot_simulator]: [emergency_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842847.527403974] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842847.527857873] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842847.528130906] [robot_simulator]: Received assignment: general_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842847.529372045] [robot_simulator]: [general_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842847.529704387] [robot_simulator]: Received assignment: general_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842847.530725312] [robot_simulator]: [general_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842850.527297520] [robot_simulator]: [delivery_1] moved to WardB
+[INFO] [1775842850.528548581] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775842850.531582098] [robot_simulator]: [cleaning_1] moved to WardA
+[INFO] [1775842850.532042403] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842850.534390885] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842850.535206611] [robot_simulator]: [patient_mover_1] moved to WardE
+[INFO] [1775842850.539445957] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842850.539773478] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775842850.542468987] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775842850.542890616] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842850.543932155] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842850.544116293] [robot_simulator]: [general_1] moved to ER
+[INFO] [1775842856.529386637] [robot_simulator]: [delivery_2] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842856.532848792] [robot_simulator]: [delivery_3] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842856.535310979] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842856.540302294] [robot_simulator]: [emergency_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842857.536761535] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842857.544163601] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842857.545484636] [robot_simulator]: [general_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842858.533728406] [robot_simulator]: [cleaning_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842859.528964035] [robot_simulator]: [delivery_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842859.540685759] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842859.543967833] [robot_simulator]: [general_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842859.545337166] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842877.525242554] [robot_simulator]: Received assignment: delivery_1: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842877.527358607] [robot_simulator]: [delivery_1] starts task: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842877.527741612] [robot_simulator]: Received assignment: delivery_2: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842877.529131929] [robot_simulator]: [delivery_2] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842877.529524735] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842877.530892422] [robot_simulator]: [delivery_3] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842877.531171539] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842877.532386910] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842877.532660417] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842877.534318526] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842877.534497705] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842877.535291181] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842877.536490758] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842877.536705594] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842877.536809055] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842877.538170129] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842877.538376032] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842877.539446649] [robot_simulator]: Received assignment: emergency_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842877.540301490] [robot_simulator]: Received assignment: general_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842877.540884836] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842877.541418307] [robot_simulator]: Received assignment: general_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842877.542472279] [robot_simulator]: [emergency_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842877.542838007] [robot_simulator]: [general_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842877.543296272] [robot_simulator]: [general_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842880.539817915] [robot_simulator]: [delivery_1] moved to WardE
+[INFO] [1775842880.540794733] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775842880.544034969] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775842880.544531313] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842880.545633698] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842880.546891024] [robot_simulator]: [patient_mover_1] moved to WardE
+[INFO] [1775842880.553714762] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842880.555692707] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775842880.556035874] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775842880.556469913] [robot_simulator]: [general_1] moved to WardA
+[INFO] [1775842880.557939966] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775842880.558112934] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775842886.548183366] [robot_simulator]: [delivery_3] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842886.549703820] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842886.559886587] [robot_simulator]: [emergency_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842887.546701297] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842887.548906627] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842887.556883621] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842888.557953213] [robot_simulator]: [general_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842889.541610483] [robot_simulator]: [delivery_1] completed task: cleaning_task_7 (WardB -> WardE)
+[INFO] [1775842889.543745670] [robot_simulator]: [delivery_2] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842889.555711554] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842889.557656253] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775842889.559503240] [robot_simulator]: [general_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842907.522357485] [robot_simulator]: Received assignment: delivery_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842907.524045775] [robot_simulator]: Received assignment: delivery_2: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842907.524920830] [robot_simulator]: [delivery_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842907.525625668] [robot_simulator]: [delivery_2] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842907.526083733] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842907.528109751] [robot_simulator]: Received assignment: cleaning_1: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842907.528284527] [robot_simulator]: [delivery_3] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842907.530411636] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842907.530553018] [robot_simulator]: [cleaning_1] starts task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842907.532103667] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842907.532217389] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842907.533261055] [robot_simulator]: Received assignment: patient_mover_2: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842907.533981144] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842907.534377379] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842907.535200511] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842907.536115695] [robot_simulator]: Received assignment: emergency_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842907.536307412] [robot_simulator]: [patient_mover_2] starts task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842907.537409900] [robot_simulator]: Received assignment: general_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842907.538670711] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842907.538779077] [robot_simulator]: Received assignment: general_2: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842907.539069049] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842907.539639519] [robot_simulator]: [emergency_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842907.540170929] [robot_simulator]: [general_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842907.540763026] [robot_simulator]: [general_2] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842910.539315437] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775842910.539509176] [robot_simulator]: [delivery_1] moved to WardE
+[INFO] [1775842910.541540255] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842910.546964193] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775842910.548563699] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775842910.550361879] [robot_simulator]: [cleaning_1] moved to WardA
+[INFO] [1775842910.556973090] [robot_simulator]: [patient_mover_2] moved to Radiology
+[INFO] [1775842910.557699617] [robot_simulator]: [general_2] moved to Recovery
+[INFO] [1775842910.559653062] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775842910.560339204] [robot_simulator]: [lab_courier_1] moved to ER
+[INFO] [1775842910.561176062] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842910.561545374] [robot_simulator]: [general_1] moved to ER
+[INFO] [1775842916.541219376] [robot_simulator]: [delivery_2] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842916.543090987] [robot_simulator]: [delivery_3] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842916.550179571] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775842916.551484869] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842916.562369006] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842917.541374571] [robot_simulator]: [delivery_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842917.559902441] [robot_simulator]: [general_2] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842917.563677259] [robot_simulator]: [general_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842918.552176186] [robot_simulator]: [cleaning_1] completed task: patient_mover_task_17 (ER -> WardA)
+[INFO] [1775842919.558757724] [robot_simulator]: [patient_mover_2] completed task: lab_courier_task_5 (Lab -> Radiology)
+[INFO] [1775842919.561399751] [robot_simulator]: [emergency_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842919.563484564] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842937.520252162] [robot_simulator]: Received assignment: delivery_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842937.521290350] [robot_simulator]: Received assignment: delivery_2: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842937.522276135] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842937.523578390] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842937.524148514] [robot_simulator]: [delivery_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842937.525017428] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842937.525456414] [robot_simulator]: [delivery_2] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842937.526158304] [robot_simulator]: [delivery_3] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842937.526882255] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842937.527321003] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842937.527666894] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842937.529017296] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842937.529280647] [robot_simulator]: Received assignment: patient_mover_2: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842937.530546852] [robot_simulator]: [patient_mover_2] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842937.530811578] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842937.531963052] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842937.532300551] [robot_simulator]: Received assignment: lab_courier_1: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842937.533686937] [robot_simulator]: [lab_courier_1] starts task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842937.533810462] [robot_simulator]: Received assignment: emergency_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842937.535190279] [robot_simulator]: Received assignment: general_1: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842937.535314826] [robot_simulator]: [emergency_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842937.536591994] [robot_simulator]: [general_1] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842937.536882257] [robot_simulator]: Received assignment: general_2: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842937.537904798] [robot_simulator]: [general_2] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842940.538818039] [robot_simulator]: [delivery_1] moved to WardB
+[INFO] [1775842940.539723833] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775842940.543701313] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775842940.546082562] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775842940.547633500] [robot_simulator]: [general_1] moved to PICU
+[INFO] [1775842940.548069105] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775842940.549171067] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775842940.549423549] [robot_simulator]: [general_2] moved to ER
+[INFO] [1775842940.550006053] [robot_simulator]: [patient_mover_2] moved to ER
+[INFO] [1775842940.550227357] [robot_simulator]: [cleaning_2] moved to ICU
+[INFO] [1775842940.550333631] [robot_simulator]: [lab_courier_1] moved to Recovery
+[INFO] [1775842940.550534073] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842945.551895133] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842946.542728338] [robot_simulator]: [delivery_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842946.543914112] [robot_simulator]: [delivery_3] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842946.547411716] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842946.550946672] [robot_simulator]: [patient_mover_2] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842947.553104770] [robot_simulator]: [lab_courier_1] completed task: patient_mover_task_1 (Trauma -> Recovery)
+[INFO] [1775842947.553881850] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842948.549558503] [robot_simulator]: [emergency_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842948.551408792] [robot_simulator]: [general_2] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842949.545441531] [robot_simulator]: [delivery_2] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842949.548768719] [robot_simulator]: [general_1] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842949.552012205] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842967.523188756] [robot_simulator]: Received assignment: delivery_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842967.524443807] [robot_simulator]: [delivery_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842967.524882658] [robot_simulator]: Received assignment: delivery_2: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842967.526286527] [robot_simulator]: [delivery_2] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842967.526657863] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842967.528199327] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842967.528334354] [robot_simulator]: [delivery_3] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842967.529922134] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842967.530065094] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842967.531709552] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842967.531905638] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842967.533443726] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842967.533544494] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842967.534982655] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842967.535289397] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842967.536788272] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842967.536902328] [robot_simulator]: Received assignment: lab_courier_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842967.538261508] [robot_simulator]: [lab_courier_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842967.538495333] [robot_simulator]: Received assignment: emergency_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842967.539764599] [robot_simulator]: [emergency_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842967.540027820] [robot_simulator]: Received assignment: general_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775842967.541503450] [robot_simulator]: Received assignment: general_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842967.541663964] [robot_simulator]: [general_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775842967.542837185] [robot_simulator]: [general_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842970.538414564] [robot_simulator]: [delivery_1] moved to WardD
+[INFO] [1775842970.538707735] [robot_simulator]: [delivery_2] moved to ER
+[INFO] [1775842970.540155925] [robot_simulator]: [delivery_3] moved to ER
+[INFO] [1775842970.541020029] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775842970.543080665] [robot_simulator]: [cleaning_2] moved to ICU
+[INFO] [1775842970.543616143] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775842970.546134912] [robot_simulator]: [patient_mover_2] moved to PICU
+[INFO] [1775842970.547398746] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775842970.548753903] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775842970.548945850] [robot_simulator]: [lab_courier_1] moved to WardE
+[INFO] [1775842970.552422036] [robot_simulator]: [general_1] moved to Radiology
+[INFO] [1775842970.554067755] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775842975.544775547] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842976.541684386] [robot_simulator]: [delivery_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842976.544405696] [robot_simulator]: [delivery_3] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842976.554463965] [robot_simulator]: [general_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775842976.557550601] [robot_simulator]: [general_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842977.542579313] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775842977.550947684] [robot_simulator]: [lab_courier_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775842978.540321437] [robot_simulator]: [delivery_2] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842978.550059132] [robot_simulator]: [emergency_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842979.545310682] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842979.547436457] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842979.549319110] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842997.468458362] [robot_simulator]: Received assignment: delivery_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842997.469987754] [robot_simulator]: [delivery_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775842997.470439404] [robot_simulator]: Received assignment: delivery_2: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775842997.471828863] [robot_simulator]: [delivery_2] starts task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775842997.472117545] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842997.473429146] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842997.473579233] [robot_simulator]: [delivery_3] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775842997.475083159] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842997.475242794] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775842997.476767478] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775842997.476933360] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842997.478231538] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775842997.478574778] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842997.479837983] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775842997.480111928] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842997.481482894] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775842997.481638835] [robot_simulator]: Received assignment: lab_courier_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842997.483085676] [robot_simulator]: [lab_courier_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775842997.483192420] [robot_simulator]: Received assignment: emergency_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842997.484676112] [robot_simulator]: [emergency_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775842997.484793120] [robot_simulator]: Received assignment: general_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842997.486163936] [robot_simulator]: [general_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775842997.486283179] [robot_simulator]: Received assignment: general_2: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775842997.487390046] [robot_simulator]: [general_2] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843000.483532953] [robot_simulator]: [delivery_1] moved to WardB
+[INFO] [1775843000.485459287] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843000.487572898] [robot_simulator]: [delivery_3] moved to PICU
+[INFO] [1775843000.488026992] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843000.492153236] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843000.492608097] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843000.493390579] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843000.495370429] [robot_simulator]: [lab_courier_1] moved to WardB
+[INFO] [1775843000.496630008] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843000.497196541] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775843000.497527716] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843000.498707137] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775843005.498397085] [robot_simulator]: [general_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843006.493890789] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_3 (WardB -> WardD)
+[INFO] [1775843006.495732643] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843006.497368625] [robot_simulator]: [lab_courier_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843006.498483044] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843006.499812476] [robot_simulator]: [general_2] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843008.489746021] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843008.499082150] [robot_simulator]: [emergency_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843009.485286016] [robot_simulator]: [delivery_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843009.487770939] [robot_simulator]: [delivery_2] completed task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843009.489463688] [robot_simulator]: [delivery_3] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843009.493532521] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843027.512495028] [robot_simulator]: Received assignment: delivery_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843027.513967388] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843027.515888711] [robot_simulator]: [delivery_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843027.516315071] [robot_simulator]: [delivery_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843027.516718808] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843027.517879445] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843027.518034224] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843027.519069414] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843027.519210637] [robot_simulator]: Received assignment: cleaning_2: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843027.520552310] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843027.520668318] [robot_simulator]: [cleaning_2] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843027.522213349] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843027.522317982] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843027.523787196] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843027.524033134] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843027.525334383] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843027.525568816] [robot_simulator]: Received assignment: lab_courier_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843027.527055799] [robot_simulator]: [lab_courier_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843027.527220893] [robot_simulator]: Received assignment: emergency_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843027.528641564] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843027.528895029] [robot_simulator]: [emergency_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843027.530215122] [robot_simulator]: Received assignment: general_2: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843027.530510923] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843027.531649182] [robot_simulator]: [general_2] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843030.532411212] [robot_simulator]: [delivery_1] moved to ER
+[INFO] [1775843030.534125893] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843030.535438947] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843030.536157893] [robot_simulator]: [cleaning_2] moved to PICU
+[INFO] [1775843030.536432258] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843030.538074091] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843030.540634658] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843030.540942578] [robot_simulator]: [emergency_1] moved to WardE
+[INFO] [1775843030.541317739] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775843030.542138002] [robot_simulator]: [lab_courier_1] moved to WardD
+[INFO] [1775843030.543849217] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843030.544181511] [robot_simulator]: [general_2] moved to ER
+[INFO] [1775843035.537935519] [robot_simulator]: [delivery_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843036.535272456] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843036.541449281] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843036.545155775] [robot_simulator]: [general_2] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843037.534441836] [robot_simulator]: [delivery_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843037.542446669] [robot_simulator]: [emergency_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843038.537849900] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843038.543301025] [robot_simulator]: [lab_courier_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843039.537769233] [robot_simulator]: [cleaning_2] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843039.538757988] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843039.541942511] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843039.544282019] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843057.513697429] [robot_simulator]: Received assignment: delivery_1: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843057.515297885] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843057.515544677] [robot_simulator]: [delivery_1] starts task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843057.517097170] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843057.517201867] [robot_simulator]: [delivery_2] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843057.518752524] [robot_simulator]: [delivery_3] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843057.519029488] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843057.520295497] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843057.521425457] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843057.521601547] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843057.522444435] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843057.523402075] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843057.524410045] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843057.524698904] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843057.524893347] [robot_simulator]: Received assignment: lab_courier_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843057.525861248] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843057.526212162] [robot_simulator]: Received assignment: emergency_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843057.527245939] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843057.527486022] [robot_simulator]: Received assignment: general_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843057.528650051] [robot_simulator]: [lab_courier_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843057.528828847] [robot_simulator]: Received assignment: general_2: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843057.529250269] [robot_simulator]: [emergency_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843057.530286785] [robot_simulator]: [general_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843057.530558140] [robot_simulator]: [general_2] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843060.527562970] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843060.529152497] [robot_simulator]: [delivery_2] moved to Radiology
+[INFO] [1775843060.529901261] [robot_simulator]: [delivery_3] moved to ER
+[INFO] [1775843060.532475704] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843060.535486207] [robot_simulator]: [cleaning_2] moved to ICU
+[INFO] [1775843060.537861898] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843060.538380243] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843060.539588076] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843060.541107279] [robot_simulator]: [lab_courier_1] moved to WardB
+[INFO] [1775843060.542315199] [robot_simulator]: [general_2] moved to PICU
+[INFO] [1775843060.543221945] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843060.543302834] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843065.545242040] [robot_simulator]: [general_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843066.531785683] [robot_simulator]: [delivery_2] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843066.532767510] [robot_simulator]: [delivery_3] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843066.540506532] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843066.544872086] [robot_simulator]: [emergency_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843068.533726704] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843068.541336121] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843069.528875852] [robot_simulator]: [delivery_1] completed task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843069.537403262] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843069.539202822] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843069.542210433] [robot_simulator]: [lab_courier_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843069.544397041] [robot_simulator]: [general_2] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843087.541265414] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843087.543347541] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843087.543571417] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843087.545601016] [robot_simulator]: [delivery_2] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843087.545825952] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843087.548096028] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843087.548372893] [robot_simulator]: [delivery_3] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843087.549922684] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843087.550049911] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843087.551496922] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843087.551779106] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843087.553211832] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843087.553323179] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843087.554933703] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843087.555087726] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843087.556539768] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843087.556811867] [robot_simulator]: Received assignment: lab_courier_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843087.558266698] [robot_simulator]: [lab_courier_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843087.558554028] [robot_simulator]: Received assignment: emergency_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843087.560360943] [robot_simulator]: [emergency_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843087.560648382] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843087.562820508] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843087.563099674] [robot_simulator]: Received assignment: general_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843087.565029380] [robot_simulator]: [general_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843090.555608616] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843090.559234121] [robot_simulator]: [delivery_2] moved to Radiology
+[INFO] [1775843090.563688669] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843090.569656504] [robot_simulator]: [delivery_3] moved to PICU
+[INFO] [1775843090.570582755] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775843090.571060800] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843090.572557106] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843090.573406258] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843090.574637597] [robot_simulator]: [lab_courier_1] moved to ER
+[INFO] [1775843090.575616822] [robot_simulator]: [emergency_1] moved to WardD
+[INFO] [1775843090.576274810] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843090.577134291] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775843095.557488466] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843096.560398056] [robot_simulator]: [delivery_2] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843096.572892233] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843096.575197711] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843096.578958635] [robot_simulator]: [general_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843097.576949335] [robot_simulator]: [lab_courier_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843098.564711076] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843098.577269103] [robot_simulator]: [emergency_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843099.572500420] [robot_simulator]: [delivery_3] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843099.574228392] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843099.574705219] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843099.577585583] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843117.681913987] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843117.683949295] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843117.684079836] [robot_simulator]: [delivery_1] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843117.685595477] [robot_simulator]: [delivery_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843117.685898575] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843117.687625885] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843117.687805869] [robot_simulator]: [delivery_3] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843117.689379588] [robot_simulator]: Received assignment: cleaning_2: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843117.689483579] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843117.690842545] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843117.692102141] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843117.693133225] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843117.695201146] [robot_simulator]: Received assignment: lab_courier_1: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843117.697093224] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843117.697282248] [robot_simulator]: [cleaning_2] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843117.698288302] [robot_simulator]: Received assignment: emergency_1: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843117.698544078] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843117.699690307] [robot_simulator]: Received assignment: general_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843117.700030853] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843117.700535171] [robot_simulator]: [lab_courier_1] starts task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843117.700983775] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843117.701854966] [robot_simulator]: [emergency_1] starts task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843117.702432831] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843117.702730428] [robot_simulator]: [general_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843120.699386080] [robot_simulator]: [delivery_1] moved to ER
+[INFO] [1775843120.702424405] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843120.703128411] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843120.703308048] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843120.713694897] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843120.714479808] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843120.717490712] [robot_simulator]: [lab_courier_1] moved to ICU
+[INFO] [1775843120.717862634] [robot_simulator]: [general_1] moved to Radiology
+[INFO] [1775843120.718220614] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843120.719144264] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843120.719413074] [robot_simulator]: [cleaning_2] moved to PICU
+[INFO] [1775843120.719803389] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843125.704905317] [robot_simulator]: [delivery_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843126.701404528] [robot_simulator]: [delivery_1] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843126.703663824] [robot_simulator]: [delivery_3] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843126.720602127] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843126.721539367] [robot_simulator]: [general_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843128.705699883] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843128.715177632] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843129.716003873] [robot_simulator]: [emergency_1] completed task: cleaning_task_6 (WardD -> WardB)
+[INFO] [1775843129.718703602] [robot_simulator]: [lab_courier_1] completed task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843129.723291324] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843129.723783558] [robot_simulator]: [cleaning_2] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843129.724777199] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843147.567456838] [robot_simulator]: Received assignment: delivery_1: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843147.569145053] [robot_simulator]: [delivery_1] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843147.569438289] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843147.570480920] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843147.571553829] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843147.572360823] [robot_simulator]: [delivery_2] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843147.572584645] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843147.574510382] [robot_simulator]: [delivery_3] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843147.574826555] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843147.576429442] [robot_simulator]: [cleaning_1] starts task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843147.576538669] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843147.577732623] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843147.577973548] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843147.579627616] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843147.579845017] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843147.581324071] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843147.582103521] [robot_simulator]: Received assignment: emergency_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843147.582419408] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843147.583359577] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843147.584410550] [robot_simulator]: Received assignment: general_2: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843147.585920704] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843147.586054276] [robot_simulator]: [emergency_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843147.586215036] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843147.586572001] [robot_simulator]: [general_2] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843150.580042330] [robot_simulator]: [delivery_1] moved to PICU
+[INFO] [1775843150.582572236] [robot_simulator]: [delivery_2] moved to Radiology
+[INFO] [1775843150.592023743] [robot_simulator]: [delivery_3] moved to ER
+[INFO] [1775843150.592292392] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843150.592744011] [robot_simulator]: [cleaning_2] moved to Radiology
+[INFO] [1775843150.594893649] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843150.598213800] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843150.598508602] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843150.601019499] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775843150.601798040] [robot_simulator]: [emergency_1] moved to ER
+[INFO] [1775843150.603146590] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843150.603427729] [robot_simulator]: [lab_courier_1] moved to ICU
+[INFO] [1775843155.604951459] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843156.584721550] [robot_simulator]: [delivery_2] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843156.594050714] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843156.594874333] [robot_simulator]: [delivery_3] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843156.599892877] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843157.603369161] [robot_simulator]: [emergency_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843158.593871239] [robot_simulator]: [cleaning_1] completed task: cleaning_task_30 (WardA -> ER)
+[INFO] [1775843158.600376329] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843159.581768664] [robot_simulator]: [delivery_1] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843159.596695569] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_8 (Sterilization -> OperatingRoom1)
+[INFO] [1775843159.602550268] [robot_simulator]: [general_2] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843159.604838497] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843177.517043426] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843177.518050984] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843177.519574590] [robot_simulator]: [delivery_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843177.519880511] [robot_simulator]: Received assignment: delivery_3: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843177.520018726] [robot_simulator]: [delivery_1] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843177.521255338] [robot_simulator]: [delivery_3] starts task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843177.521742982] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843177.522987395] [robot_simulator]: Received assignment: cleaning_2: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843177.524033601] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843177.524459070] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843177.524955217] [robot_simulator]: [cleaning_2] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843177.525681083] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843177.526005714] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843177.526677717] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_11 (Supply -> OperatingRoom1)
+[INFO] [1775843177.527493228] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843177.528474463] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843177.528952195] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843177.530009855] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_11 (Supply -> OperatingRoom1)
+[INFO] [1775843177.530353832] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843177.530447743] [robot_simulator]: Received assignment: general_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843177.531144754] [robot_simulator]: [emergency_1] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843177.531505552] [robot_simulator]: Received assignment: general_2: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843177.532191626] [robot_simulator]: [general_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843177.532553272] [robot_simulator]: [general_2] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843180.535753153] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843180.536768460] [robot_simulator]: [delivery_3] moved to ICU
+[INFO] [1775843180.546134775] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843180.546430563] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843180.549221261] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843180.550136598] [robot_simulator]: [emergency_1] moved to PICU
+[INFO] [1775843180.550686161] [robot_simulator]: [lab_courier_1] moved to ICU
+[INFO] [1775843180.551662590] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom1
+[INFO] [1775843180.552199065] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843180.553982988] [robot_simulator]: [general_1] moved to Radiology
+[INFO] [1775843180.554390547] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775843180.554792300] [robot_simulator]: [delivery_1] moved to Radiology
+[INFO] [1775843185.537269241] [robot_simulator]: [delivery_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843186.547527557] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843186.553819158] [robot_simulator]: [cleaning_2] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843186.557819650] [robot_simulator]: [delivery_1] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843186.558275383] [robot_simulator]: [general_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843188.548554824] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843188.550563546] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843188.552942579] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_11 (Supply -> OperatingRoom1)
+[INFO] [1775843189.538303495] [robot_simulator]: [delivery_3] completed task: delivery_task_26 (Pharmacy -> ICU)
+[INFO] [1775843189.552770611] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843189.553722678] [robot_simulator]: [emergency_1] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843189.555827170] [robot_simulator]: [general_2] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843207.554527331] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843207.556401230] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843207.557993763] [robot_simulator]: [delivery_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843207.558934199] [robot_simulator]: [delivery_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843207.559391112] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843207.561015315] [robot_simulator]: [delivery_3] starts task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843207.561505252] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843207.563575926] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843207.564360124] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843207.566522727] [robot_simulator]: [cleaning_2] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843207.566977671] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843207.569782073] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843207.570158000] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843207.574537515] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843207.576700138] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843207.578204528] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843207.585021801] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843207.587078318] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843207.587439754] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843207.590506028] [robot_simulator]: [emergency_1] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843207.592175931] [robot_simulator]: Received assignment: general_1: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843207.598229447] [robot_simulator]: Received assignment: general_2: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843207.604274620] [robot_simulator]: [general_1] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843207.606592955] [robot_simulator]: [general_2] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843210.572398545] [robot_simulator]: [delivery_1] moved to Radiology
+[INFO] [1775843210.573314891] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843210.573800413] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843210.575471063] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843210.576278337] [robot_simulator]: [cleaning_2] moved to WardB
+[INFO] [1775843210.581919807] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843210.586928034] [robot_simulator]: [patient_mover_2] moved to PICU
+[INFO] [1775843210.595602893] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843210.598179159] [robot_simulator]: [lab_courier_1] moved to ICU
+[INFO] [1775843210.600916407] [robot_simulator]: [emergency_1] moved to ICU
+[INFO] [1775843210.615443273] [robot_simulator]: [general_1] moved to ER
+[INFO] [1775843210.616540435] [robot_simulator]: [general_2] moved to Radiology
+[INFO] [1775843215.574542924] [robot_simulator]: [delivery_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843216.574018852] [robot_simulator]: [delivery_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843216.602893887] [robot_simulator]: [emergency_1] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843216.619658869] [robot_simulator]: [general_1] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843216.621839298] [robot_simulator]: [general_2] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843217.577379586] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843218.578166242] [robot_simulator]: [cleaning_2] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843218.584213395] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843219.575114981] [robot_simulator]: [delivery_3] completed task: lab_courier_task_25 (Lab -> Radiology)
+[INFO] [1775843219.588384294] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843219.596911001] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843219.599544873] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843237.514828960] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843237.516612317] [robot_simulator]: [delivery_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843237.516735954] [robot_simulator]: Received assignment: delivery_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843237.518249142] [robot_simulator]: [delivery_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843237.518376430] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843237.519835736] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843237.519937924] [robot_simulator]: [delivery_3] starts task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843237.521453237] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843237.521590310] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843237.522987503] [robot_simulator]: [cleaning_2] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843237.523275078] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843237.524349383] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843237.525797004] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843237.526190642] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843237.526372355] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843237.527299272] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843237.528205962] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843237.529465813] [robot_simulator]: Received assignment: general_1: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843237.529566694] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843237.531629253] [robot_simulator]: [emergency_1] starts task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843237.531863513] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843237.531958808] [robot_simulator]: [general_1] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843237.532369542] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843237.533631158] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843240.529137798] [robot_simulator]: [delivery_1] moved to Radiology
+[INFO] [1775843240.530107301] [robot_simulator]: [delivery_2] moved to ICU
+[INFO] [1775843240.532902778] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843240.534807674] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843240.535030001] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843240.537475586] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843240.537729248] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843240.538413341] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843240.541979545] [robot_simulator]: [lab_courier_1] moved to ER
+[INFO] [1775843240.543241873] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843240.543550009] [robot_simulator]: [emergency_1] moved to Recovery
+[INFO] [1775843240.544196482] [robot_simulator]: [general_1] moved to PICU
+[INFO] [1775843245.532391673] [robot_simulator]: [delivery_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843246.530656756] [robot_simulator]: [delivery_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843246.534370949] [robot_simulator]: [delivery_3] completed task: lab_courier_task_16 (Lab -> Radiology)
+[INFO] [1775843246.538807225] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843246.543174055] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843247.536818762] [robot_simulator]: [cleaning_2] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843247.545426266] [robot_simulator]: [emergency_1] completed task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843248.536511805] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843248.538979664] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843249.539486276] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843249.544530322] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843249.546130023] [robot_simulator]: [general_1] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843267.742144565] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843267.743850418] [robot_simulator]: Received assignment: delivery_2: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843267.748683829] [robot_simulator]: [delivery_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843267.749678304] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843267.750179707] [robot_simulator]: [delivery_2] starts task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843267.753771414] [robot_simulator]: [delivery_3] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843267.754374328] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843267.757757977] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843267.757971949] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843267.760384296] [robot_simulator]: [cleaning_2] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843267.761138117] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843267.765781972] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843267.768602460] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843267.769780424] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843267.770294953] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843267.772336770] [robot_simulator]: Received assignment: lab_courier_1: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843267.772563274] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843267.775406760] [robot_simulator]: [lab_courier_1] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843267.776061314] [robot_simulator]: Received assignment: emergency_1: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843267.779902965] [robot_simulator]: [emergency_1] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843267.780833324] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843267.783974502] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843267.784468125] [robot_simulator]: Received assignment: general_2: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843267.787433555] [robot_simulator]: [general_2] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843270.762991544] [robot_simulator]: [delivery_2] moved to Recovery
+[INFO] [1775843270.763344560] [robot_simulator]: [delivery_1] moved to Radiology
+[INFO] [1775843270.765699060] [robot_simulator]: [delivery_3] moved to ER
+[INFO] [1775843270.767160682] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843270.770726613] [robot_simulator]: [cleaning_2] moved to WardB
+[INFO] [1775843270.780147792] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843270.785420750] [robot_simulator]: [patient_mover_2] moved to ICU
+[INFO] [1775843270.785827923] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843270.786750115] [robot_simulator]: [lab_courier_1] moved to PICU
+[INFO] [1775843270.788705738] [robot_simulator]: [emergency_1] moved to WardE
+[INFO] [1775843270.793802352] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843270.796771680] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843275.798401033] [robot_simulator]: [general_2] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843276.764760593] [robot_simulator]: [delivery_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843276.766885253] [robot_simulator]: [delivery_3] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843276.786992335] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843277.765285770] [robot_simulator]: [delivery_2] completed task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843277.768454328] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843277.790139022] [robot_simulator]: [emergency_1] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843278.772312835] [robot_simulator]: [cleaning_2] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843278.781939919] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843279.788711618] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843279.789776726] [robot_simulator]: [lab_courier_1] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843279.795041114] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843297.528734297] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843297.530680322] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843297.531143440] [robot_simulator]: Received assignment: delivery_2: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843297.532668262] [robot_simulator]: [delivery_2] starts task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843297.533133025] [robot_simulator]: Received assignment: delivery_3: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843297.534873393] [robot_simulator]: [delivery_3] starts task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843297.535160269] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843297.536278619] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843297.536910689] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843297.537995897] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843297.538694883] [robot_simulator]: [cleaning_2] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843297.539067983] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843297.540448732] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843297.541616175] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843297.542589081] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843297.543137886] [robot_simulator]: Received assignment: emergency_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843297.543347897] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843297.544316441] [robot_simulator]: Received assignment: general_1: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843297.544834741] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843297.545570518] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843297.546565181] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843297.547087206] [robot_simulator]: [emergency_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843297.547761929] [robot_simulator]: [general_1] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843297.548083088] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843300.541763872] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843300.547339892] [robot_simulator]: [delivery_3] moved to PICU
+[INFO] [1775843300.549207803] [robot_simulator]: [delivery_2] moved to WardE
+[INFO] [1775843300.549786566] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843300.551319030] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843300.555489225] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843300.555988011] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775843300.558206593] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843300.561118619] [robot_simulator]: [lab_courier_1] moved to Radiology
+[INFO] [1775843300.561799176] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843300.563702741] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843300.564429359] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843305.544082195] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843306.566571858] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843306.568431235] [robot_simulator]: [general_1] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843306.569046900] [robot_simulator]: [emergency_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843307.551293024] [robot_simulator]: [delivery_2] completed task: cleaning_task_14 (WardE -> WardE)
+[INFO] [1775843307.553904245] [robot_simulator]: [cleaning_2] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843307.557418037] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843308.551439263] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843308.560229183] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843309.548817224] [robot_simulator]: [delivery_3] completed task: patient_mover_task_23 (ER -> PICU)
+[INFO] [1775843309.557037740] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843309.565176473] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843327.544557597] [robot_simulator]: Received assignment: delivery_1: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843327.546578227] [robot_simulator]: [delivery_1] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843327.546745043] [robot_simulator]: Received assignment: delivery_2: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843327.547856778] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843327.548698442] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843327.549753024] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843327.551153470] [robot_simulator]: [delivery_2] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843327.551646179] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843327.552535891] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843327.553233881] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843327.554794221] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843327.554998442] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843327.555333904] [robot_simulator]: [cleaning_2] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843327.555828144] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843327.556660833] [robot_simulator]: Received assignment: lab_courier_1: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843327.557486782] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843327.557807416] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843327.558801044] [robot_simulator]: Received assignment: general_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843327.559520841] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843327.559692085] [robot_simulator]: [lab_courier_1] starts task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843327.560421274] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843327.561295151] [robot_simulator]: [emergency_1] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843327.562300220] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843327.562593812] [robot_simulator]: [general_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843330.559243174] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843330.561899951] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775843330.578020478] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843330.578647834] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843330.580488862] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843330.580687593] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843330.581122528] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775843330.581964273] [robot_simulator]: [cleaning_2] moved to WardB
+[INFO] [1775843330.582286775] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843330.582802685] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843330.583189771] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843330.583479470] [robot_simulator]: [lab_courier_1] moved to ER
+[INFO] [1775843335.580407293] [robot_simulator]: [general_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843335.584741497] [robot_simulator]: [emergency_1] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843336.559886140] [robot_simulator]: [delivery_1] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843336.562504258] [robot_simulator]: [delivery_2] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843336.583594184] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843336.584515826] [robot_simulator]: [lab_courier_1] completed task: lab_courier_task_22 (Lab -> ER)
+[INFO] [1775843337.582165400] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843337.583515068] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843338.579114174] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843338.583262047] [robot_simulator]: [cleaning_2] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843339.582313182] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843339.584747065] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843357.528705088] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843357.530436586] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843357.530974093] [robot_simulator]: Received assignment: delivery_2: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843357.532567534] [robot_simulator]: [delivery_2] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843357.532820990] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843357.534717031] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843357.534879186] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843357.536397327] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843357.536594462] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843357.537491289] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843357.538550838] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843357.539538243] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843357.539682384] [robot_simulator]: [cleaning_2] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843357.540703856] [robot_simulator]: Received assignment: lab_courier_1: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843357.541292139] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843357.542108727] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843357.542260246] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843357.543448554] [robot_simulator]: Received assignment: general_1: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843357.543918766] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843357.544453847] [robot_simulator]: [lab_courier_1] starts task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843357.545142991] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843357.545819156] [robot_simulator]: [emergency_1] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843357.546635908] [robot_simulator]: [general_1] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843357.547075115] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843360.542370971] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843360.542668624] [robot_simulator]: [delivery_2] moved to ER
+[INFO] [1775843360.545710625] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843360.546449278] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843360.552403232] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775843360.555044056] [robot_simulator]: [patient_mover_2] moved to Recovery
+[INFO] [1775843360.555822104] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843360.557686896] [robot_simulator]: [cleaning_2] moved to WardD
+[INFO] [1775843360.558789695] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843360.559985523] [robot_simulator]: [lab_courier_1] moved to WardB
+[INFO] [1775843360.561076056] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843360.561298563] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843365.544454686] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843365.562485150] [robot_simulator]: [lab_courier_1] completed task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843365.564389976] [robot_simulator]: [emergency_1] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843366.548502007] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843366.554201243] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843366.559931573] [robot_simulator]: [general_1] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843367.544694209] [robot_simulator]: [delivery_2] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843367.556331151] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_41 (Trauma -> Recovery)
+[INFO] [1775843368.547413743] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843368.559321592] [robot_simulator]: [cleaning_2] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843369.557715359] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843369.562568002] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843387.544330628] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843387.545870514] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843387.546374901] [robot_simulator]: Received assignment: delivery_2: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843387.547945014] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843387.553458192] [robot_simulator]: [delivery_2] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843387.554215862] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843387.554540544] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843387.556538724] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843387.557089148] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843387.558457696] [robot_simulator]: Received assignment: patient_mover_1: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843387.560036476] [robot_simulator]: [cleaning_2] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843387.560724162] [robot_simulator]: Received assignment: patient_mover_2: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843387.562440430] [robot_simulator]: [patient_mover_1] starts task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843387.562719696] [robot_simulator]: [patient_mover_2] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843387.563266691] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843387.564796389] [robot_simulator]: Received assignment: lab_courier_1: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843387.566674695] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843387.568370144] [robot_simulator]: [lab_courier_1] starts task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843387.570469669] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843387.571326619] [robot_simulator]: Received assignment: general_1: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843387.573379214] [robot_simulator]: [general_1] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843387.573816711] [robot_simulator]: [emergency_1] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843387.574226420] [robot_simulator]: Received assignment: general_2: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843387.575381836] [robot_simulator]: [general_2] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843390.556287177] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843390.563472329] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775843390.568038871] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843390.568368523] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843390.570467428] [robot_simulator]: [cleaning_2] moved to WardD
+[INFO] [1775843390.573151939] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775843390.573660781] [robot_simulator]: [patient_mover_2] moved to WardB
+[INFO] [1775843390.577714290] [robot_simulator]: [lab_courier_1] moved to OperatingRoom2
+[INFO] [1775843390.579824151] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843390.583851205] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843390.584819385] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843390.585873205] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843395.557896954] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843395.574947631] [robot_simulator]: [patient_mover_1] completed task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843395.586962607] [robot_simulator]: [emergency_1] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843396.569682614] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843396.575113102] [robot_simulator]: [patient_mover_2] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843396.585360910] [robot_simulator]: [general_1] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843397.570379823] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843398.565212592] [robot_simulator]: [delivery_2] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843398.571943843] [robot_simulator]: [cleaning_2] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843399.581410710] [robot_simulator]: [lab_courier_1] completed task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843399.583989050] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843399.588045763] [robot_simulator]: [general_2] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843417.563292042] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843417.565188139] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843417.565900483] [robot_simulator]: Received assignment: delivery_2: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843417.567356743] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843417.568739471] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843417.569063902] [robot_simulator]: [delivery_2] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843417.569486736] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843417.570897856] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843417.571314200] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843417.573412179] [robot_simulator]: Received assignment: patient_mover_1: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843417.573529186] [robot_simulator]: [cleaning_2] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843417.575005803] [robot_simulator]: Received assignment: patient_mover_2: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843417.575142098] [robot_simulator]: [patient_mover_1] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843417.576537792] [robot_simulator]: [patient_mover_2] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843417.576821169] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843417.578064350] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843417.578410694] [robot_simulator]: Received assignment: lab_courier_1: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843417.579625777] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843417.580795422] [robot_simulator]: [lab_courier_1] starts task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843417.581061037] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843417.587454279] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843417.588965527] [robot_simulator]: Received assignment: general_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843417.592022715] [robot_simulator]: [general_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843417.592398737] [robot_simulator]: [emergency_1] starts task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843420.576706671] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843420.582546952] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843420.585421393] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775843420.587732184] [robot_simulator]: [patient_mover_2] moved to ER
+[INFO] [1775843420.588761245] [robot_simulator]: [cleaning_2] moved to WardB
+[INFO] [1775843420.589965097] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843420.590395729] [robot_simulator]: [patient_mover_1] moved to WardB
+[INFO] [1775843420.591503535] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843420.591752586] [robot_simulator]: [lab_courier_1] moved to OperatingRoom2
+[INFO] [1775843420.598383725] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843420.602793208] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843420.603522636] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843425.577465273] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843425.591054612] [robot_simulator]: [patient_mover_1] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843425.603593675] [robot_simulator]: [emergency_1] completed task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843426.583758120] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843426.590498254] [robot_simulator]: [cleaning_2] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843426.605544967] [robot_simulator]: [general_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843427.588773497] [robot_simulator]: [patient_mover_2] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843428.587633657] [robot_simulator]: [delivery_2] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843428.591822079] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843429.595031127] [robot_simulator]: [lab_courier_1] completed task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843429.596092920] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843429.599699566] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843447.522345746] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843447.524059106] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843447.524388609] [robot_simulator]: Received assignment: delivery_2: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843447.525515193] [robot_simulator]: [delivery_2] starts task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843447.525853861] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843447.527259188] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843447.527411873] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843447.529106376] [robot_simulator]: [cleaning_1] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843447.529364152] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843447.531051108] [robot_simulator]: [cleaning_2] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843447.531337264] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843447.532354537] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843447.533483715] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843447.534201115] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843447.535151588] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843447.535646549] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843447.535908596] [robot_simulator]: Received assignment: lab_courier_1: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843447.537339940] [robot_simulator]: [lab_courier_1] starts task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843447.537479984] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843447.538943306] [robot_simulator]: [emergency_1] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843447.539271527] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843447.540385821] [robot_simulator]: Received assignment: general_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843447.541435392] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843447.541823321] [robot_simulator]: [general_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843450.536590404] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843450.549572215] [robot_simulator]: [cleaning_1] moved to ER
+[INFO] [1775843450.551806304] [robot_simulator]: [delivery_2] moved to WardB
+[INFO] [1775843450.552532274] [robot_simulator]: [patient_mover_2] moved to WardB
+[INFO] [1775843450.559045663] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843450.559692456] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843450.560351827] [robot_simulator]: [lab_courier_1] moved to OperatingRoom2
+[INFO] [1775843450.563873402] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843450.564183997] [robot_simulator]: [cleaning_2] moved to WardB
+[INFO] [1775843450.564954362] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843450.566149294] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843450.566474438] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843455.538672088] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843455.553747385] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843455.567418160] [robot_simulator]: [emergency_1] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843456.554076882] [robot_simulator]: [delivery_2] completed task: cleaning_task_21 (WardE -> WardB)
+[INFO] [1775843456.561162171] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843456.566526543] [robot_simulator]: [general_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843457.551522283] [robot_simulator]: [cleaning_1] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843458.565432476] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843458.566179579] [robot_simulator]: [cleaning_2] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843459.563734383] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843459.564470103] [robot_simulator]: [lab_courier_1] completed task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843459.567777037] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843477.525548021] [robot_simulator]: Received assignment: delivery_1: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843477.526815301] [robot_simulator]: Received assignment: delivery_2: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843477.528065900] [robot_simulator]: Received assignment: delivery_3: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843477.528250144] [robot_simulator]: [delivery_1] starts task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843477.528520766] [robot_simulator]: [delivery_2] starts task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843477.530268107] [robot_simulator]: [delivery_3] starts task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843477.530384627] [robot_simulator]: Received assignment: cleaning_1: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843477.531845373] [robot_simulator]: [cleaning_1] starts task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843477.532332834] [robot_simulator]: Received assignment: cleaning_2: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843477.533295059] [robot_simulator]: Received assignment: patient_mover_1: cleaning_task_47 (WardB -> WardD)
+[INFO] [1775843477.534135422] [robot_simulator]: Received assignment: patient_mover_2: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843477.534285838] [robot_simulator]: [cleaning_2] starts task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843477.535180821] [robot_simulator]: Received assignment: heavy_supply_1: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843477.536243476] [robot_simulator]: Received assignment: lab_courier_1: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843477.537067619] [robot_simulator]: [patient_mover_2] starts task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843477.537380738] [robot_simulator]: [patient_mover_1] starts task: cleaning_task_47 (WardB -> WardD)
+[INFO] [1775843477.537894259] [robot_simulator]: Received assignment: emergency_1: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843477.538241335] [robot_simulator]: [lab_courier_1] starts task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
+[INFO] [1775843477.539537565] [robot_simulator]: [heavy_supply_1] starts task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843477.539723415] [robot_simulator]: Received assignment: general_1: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843477.540782584] [robot_simulator]: Received assignment: general_2: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843477.541588680] [robot_simulator]: [general_1] starts task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843477.541879986] [robot_simulator]: [emergency_1] starts task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843477.542331143] [robot_simulator]: [general_2] starts task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843480.543594564] [robot_simulator]: [delivery_1] moved to ICU
+[INFO] [1775843480.548395441] [robot_simulator]: [cleaning_1] moved to WardB
+[INFO] [1775843480.548883278] [robot_simulator]: [delivery_3] moved to Radiology
+[INFO] [1775843480.549366513] [robot_simulator]: [cleaning_2] moved to ER
+[INFO] [1775843480.550114936] [robot_simulator]: [delivery_2] moved to WardD
+[INFO] [1775843480.552017704] [robot_simulator]: [general_1] moved to ICU
+[INFO] [1775843480.553084158] [robot_simulator]: [patient_mover_2] moved to WardB
+[INFO] [1775843480.553542282] [robot_simulator]: [patient_mover_1] moved to WardD
+[INFO] [1775843480.554757036] [robot_simulator]: [emergency_1] moved to WardB
+[INFO] [1775843480.555348563] [robot_simulator]: [heavy_supply_1] moved to OperatingRoom2
+[INFO] [1775843480.555735857] [robot_simulator]: [lab_courier_1] moved to OperatingRoom2
+[INFO] [1775843480.556343440] [robot_simulator]: [general_2] moved to ICU
+[INFO] [1775843485.545094255] [robot_simulator]: [delivery_1] completed task: lab_courier_task_28 (Lab -> ICU)
+[INFO] [1775843485.554733943] [robot_simulator]: [patient_mover_2] completed task: patient_mover_task_44 (ER -> WardB)
+[INFO] [1775843485.556148789] [robot_simulator]: [emergency_1] completed task: patient_mover_task_42 (ER -> WardB)
+[INFO] [1775843486.550083291] [robot_simulator]: [delivery_3] completed task: lab_courier_task_31 (Lab -> Radiology)
+[INFO] [1775843486.558488645] [robot_simulator]: [general_2] completed task: patient_mover_task_27 (Trauma -> ICU)
+[INFO] [1775843487.551014847] [robot_simulator]: [cleaning_2] completed task: cleaning_task_24 (WardA -> ER)
+[INFO] [1775843488.549454635] [robot_simulator]: [cleaning_1] completed task: cleaning_task_37 (ER -> WardB)
+[INFO] [1775843488.551058358] [robot_simulator]: [delivery_2] completed task: cleaning_task_29 (WardB -> WardD)
+[INFO] [1775843489.553029519] [robot_simulator]: [general_1] completed task: lab_courier_task_33 (Lab -> ICU)
+[INFO] [1775843489.554776478] [robot_simulator]: [patient_mover_1] completed task: cleaning_task_47 (WardB -> WardD)
+[INFO] [1775843489.557055997] [robot_simulator]: [heavy_supply_1] completed task: heavy_supply_task_40 (Sterilization -> OperatingRoom2)
+[INFO] [1775843489.557995787] [robot_simulator]: [lab_courier_1] completed task: heavy_supply_task_45 (Sterilization -> OperatingRoom2)
