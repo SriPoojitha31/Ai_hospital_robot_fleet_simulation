@@ -39,7 +39,18 @@ def generate_launch_description():
     )
 
     bridge_args = []
-    robot_names = [f'robot_{i}' for i in range(1, 8)]
+    robot_names = [
+        # Delivery robots
+        'delivery_1', 'delivery_2', 'delivery_3',
+        # Cleaning robots
+        'cleaning_1', 'cleaning_2',
+        # Patient mover robots
+        'patient_mover_1', 'patient_mover_2',
+        # Supply and lab robots
+        'heavy_supply_1', 'lab_courier_1',
+        # Emergency and general robots
+        'emergency_1', 'general_1', 'general_2'
+    ]
     for robot_name in robot_names:
         bridge_args.append(f'/{robot_name}/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist')
         bridge_args.append(f'/{robot_name}/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry')

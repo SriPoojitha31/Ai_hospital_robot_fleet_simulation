@@ -265,59 +265,82 @@
       </link>
     </model>
 
-    <!-- Include robot models -->
+    <!-- Include robot models with specializations -->
+    <!-- Delivery Robots -->
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_1</name>
+      <name>delivery_1</name>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_2</name>
+      <name>delivery_2</name>
       <pose>2 0 0.1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_3</name>
+      <name>delivery_3</name>
       <pose>-2 0 0.1 0 0 0</pose>
     </include>
 
+    <!-- Cleaning Robots -->
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_4</name>
+      <name>cleaning_1</name>
       <pose>4 0 0.1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_5</name>
+      <name>cleaning_2</name>
       <pose>-4 0 0.1 0 0 0</pose>
     </include>
 
+    <!-- Patient Mover Robots -->
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_6</name>
+      <name>patient_mover_1</name>
       <pose>6 0 0.1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_7</name>
+      <name>patient_mover_2</name>
       <pose>-6 0 0.1 0 0 0</pose>
     </include>
 
+    <!-- Supply & Lab Robots -->
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_4</name>
-      <pose>4 0 0.1 0 0 0</pose>
+      <name>heavy_supply_1</name>
+      <pose>8 0 0.1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://hospital_robot</uri>
-      <name>robot_5</name>
-      <pose>-4 0 0.1 0 0 0</pose>
+      <name>lab_courier_1</name>
+      <pose>-8 0 0.1 0 0 0</pose>
+    </include>
+
+    <!-- Emergency Response & General Robots -->
+    <include>
+      <uri>model://hospital_robot</uri>
+      <name>emergency_1</name>
+      <pose>10 0 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://hospital_robot</uri>
+      <name>general_1</name>
+      <pose>-10 0 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://hospital_robot</uri>
+      <name>general_2</name>
+      <pose>12 0 0.1 0 0 0</pose>
     </include>
 
   </world>

@@ -2,34 +2,82 @@ import networkx as nx
 
 
 def build_hospital_map():
-    """Build a simple hospital topology map."""
+    """Build an extensive hospital topology map with multiple wings and departments."""
     G = nx.Graph()
 
-    # Rooms and nodes
+    # Rooms and nodes - 25+ locations across hospital
     rooms = [
-        'Lobby', 'NurseStation', 'ER', 'WardA', 'WardB', 'WardC',
-        'Pharmacy', 'Lab', 'Cafeteria', 'Radiology', 'ICU', 'Supply', 'MRI'
+        # Main Lobby & Access
+        'MainLobby', 'NorthEntrance', 'SouthEntrance', 'EmergencyEntry',
+        # Emergency & Critical Care
+        'ER', 'Trauma', 'ICU', 'PICU', 'NICU', 'CCU',
+        # Medical Wards
+        'WardA', 'WardB', 'WardC', 'WardD', 'WardE',
+        # Surgery & Procedure Rooms
+        'OperatingRoom1', 'OperatingRoom2', 'OperatingRoom3', 'Recovery',
+        # Diagnostics & Imaging
+        'Lab', 'Radiology', 'MRI', 'Ultrasound', 'CT',
+        # Support Services
+        'Pharmacy', 'Cafeteria', 'Supply', 'Sterilization',
+        # Administration & Specialized
+        'Administration', 'Morgue', 'Physical Therapy',
+        # Nursing Stations
+        'NursingStationN', 'NursingStationS', 'NursingStationE',
     ]
     G.add_nodes_from(rooms)
 
-    # Bidirectional corridors
+    # Bidirectional corridors - extensive network
     edges = [
-        ('Lobby', 'NurseStation'),
-        ('NurseStation', 'ER'),
-        ('NurseStation', 'WardA'),
-        ('NurseStation', 'WardB'),
-        ('NurseStation', 'Cafeteria'),
-        ('ER', 'ICU'),
+        # Access points
+        ('MainLobby', 'NorthEntrance'),
+        ('MainLobby', 'SouthEntrance'),
+        ('MainLobby', 'EmergencyEntry'),
+        # Emergency cluster
+        ('EmergencyEntry', 'ER'),
+        ('ER', 'Trauma'),
+        ('Trauma', 'ICU'),
+        ('ER', 'NursingStationN'),
+        # Critical care
+        ('ICU', 'PICU'),
+        ('PICU', 'NICU'),
+        ('ICU', 'CCU'),
+        ('CCU', 'Recovery'),
+        # Ward distribution
+        ('NursingStationN', 'WardA'),
+        ('NursingStationN', 'WardB'),
         ('WardA', 'WardC'),
-        ('WardB', 'Supply'),
-        ('WardC', 'Radiology'),
-        ('Supply', 'Pharmacy'),
+        ('WardB', 'WardD'),
+        ('WardC', 'WardE'),
+        ('NursingStationS', 'WardD'),
+        ('NursingStationS', 'WardE'),
+        # Surgery wing
+        ('NursingStationN', 'OperatingRoom1'),
+        ('OperatingRoom1', 'OperatingRoom2'),
+        ('OperatingRoom2', 'OperatingRoom3'),
+        ('OperatingRoom3', 'Recovery'),
+        # Diagnostics hub
+        ('NursingStationE', 'Lab'),
         ('Lab', 'Radiology'),
         ('Radiology', 'MRI'),
-        ('MRI', 'ICU'),
-        ('Pharmacy', 'Cafeteria'),
-        ('Cafeteria', 'Lobby'),
-        ('Lab', 'MRI'),
+        ('Radiology', 'Ultrasound'),
+        ('Radiology', 'CT'),
+        ('MRI', 'CT'),
+        # Support services
+        ('MainLobby', 'Pharmacy'),
+        ('MainLobby', 'Cafeteria'),
+        ('Pharmacy', 'Supply'),
+        ('Supply', 'Sterilization'),
+        # Administration
+        ('MainLobby', 'Administration'),
+        ('Administration', 'Morgue'),
+        # Physical therapy
+        ('WardE', 'Physical Therapy'),
+        ('Recovery', 'Physical Therapy'),
+        # Additional connections
+        ('Cafeteria', 'Supply'),
+        ('Sterilization', 'OperatingRoom1'),
+        ('Lab', 'ICU'),
+        ('Pharmacy', 'ER'),
     ]
     G.add_edges_from(edges, weight=1.0)
 

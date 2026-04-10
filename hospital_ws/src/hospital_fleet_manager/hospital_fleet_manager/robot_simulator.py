@@ -25,7 +25,13 @@ class RobotSimulator(Node):
 
         # Velocity publishers for each robot
         self.vel_publishers = {}
-        self.robot_namespaces = ['robot_1', 'robot_2', 'robot_3', 'robot_4', 'robot_5', 'robot_6', 'robot_7']
+        self.robot_namespaces = [
+            'delivery_1', 'delivery_2', 'delivery_3',
+            'cleaning_1', 'cleaning_2',
+            'patient_mover_1', 'patient_mover_2',
+            'heavy_supply_1', 'lab_courier_1',
+            'emergency_1', 'general_1', 'general_2'
+        ]
         for ns in self.robot_namespaces:
             self.vel_publishers[ns] = self.create_publisher(
                 Twist,
