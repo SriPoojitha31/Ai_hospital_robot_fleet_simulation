@@ -47,7 +47,25 @@ class RobotSimulator(Node):
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
-        self.robots = {}
+        # Initialize robots with proper data structure including battery
+        self.robots = {
+            'delivery_1': {'status': 'idle', 'location': 'MainLobby', 'type': 'delivery', 'battery': 100.0, 'current_task': None},
+            'delivery_2': {'status': 'idle', 'location': 'Pharmacy', 'type': 'delivery', 'battery': 100.0, 'current_task': None},
+            'delivery_3': {'status': 'idle', 'location': 'ER', 'type': 'delivery', 'battery': 100.0, 'current_task': None},
+            'cleaning_1': {'status': 'idle', 'location': 'WardA', 'type': 'cleaning', 'battery': 100.0, 'current_task': None},
+            'cleaning_2': {'status': 'idle', 'location': 'ICU', 'type': 'cleaning', 'battery': 100.0, 'current_task': None},
+            'patient_mover_1': {'status': 'idle', 'location': 'ER', 'type': 'patient_mover', 'battery': 100.0, 'current_task': None},
+            'patient_mover_2': {'status': 'idle', 'location': 'Recovery', 'type': 'patient_mover', 'battery': 100.0, 'current_task': None},
+            'heavy_supply_1': {'status': 'idle', 'location': 'Supply', 'type': 'heavy_supply', 'battery': 100.0, 'current_task': None},
+            'lab_courier_1': {'status': 'idle', 'location': 'Lab', 'type': 'lab_courier', 'battery': 100.0, 'current_task': None},
+            'emergency_1': {'status': 'idle', 'location': 'ER', 'type': 'emergency_response', 'battery': 100.0, 'current_task': None},
+            'general_1': {'status': 'idle', 'location': 'MainLobby', 'type': 'general', 'battery': 100.0, 'current_task': None},
+            'general_2': {'status': 'idle', 'location': 'Cafeteria', 'type': 'general', 'battery': 100.0, 'current_task': None},
+        }
+        
+        # Battery decay timer (every 5 seconds, simulate battery drain)
+        self.battery_timer = self.create_timer(5.0, self.update_battery_levels)
+        
         self.logger.info('Robot simulator initialized with Gazebo integration')
         self.get_logger().info('Robot simulator initialized with Gazebo integration')
 
@@ -71,10 +89,12 @@ class RobotSimulator(Node):
         thread.start()
 
     def simulate_task(self, robot_name, task):
-        state = self.robots.setdefault(robot_name, {'status': 'idle', 'location': 'unknown', 'current_task': None})
-        if state['status'] == 'busy':
+        state = self.robots.get(robot_name, {})
+        if state.get('status') == 'busy':
             self.logger.warning(f'{robot_name} already busy')
             return
+        
+        # Preserve existing data and update status
         state['status'] = 'busy'
         state['current_task'] = task
         self.robots[robot_name] = state
@@ -126,6 +146,32 @@ class RobotSimulator(Node):
         publisher.publish(twist)
 
         self.get_logger().info(f'[{robot_name}] moved to {destination}')
+
+    def update_battery_levels(self):
+        """Simulate battery drain for active robots"""
+        for robot_name, state in self.robots.items():
+            if state.get('status') == 'busy':
+                # Drain battery faster when busy (~5-8% per update cycle)
+                drain = 6.0 + (hash(robot_name) % 4)  # 6-10% drain per 5 seconds
+            else:
+                # Slow drain when idle (~0.5% per update cycle)
+                drain = 0.5 + (hash(robot_name) % 2) * 0.25  # 0.5-1% drain per 5 seconds
+            
+            current_battery = state.get('battery', 100.0)
+            new_battery = max(0.0, current_battery - drain)
+            
+            # Recharge if idle and battery below 30%
+            if state.get('status') == 'idle' and new_battery < 30.0:
+                new_battery = min(100.0, new_battery + 1.5)  # Slow recharge
+            
+            state['battery'] = round(new_battery, 1)
+            self.robots[robot_name] = state
+        
+        # Publish updated status
+        try:
+            self.publish_status()
+        except:
+            pass  # Ignore publish errors during timer callback
 
     def publish_status(self):
         status_data = json.dumps(self.robots)

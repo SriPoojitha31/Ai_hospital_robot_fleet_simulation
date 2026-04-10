@@ -21,56 +21,59 @@ from std_msgs.msg import String
 app = Flask(__name__)
 
 # Hospital room positions for map visualization (x, y in virtual coordinates)
+# Organized as a realistic floor plan blueprint
 HOSPITAL_LAYOUT = {
-    # Main Lobby & Access
-    'MainLobby': (10, 10),
-    'NorthEntrance': (10, 20),
-    'SouthEntrance': (10, 0),
-    'EmergencyEntry': (20, 10),
+    # ===== ACCESS & LOBBY (Bottom-Left Corner) =====
+    'MainLobby': (15, 8),
+    'NorthEntrance': (5, 18),
+    'SouthEntrance': (5, 2),
+    'EmergencyEntry': (25, 5),
     
-    # Emergency & Critical Care
-    'ER': (25, 15),
-    'Trauma': (30, 15),
-    'ICU': (35, 15),
-    'PICU': (35, 20),
-    'NICU': (35, 10),
-    'CCU': (30, 10),
+    # ===== EMERGENCY & CRITICAL CARE WING (Right Side - High Priority) =====
+    'ER': (30, 10),
+    'Trauma': (35, 10),
+    'ICU': (40, 12),
+    'PICU': (40, 6),
+    'NICU': (40, 2),
+    'CCU': (35, 6),
     
-    # Medical Wards
-    'WardA': (5, 15),
-    'WardB': (5, 10),
-    'WardC': (5, 5),
-    'WardD': (0, 10),
-    'WardE': (0, 5),
+    # ===== NURSING STATION & COORDINATION =====
+    'NursingStationE': (42, 9),
     
-    # Surgery & Procedure Rooms
-    'OperatingRoom1': (20, 25),
-    'OperatingRoom2': (25, 25),
-    'OperatingRoom3': (30, 25),
-    'Recovery': (35, 25),
+    # ===== MEDICAL WARDS (Left Side - General Care) =====
+    'WardA': (8, 15),
+    'WardB': (8, 10),
+    'WardC': (8, 5),
+    'WardD': (3, 12),
+    'WardE': (3, 8),
     
-    # Diagnostics & Imaging
-    'Lab': (40, 5),
-    'Radiology': (40, 15),
-    'MRI': (45, 15),
-    'Ultrasound': (45, 10),
-    'CT': (45, 5),
+    # ===== SURGERY SUITE (Center-Right, Upper) =====
+    'OperatingRoom1': (28, 20),
+    'OperatingRoom2': (33, 20),
+    'OperatingRoom3': (38, 20),
+    'Recovery': (42, 18),
     
-    # Support Services
-    'Pharmacy': (15, 0),
-    'Cafeteria': (0, 0),
-    'Supply': (20, 0),
-    'Sterilization': (25, 3),
+    # ===== NURSING STATIONS FOR WARDS =====
+    'NursingStationN': (13, 18),
+    'NursingStationS': (13, 3),
     
-    # Administration & Specialized
-    'Administration': (12, 20),
-    'Morgue': (8, 22),
-    'Physical Therapy': (2, 22),
+    # ===== DIAGNOSTICS & IMAGING (Far Right) =====
+    'Lab': (45, 5),
+    'Radiology': (45, 10),
+    'MRI': (48, 10),
+    'Ultrasound': (48, 6),
+    'CT': (48, 2),
     
-    # Nursing Stations
-    'NursingStationN': (18, 20),
-    'NursingStationS': (18, 5),
-    'NursingStationE': (40, 20),
+    # ===== SUPPORT SERVICES (Bottom Center) =====
+    'Pharmacy': (20, 2),
+    'Cafeteria': (3, 2),
+    'Supply': (25, 2),
+    'Sterilization': (30, 2),
+    
+    # ===== ADMINISTRATION (Top Left) =====
+    'Administration': (10, 22),
+    'Morgue': (3, 22),
+    'Physical Therapy': (15, 22),
 }
 
 # Robot specialization colors
@@ -231,18 +234,19 @@ HTML_TEMPLATE = """
         
         .map-container {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+            background: linear-gradient(135deg, #E8F1F8 0%, #D4E6F1 100%);
             border-radius: 12px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 2px solid #34495E;
             padding: 15px;
             min-height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: inset 0 0 10px rgba(52, 73, 94, 0.2);
         }
         
         #hospitalMap {
-            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .legend {
@@ -516,17 +520,11 @@ HTML_TEMPLATE = """
             <div class="section">
                 <h2>📍 Hospital Floor Plan & Robot Positions</h2>
                 <div class="map-container">
-                    <svg id="hospitalMap" width="100%" height="600" viewBox="0 0 600 600" style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05), transparent);">
-                        <!-- Grid lines for reference -->
-                        <defs>
-                            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(59, 130, 246, 0.1)" stroke-width="0.5"/>
-                            </pattern>
-                        </defs>
-                        <rect width="600" height="600" fill="url(#grid)"/>
-                        <!-- Rooms will be drawn here dynamically -->
+                    <svg id="hospitalMap" width="100%" height="600" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid meet" style="background: linear-gradient(135deg, #E8F1F8 0%, #D4E6F1 100%);">
+                        <!-- Blueprint background grid already added by drawHospitalMap -->
+                        <!-- Room elements -->
                         <g id="rooms"></g>
-                        <!-- Robots will be drawn here dynamically -->
+                        <!-- Robot markers -->
                         <g id="robots"></g>
                     </svg>
                 </div>
@@ -583,33 +581,6 @@ HTML_TEMPLATE = """
         let charts = {};
         let robotTrails = {};
         
-const ROOM_TYPE_COLORS = {
-            'ER': '#FCA5A5', 'Trauma': '#FCA5A5', 'ICU': '#DC2626', 'PICU': '#DC2626',
-            'NICU': '#DC2626', 'CCU': '#FCA5A5',
-            'WardA': '#BFDBFE', 'WardB': '#BFDBFE', 'WardC': '#BFDBFE',
-            'WardD': '#BFDBFE', 'WardE': '#BFDBFE',
-            'OperatingRoom1': '#FDBA74', 'OperatingRoom2': '#FDBA74',
-            'OperatingRoom3': '#FDBA74', 'Recovery': '#FED7AA',
-            'Lab': '#FEE08B', 'Radiology': '#FEE08B', 'MRI': '#FCD34D',
-            'Ultrasound': '#FEE08B', 'CT': '#FCD34D',
-            'Pharmacy': '#BBEF63', 'Supply': '#BBEF63', 'Sterilization': '#DCFCE7',
-            'Cafeteria': '#D1FAE5',
-            'MainLobby': '#E5E7EB', 'NorthEntrance': '#F3F4F6', 'SouthEntrance': '#F3F4F6',
-            'EmergencyEntry': '#F3F4F6', 'Administration': '#E5E7EB', 'Morgue': '#D1D5DB',
-            'PhysicalTherapy': '#E2E8F0',
-            'NursingStationN': '#DDD6FE', 'NursingStationS': '#DDD6FE', 'NursingStationE': '#DDD6FE',
-        };
-
-        function getDepartmentType(roomName) {
-            if (roomName.includes('ER') || roomName.includes('Trauma') || roomName.includes('ICU') || roomName.includes('PICU') || roomName.includes('NICU') || roomName.includes('CCU')) return 'Emergency';
-            if (roomName.includes('Ward')) return 'Wards';
-            if (roomName.includes('Operating') || roomName.includes('Recovery')) return 'Surgery';
-            if (roomName.includes('Lab') || roomName.includes('Radiology') || roomName.includes('MRI') || roomName.includes('Ultrasound') || roomName.includes('CT')) return 'Diagnostics';
-            if (roomName.includes('Pharmacy') || roomName.includes('Supply') || roomName.includes('Sterilization') || roomName.includes('Cafeteria')) return 'Support';
-            if (roomName.includes('Nursing')) return 'Nursing';
-            return 'Admin';
-        }
-
         function drawHospitalMap(robots) {
             const svg = document.getElementById('hospitalMap');
             const roomsGroup = svg.querySelector('#rooms');
@@ -624,37 +595,74 @@ const ROOM_TYPE_COLORS = {
                 .then(r => r.json())
                 .then(data => {
                     if (!data.error) {
-                        // Draw rooms with color coding
+                        // Draw blueprint grid/scale lines
+                        const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                        gridGroup.innerHTML = `
+                            <defs>
+                                <pattern id="blueprint-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2C3E50" stroke-width="0.3" opacity="0.3"/>
+                                </pattern>
+                            </defs>
+                            <rect width="900" height="600" fill="url(#blueprint-grid)"/>
+                        `;
+                        if (roomsGroup.parentElement) {
+                            roomsGroup.parentElement.insertBefore(gridGroup, roomsGroup);
+                        }
+
+                        // Draw rooms with blueprint styling
                         data.rooms.forEach((room, idx) => {
-                            const roomColor = ROOM_TYPE_COLORS[room.name] || 'rgba(59, 130, 246, 0.15)';
+                            const roomColor = ROOM_TYPE_COLORS[room.name] || '#BDC3C7';
                             const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            
+                            // Outer wall (darker blue)
+                            let wallColor = '#2C3E50';
+                            let fillColor = roomColor;
+                            
                             roomGroup.innerHTML = `
-                                <defs>
-                                    <filter id="drop-shadow-${idx}" x="-50%" y="-50%" width="200%" height="200%">
-                                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
-                                    </filter>
-                                </defs>
+                                <!-- Room walls (blueprint style) -->
                                 <rect 
-                                    x="${room.x - 8}" 
-                                    y="${room.y - 8}" 
-                                    width="16" 
-                                    height="16"
-                                    fill="${roomColor}"
-                                    stroke="#334155"
-                                    stroke-width="1.5"
-                                    rx="2"
-                                    filter="url(#drop-shadow-${idx})"
-                                    opacity="0.85"
+                                    x="${room.x - 10}" 
+                                    y="${room.y - 10}" 
+                                    width="20" 
+                                    height="20"
+                                    fill="${fillColor}"
+                                    stroke="${wallColor}"
+                                    stroke-width="2"
+                                    rx="1"
+                                    opacity="0.8"
                                 />
+                                <!-- Inner wall detail -->
+                                <rect 
+                                    x="${room.x - 9}" 
+                                    y="${room.y - 9}" 
+                                    width="18" 
+                                    height="18"
+                                    fill="none"
+                                    stroke="${wallColor}"
+                                    stroke-width="0.5"
+                                    opacity="0.3"
+                                    rx="1"
+                                />
+                                <!-- Room label -->
                                 <text 
                                     x="${room.x}" 
-                                    y="${room.y + 22}" 
+                                    y="${room.y}" 
                                     text-anchor="middle"
-                                    font-size="9"
-                                    fill="#cbd5e1"
-                                    font-weight="600"
-                                    letter-spacing="0.5"
-                                >${room.name.substring(0, 6)}</text>
+                                    dominant-baseline="middle"
+                                    font-size="8"
+                                    fill="#1A252F"
+                                    font-weight="700"
+                                    letter-spacing="0.3"
+                                >${room.name.substring(0, 5)}</text>
+                                <text 
+                                    x="${room.x}" 
+                                    y="${room.y + 24}" 
+                                    text-anchor="middle"
+                                    font-size="7"
+                                    fill="#34495E"
+                                    font-weight="500"
+                                    opacity="0.7"
+                                >${room.name.substring(5)}</text>
                             `;
                             roomsGroup.appendChild(roomGroup);
                         });
@@ -666,62 +674,62 @@ const ROOM_TYPE_COLORS = {
                                 const color = ROBOT_COLORS[status.type] || '#6B7280';
                                 const battery = status.battery || 100;
                                 const getBatteryColor = (bat) => {
-                                    if (bat >= 75) return '#10B981';
-                                    if (bat >= 50) return '#F59E0B';
-                                    if (bat >= 25) return '#EF4444';
-                                    return '#DC2626';
+                                    if (bat >= 75) return '#27AE60';  // Blueprint green
+                                    if (bat >= 50) return '#F39C12';  // Blueprint orange
+                                    if (bat >= 25) return '#E74C3C';  // Blueprint red
+                                    return '#C0392B';                  // Blueprint dark red
                                 };
                                 
                                 const robotGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                                 robotGroup.innerHTML = `
-                                    <!-- Battery ring indicator -->
+                                    <!-- Battery ring indicator (outer ring) -->
                                     <circle 
                                         cx="${room.x}" 
                                         cy="${room.y}" 
-                                        r="8"
+                                        r="9"
                                         fill="none"
                                         stroke="${getBatteryColor(battery)}"
-                                        stroke-width="1.5"
+                                        stroke-width="2"
                                         opacity="0.6"
                                     />
                                     <!-- Main robot circle -->
                                     <circle 
                                         cx="${room.x}" 
                                         cy="${room.y}" 
-                                        r="5"
+                                        r="6"
                                         fill="${color}"
-                                        stroke="white"
+                                        stroke="#FFFFFF"
                                         stroke-width="1.5"
-                                        opacity="${status.status === 'busy' ? 1 : 0.7}"
+                                        opacity="${status.status === 'busy' ? 1 : 0.8}"
                                     />
                                     <!-- Pulsing animation ring for active robots -->
                                     ${status.status === 'busy' ? `
                                     <circle 
                                         cx="${room.x}" 
                                         cy="${room.y}" 
-                                        r="5"
+                                        r="6"
                                         fill="none"
                                         stroke="${color}"
-                                        stroke-width="0.8"
-                                        opacity="0.5"
+                                        stroke-width="1"
+                                        opacity="0.4"
                                     >
                                         <animate 
                                             attributeName="r" 
-                                            from="5" 
-                                            to="11" 
+                                            from="6" 
+                                            to="13" 
                                             dur="1.5s" 
                                             repeatCount="indefinite"
                                         />
                                         <animate 
                                             attributeName="opacity" 
-                                            from="0.5" 
+                                            from="0.6" 
                                             to="0" 
                                             dur="1.5s" 
                                             repeatCount="indefinite"
                                         />
                                     </circle>
                                     ` : ''}
-                                    <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(0)}% - ${status.status} (${status.location})</title>
+                                    <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status}</title>
                                 `;
                                 robotsGroup.appendChild(robotGroup);
                             }
