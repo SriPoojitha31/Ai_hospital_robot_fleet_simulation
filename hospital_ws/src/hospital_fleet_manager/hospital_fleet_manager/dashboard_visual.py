@@ -84,6 +84,31 @@ ROBOT_COLORS = {
     'general': '#6B7280',            # Gray
 }
 
+# Room type color coding (for hospital map)
+ROOM_TYPE_COLORS = {
+    # Emergency & Critical (Red shades)
+    'ER': '#FCA5A5', 'Trauma': '#FCA5A5', 'ICU': '#DC2626', 'PICU': '#DC2626',
+    'NICU': '#DC2626', 'CCU': '#FCA5A5',
+    # Medical Wards (Blue shades)
+    'WardA': '#BFDBFE', 'WardB': '#BFDBFE', 'WardC': '#BFDBFE',
+    'WardD': '#BFDBFE', 'WardE': '#BFDBFE',
+    # Surgery (Orange shades)
+    'OperatingRoom1': '#FDBA74', 'OperatingRoom2': '#FDBA74',
+    'OperatingRoom3': '#FDBA74', 'Recovery': '#FED7AA',
+    # Diagnostics (Yellow shades)
+    'Lab': '#FEE08B', 'Radiology': '#FEE08B', 'MRI': '#FCD34D',
+    'Ultrasound': '#FEE08B', 'CT': '#FCD34D',
+    # Support Services (Green shades)
+    'Pharmacy': '#BBEF63', 'Supply': '#BBEF63', 'Sterilization': '#DCFCE7',
+    'Cafeteria': '#D1FAE5',
+    # Access & Admin (Gray/White shades)
+    'MainLobby': '#E5E7EB', 'NorthEntrance': '#F3F4F6', 'SouthEntrance': '#F3F4F6',
+    'EmergencyEntry': '#F3F4F6', 'Administration': '#E5E7EB', 'Morgue': '#D1D5DB',
+    'Physical Therapy': '#E2E8F0',
+    # Nursing Stations (Purple shades)
+    'NursingStationN': '#DDD6FE', 'NursingStationS': '#DDD6FE', 'NursingStationE': '#DDD6FE',
+}
+
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -314,23 +339,64 @@ HTML_TEMPLATE = """
         .battery-mini {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             font-size: 0.75rem;
-            margin-top: 4px;
+            margin-top: 6px;
+            padding: 6px 8px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
         }
         
         .battery-bar {
-            width: 50px;
-            height: 6px;
+            flex: 1;
+            height: 8px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
+            border-radius: 4px;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .battery-fill {
             height: 100%;
             background: linear-gradient(90deg, #10B981, #6EE7B7);
-            transition: width 0.3s;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+        
+        .battery-fill.low {
+            background: linear-gradient(90deg, #F59E0B, #FBBF24);
+        }
+        
+        .battery-fill.critical {
+            background: linear-gradient(90deg, #EF4444, #F87171);
+        }
+        
+        .battery-fill.empty {
+            background: linear-gradient(90deg, #DC2626, #EF5350);
+        }
+        
+        .battery-status-icon {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .battery-status-icon.good {
+            background: rgba(16, 185, 129, 0.2);
+            color: #6EE7B7;
+        }
+        
+        .battery-status-icon.low {
+            background: rgba(245, 158, 11, 0.2);
+            color: #FCD34D;
+        }
+        
+        .battery-status-icon.critical {
+            background: rgba(220, 38, 38, 0.2);
+            color: #FCA5A5;
         }
         
         .chart-grid {
@@ -517,6 +583,33 @@ HTML_TEMPLATE = """
         let charts = {};
         let robotTrails = {};
         
+const ROOM_TYPE_COLORS = {
+            'ER': '#FCA5A5', 'Trauma': '#FCA5A5', 'ICU': '#DC2626', 'PICU': '#DC2626',
+            'NICU': '#DC2626', 'CCU': '#FCA5A5',
+            'WardA': '#BFDBFE', 'WardB': '#BFDBFE', 'WardC': '#BFDBFE',
+            'WardD': '#BFDBFE', 'WardE': '#BFDBFE',
+            'OperatingRoom1': '#FDBA74', 'OperatingRoom2': '#FDBA74',
+            'OperatingRoom3': '#FDBA74', 'Recovery': '#FED7AA',
+            'Lab': '#FEE08B', 'Radiology': '#FEE08B', 'MRI': '#FCD34D',
+            'Ultrasound': '#FEE08B', 'CT': '#FCD34D',
+            'Pharmacy': '#BBEF63', 'Supply': '#BBEF63', 'Sterilization': '#DCFCE7',
+            'Cafeteria': '#D1FAE5',
+            'MainLobby': '#E5E7EB', 'NorthEntrance': '#F3F4F6', 'SouthEntrance': '#F3F4F6',
+            'EmergencyEntry': '#F3F4F6', 'Administration': '#E5E7EB', 'Morgue': '#D1D5DB',
+            'PhysicalTherapy': '#E2E8F0',
+            'NursingStationN': '#DDD6FE', 'NursingStationS': '#DDD6FE', 'NursingStationE': '#DDD6FE',
+        };
+
+        function getDepartmentType(roomName) {
+            if (roomName.includes('ER') || roomName.includes('Trauma') || roomName.includes('ICU') || roomName.includes('PICU') || roomName.includes('NICU') || roomName.includes('CCU')) return 'Emergency';
+            if (roomName.includes('Ward')) return 'Wards';
+            if (roomName.includes('Operating') || roomName.includes('Recovery')) return 'Surgery';
+            if (roomName.includes('Lab') || roomName.includes('Radiology') || roomName.includes('MRI') || roomName.includes('Ultrasound') || roomName.includes('CT')) return 'Diagnostics';
+            if (roomName.includes('Pharmacy') || roomName.includes('Supply') || roomName.includes('Sterilization') || roomName.includes('Cafeteria')) return 'Support';
+            if (roomName.includes('Nursing')) return 'Nursing';
+            return 'Admin';
+        }
+
         function drawHospitalMap(robots) {
             const svg = document.getElementById('hospitalMap');
             const roomsGroup = svg.querySelector('#rooms');
@@ -531,74 +624,170 @@ HTML_TEMPLATE = """
                 .then(r => r.json())
                 .then(data => {
                     if (!data.error) {
-                        // Draw rooms
+                        // Draw rooms with color coding
                         data.rooms.forEach((room, idx) => {
+                            const roomColor = ROOM_TYPE_COLORS[room.name] || 'rgba(59, 130, 246, 0.15)';
                             const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                             roomGroup.innerHTML = `
+                                <defs>
+                                    <filter id="drop-shadow-${idx}" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                                    </filter>
+                                </defs>
                                 <rect 
                                     x="${room.x - 8}" 
                                     y="${room.y - 8}" 
                                     width="16" 
                                     height="16"
-                                    fill="rgba(59, 130, 246, 0.15)"
-                                    stroke="rgba(59, 130, 246, 0.4)"
-                                    stroke-width="1"
-                                    rx="3"
+                                    fill="${roomColor}"
+                                    stroke="#334155"
+                                    stroke-width="1.5"
+                                    rx="2"
+                                    filter="url(#drop-shadow-${idx})"
+                                    opacity="0.85"
                                 />
                                 <text 
                                     x="${room.x}" 
-                                    y="${room.y + 20}" 
+                                    y="${room.y + 22}" 
                                     text-anchor="middle"
-                                    font-size="10"
-                                    fill="#93c5fd"
-                                    font-weight="500"
-                                >${room.name.substring(0, 3)}</text>
+                                    font-size="9"
+                                    fill="#cbd5e1"
+                                    font-weight="600"
+                                    letter-spacing="0.5"
+                                >${room.name.substring(0, 6)}</text>
                             `;
                             roomsGroup.appendChild(roomGroup);
                         });
                         
-                        // Draw robots
+                        // Draw robots with enhanced visualization
                         Object.entries(robots).forEach(([robotId, status]) => {
                             const room = data.rooms.find(r => r.name === status.location);
                             if (room) {
                                 const color = ROBOT_COLORS[status.type] || '#6B7280';
+                                const battery = status.battery || 100;
+                                const getBatteryColor = (bat) => {
+                                    if (bat >= 75) return '#10B981';
+                                    if (bat >= 50) return '#F59E0B';
+                                    if (bat >= 25) return '#EF4444';
+                                    return '#DC2626';
+                                };
+                                
                                 const robotGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                                 robotGroup.innerHTML = `
+                                    <!-- Battery ring indicator -->
                                     <circle 
                                         cx="${room.x}" 
                                         cy="${room.y}" 
-                                        r="6"
+                                        r="8"
+                                        fill="none"
+                                        stroke="${getBatteryColor(battery)}"
+                                        stroke-width="1.5"
+                                        opacity="0.6"
+                                    />
+                                    <!-- Main robot circle -->
+                                    <circle 
+                                        cx="${room.x}" 
+                                        cy="${room.y}" 
+                                        r="5"
                                         fill="${color}"
                                         stroke="white"
-                                        stroke-width="2"
-                                        opacity="${status.status === 'busy' ? 1 : 0.6}"
+                                        stroke-width="1.5"
+                                        opacity="${status.status === 'busy' ? 1 : 0.7}"
                                     />
+                                    <!-- Pulsing animation ring for active robots -->
+                                    ${status.status === 'busy' ? `
                                     <circle 
                                         cx="${room.x}" 
                                         cy="${room.y}" 
-                                        r="6"
+                                        r="5"
                                         fill="none"
                                         stroke="${color}"
-                                        stroke-width="1"
+                                        stroke-width="0.8"
                                         opacity="0.5"
                                     >
                                         <animate 
                                             attributeName="r" 
-                                            from="6" 
-                                            to="12" 
+                                            from="5" 
+                                            to="11" 
                                             dur="1.5s" 
                                             repeatCount="indefinite"
-                                            opacity="0"
+                                        />
+                                        <animate 
+                                            attributeName="opacity" 
+                                            from="0.5" 
+                                            to="0" 
+                                            dur="1.5s" 
+                                            repeatCount="indefinite"
                                         />
                                     </circle>
-                                    <title>${robotId} - ${status.type} (${status.location})</title>
+                                    ` : ''}
+                                    <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(0)}% - ${status.status} (${status.location})</title>
                                 `;
                                 robotsGroup.appendChild(robotGroup);
                             }
                         });
+                        
+                        // Update legend
+                        updateLegend();
                     }
                 })
                 .catch(console.error);
+        }
+
+        function updateLegend() {
+            const legendContainer = document.getElementById('legend');
+            legendContainer.innerHTML = '<div style="grid-column: 1/-1; padding: 8px 0; font-weight: 600; color: #cbd5e1; font-size: 0.85rem;">Department Types:</div>';
+            
+            const deptTypes = {
+                'Emergency': '#DC2626',
+                'Wards': '#3B82F6',
+                'Surgery': '#F59E0B',
+                'Diagnostics': '#FCD34D',
+                'Support': '#10B981',
+                'Nursing': '#8B5CF6',
+                'Admin': '#6B7280'
+            };
+            
+            Object.entries(deptTypes).forEach(([type, color]) => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = `
+                    <div class="legend-dot" style="background: ${color}; opacity: 0.7;"></div>
+                    <span>${type}</span>
+                `;
+                legendContainer.appendChild(item);
+            });
+            
+            const spacer = document.createElement('div');
+            spacer.style.gridColumn = '1/-1';
+            spacer.style.height = '8px';
+            legendContainer.appendChild(spacer);
+            
+            const batteryTitle = document.createElement('div');
+            batteryTitle.style.gridColumn = '1/-1';
+            batteryTitle.style.padding = '8px 0';
+            batteryTitle.style.fontWeight = '600';
+            batteryTitle.style.color = '#cbd5e1';
+            batteryTitle.style.fontSize = '0.85rem';
+            batteryTitle.textContent = 'Battery Levels:';
+            legendContainer.appendChild(batteryTitle);
+            
+            const batteryLevels = [
+                { level: 'Excellent', color: '#10B981', range: '>75%' },
+                { level: 'Good', color: '#F59E0B', range: '50-75%' },
+                { level: 'Low', color: '#EF4444', range: '25-50%' },
+                { level: 'Critical', color: '#DC2626', range: '<25%' }
+            ];
+            
+            batteryLevels.forEach(({ level, color, range }) => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = `
+                    <div class="legend-dot" style="background: ${color}; opacity: 0.8;"></div>
+                    <span>${level} ${range}</span>
+                `;
+                legendContainer.appendChild(item);
+            });
         }
         
         function updateDashboard() {
@@ -640,20 +829,40 @@ HTML_TEMPLATE = """
                 const statusClass = status.status === 'busy' ? 'status-active' : 'status-idle';
                 const battery = status.battery || 100;
                 
+                let batteryClass = 'good';
+                let batteryLabel = '🔋 Full';
+                if (battery < 75 && battery >= 50) {
+                    batteryClass = 'low';
+                    batteryLabel = '⚠️ Moderate';
+                } else if (battery < 50 && battery >= 25) {
+                    batteryClass = 'low';
+                    batteryLabel = '⚠️ Low';
+                } else if (battery < 25) {
+                    batteryClass = 'critical';
+                    batteryLabel = '🔴 Critical';
+                }
+                
                 card.innerHTML = `
-                    <div class="robot-name">${name}</div>
-                    <div class="robot-type">${status.type || 'general'}</div>
-                    <div class="robot-status">
-                        <div class="status-indicator ${statusClass}"></div>
-                        <span>${status.status || 'idle'}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <div class="robot-name">${name}</div>
+                            <div class="robot-type">${status.type || 'general'}</div>
+                        </div>
+                        <div class="robot-status">
+                            <div class="status-indicator ${statusClass}"></div>
+                            <span>${status.status || 'idle'}</span>
+                        </div>
                     </div>
                     <div class="battery-mini">
                         <div class="battery-bar">
-                            <div class="battery-fill" style="width: ${battery}%"></div>
+                            <div class="battery-fill ${batteryClass}" style="width: ${battery}%"></div>
                         </div>
-                        <span>${battery.toFixed(0)}%</span>
+                        <span style="min-width: 30px;">${battery.toFixed(0)}%</span>
                     </div>
-                    <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">
+                    <div style="font-size: 0.7rem; color: #94a3b8; margin-top: 4px; padding: 4px 0;">
+                        <span class="battery-status-icon ${batteryClass}">${batteryLabel}</span>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 6px;">
                         📍 ${status.location || 'Unknown'}
                     </div>
                 `;
