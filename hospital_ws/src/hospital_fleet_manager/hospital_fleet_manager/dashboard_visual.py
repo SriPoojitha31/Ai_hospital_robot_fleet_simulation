@@ -8,6 +8,8 @@ import json
 import threading
 import time
 import math
+import os
+import sys
 from datetime import datetime
 from collections import defaultdict
 
@@ -927,7 +929,12 @@ def ros_thread_main():
 
 
 if __name__ == '__main__':
+    # Get port from environment variable or use default
+    port = int(os.environ.get('DASHBOARD_PORT', 5000))
+    
     thread = threading.Thread(target=ros_thread_main, daemon=True)
     thread.start()
     time.sleep(2)
-    app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
+    
+    print(f"\n🌐 Dashboard running at http://localhost:{port}", flush=True)
+    app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
