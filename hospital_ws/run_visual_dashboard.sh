@@ -9,7 +9,7 @@ source /opt/ros/jazzy/setup.bash
 
 # Activate Python virtual environment
 if [ -d "$HOME/venv-ai-hospital" ]; then
-    source $HOME/venv-ai-hospital/bin/activate
+    source "$HOME/venv-ai-hospital/bin/activate"
 fi
 
 # Navigate to workspace
@@ -18,6 +18,8 @@ cd "$WORKSPACE_DIR"
 
 # Export Python path
 export PYTHONPATH="${WORKSPACE_DIR}/src:${PYTHONPATH}"
+export ROS_LOG_DIR="${WORKSPACE_DIR}/.ros/log"
+mkdir -p "${ROS_LOG_DIR}"
 
 # Find available port starting from 5000
 find_available_port() {

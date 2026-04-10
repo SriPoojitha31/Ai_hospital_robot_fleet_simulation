@@ -16,4 +16,9 @@ source /opt/ros/jazzy/setup.bash
 [[ -f "${WORKSPACE_ROOT}/install/setup.bash" ]] && source "${WORKSPACE_ROOT}/install/setup.bash"
 
 export PYTHONPATH="${PACKAGE_DIR}:${PYTHONPATH}"
+export ROS_LOG_DIR="${WORKSPACE_ROOT}/.ros/log"
+mkdir -p "${ROS_LOG_DIR}"
+export DASHBOARD_PORT="${DASHBOARD_PORT:-5000}"
+
+echo "Starting dashboard at http://localhost:${DASHBOARD_PORT}"
 exec python3 -m hospital_fleet_manager.dashboard

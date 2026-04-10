@@ -76,6 +76,87 @@ HOSPITAL_LAYOUT = {
     'Physical Therapy': (15, 22),
 }
 
+# Backward-compatible aliases so robots from different publishers still map correctly.
+LOCATION_ALIASES = {
+    'Lobby': 'MainLobby',
+    'NurseStation': 'NursingStationE',
+    'NurseStationN': 'NursingStationN',
+    'NurseStationS': 'NursingStationS',
+    'NurseStationE': 'NursingStationE',
+}
+
+# Multi-floor overlays for the visual map.
+FLOOR_ZONES = [
+    {
+        'id': 'L3',
+        'name': 'Level 3 - Surgery & Administration',
+        'x': 95,
+        'y': 70,
+        'width': 710,
+        'height': 120,
+        'fill': 'rgba(139, 92, 246, 0.10)',
+        'stroke': '#7C3AED',
+    },
+    {
+        'id': 'L2',
+        'name': 'Level 2 - Wards & Nursing',
+        'x': 95,
+        'y': 195,
+        'width': 710,
+        'height': 120,
+        'fill': 'rgba(59, 130, 246, 0.10)',
+        'stroke': '#2563EB',
+    },
+    {
+        'id': 'L1',
+        'name': 'Level 1 - Emergency, Diagnostics & Support',
+        'x': 95,
+        'y': 320,
+        'width': 710,
+        'height': 120,
+        'fill': 'rgba(16, 185, 129, 0.10)',
+        'stroke': '#059669',
+    },
+]
+
+# Room to floor mapping for labels and metadata.
+ROOM_FLOORS = {
+    'MainLobby': 'L1',
+    'NorthEntrance': 'L1',
+    'SouthEntrance': 'L1',
+    'EmergencyEntry': 'L1',
+    'ER': 'L1',
+    'Trauma': 'L1',
+    'ICU': 'L2',
+    'PICU': 'L2',
+    'NICU': 'L2',
+    'CCU': 'L2',
+    'NursingStationE': 'L2',
+    'WardA': 'L2',
+    'WardB': 'L2',
+    'WardC': 'L2',
+    'WardD': 'L2',
+    'WardE': 'L2',
+    'OperatingRoom1': 'L3',
+    'OperatingRoom2': 'L3',
+    'OperatingRoom3': 'L3',
+    'Recovery': 'L3',
+    'NursingStationN': 'L2',
+    'NursingStationS': 'L1',
+    'Lab': 'L1',
+    'Radiology': 'L1',
+    'MRI': 'L1',
+    'Ultrasound': 'L1',
+    'CT': 'L1',
+    'Pharmacy': 'L1',
+    'Cafeteria': 'L1',
+    'Supply': 'L1',
+    'Sterilization': 'L1',
+    'Administration': 'L3',
+    'Morgue': 'L1',
+    'Physical Therapy': 'L3',
+}
+
 # Robot specialization colors
 ROBOT_COLORS = {
     'delivery': '#3B82F6',           # Blue
@@ -620,18 +701,35 @@ HTML_TEMPLATE = """
                     
                     console.log(`✅ Drawing ${data.rooms.length} rooms...`);
                     
-                    // Draw blueprint grid/scale lines
-                    const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                    gridGroup.innerHTML = `
-                        <defs>
-                            <pattern id="blueprint-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2C3E50" stroke-width="0.3" opacity="0.3"/>
-                            </pattern>
-                        </defs>
-                        <rect width="900" height="600" fill="url(#blueprint-grid)"/>
-                    `;
-                    if (roomsGroup.parentElement) {
-                        roomsGroup.parentElement.insertBefore(gridGroup, roomsGroup);
+                    // Keep map background clean (no blueprint grid overlay).
+
+                    // Draw floor overlays first so rooms/robots remain on top.
+                    if (Array.isArray(data.floors)) {
+                        data.floors.forEach(floor => {
+                            const floorGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                            floorGroup.innerHTML = `
+                                <rect
+                                    x="${floor.x}"
+                                    y="${floor.y}"
+                                    width="${floor.width}"
+                                    height="${floor.height}"
+                                    fill="${floor.fill}"
+                                    stroke="${floor.stroke}"
+                                    stroke-width="1.5"
+                                    rx="12"
+                                    opacity="0.85"
+                                />
+                                <text
+                                    x="${floor.x + 12}"
+                                    y="${floor.y + 18}"
+                                    font-size="11"
+                                    fill="${floor.stroke}"
+                                    font-weight="700"
+                                    letter-spacing="0.2"
+                                >${floor.name}</text>
+                            `;
+                            roomsGroup.appendChild(floorGroup);
+                        });
                     }
 
                     // Draw rooms with blueprint styling
@@ -687,7 +785,7 @@ HTML_TEMPLATE = """
                                 fill="#34495E"
                                 font-weight="500"
                                 opacity="0.7"
-                            >${room.name.substring(5)}</text>
+                            >${room.floor || ''}</text>
                         `;
                         roomsGroup.appendChild(roomGroup);
                     });
@@ -704,7 +802,8 @@ HTML_TEMPLATE = """
                             return;
                         }
                         
-                        const room = data.rooms.find(r => r.name === status.location);
+                        const normalizedLocation = (data.location_aliases && data.location_aliases[status.location]) || status.location;
+                        const room = data.rooms.find(r => r.name === normalizedLocation);
                         if (room) {
                             const color = ROBOT_COLORS[status.type] || '#6B7280';
                             const battery = status.battery || 100;
@@ -764,13 +863,13 @@ HTML_TEMPLATE = """
                                     />
                                 </circle>
                                 ` : ''}
-                                <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status}</title>
+                                <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status} - ${normalizedLocation}</title>
                             `;
                             robotsGroup.appendChild(robotGroup);
                             robotsDrawn++;
-                            console.log(`✅ Robot ${robotId} drawn at ${status.location}`);
+                            console.log(`✅ Robot ${robotId} drawn at ${normalizedLocation}`);
                         } else {
-                            console.warn(`⚠️ Room "${status.location}" not found for robot ${robotId}`);
+                            console.warn(`⚠️ Room "${status.location}" (normalized: "${normalizedLocation}") not found for robot ${robotId}`);
                             robotsSkipped++;
                         }
                     });
@@ -1127,14 +1226,22 @@ def index():
 @app.route('/api/map-data')
 def map_data():
     """Return hospital layout data for map visualization"""
+    map_scale = 14
+    x_offset = 80
+    y_offset = 110
     rooms = []
     for room_name, (x, y) in HOSPITAL_LAYOUT.items():
         rooms.append({
             'name': room_name,
-            'x': x * 12,  # Scale up for SVG
-            'y': y * 12
+            'x': x * map_scale + x_offset,
+            'y': y * map_scale + y_offset,
+            'floor': ROOM_FLOORS.get(room_name, 'L1'),
         })
-    return {'rooms': rooms}
+    return {
+        'rooms': rooms,
+        'floors': FLOOR_ZONES,
+        'location_aliases': LOCATION_ALIASES,
+    }
 
 @app.route('/api/status')
 def status():
