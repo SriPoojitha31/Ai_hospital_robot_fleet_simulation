@@ -1,9 +1,9 @@
-setuptools
-numpy
-scipy
-networkx
-scikit-learn
-joblib
-pyyaml
 flask
+joblib
+networkx
+numpy
 prometheus-client
+pyyaml
+scikit-learn
+scipy
+setuptools

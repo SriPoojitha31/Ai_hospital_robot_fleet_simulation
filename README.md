@@ -144,3 +144,7 @@ Then open `http://localhost:5000` in your browser.
 ## 🧩 Recommended Next Step
 
 Open the dashboard at `http://localhost:5000` while the scheduler and simulator are running, then watch the robot fleet assignments in real time.
+
+## Gazebo Setup Note
+
+If you run into Gazebo / gz issues (plugins, GLIBC errors, or missing system plugins), see the project-specific Gazebo notes: [hospital_ws/GZ_SETUP.md](hospital_ws/GZ_SETUP.md#L1).

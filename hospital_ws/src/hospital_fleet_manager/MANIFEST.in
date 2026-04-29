@@ -1,0 +1,5 @@
+recursive-include hospital_fleet_manager/models *
+recursive-include hospital_fleet_manager/worlds *
+include package.xml
+include setup.cfg
+global-exclude __pycache__
