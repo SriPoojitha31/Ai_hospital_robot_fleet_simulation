@@ -1,0 +1,115 @@
+[INFO] [1777348202.177255632] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1777348202.215990568] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348202.216054477] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348202.419251096] [general_1.amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.419602107] [general_1.amcl]: Creating
+[INFO] [1777348202.469597195] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777348202.550564162] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777348202.550634671] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777348202.550646172] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348202.550654810] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348202.879362839] [general_1.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.879445413] [general_1.map_server]: Creating
+[INFO] [1777348202.880129195] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1777348202.910239519] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348202.914552551] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348203.237351611] [general_1.controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.252797676] [general_1.controller_server]: Creating controller server
+[INFO] [1777348203.561395178] [general_1.local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.562183656] [general_1.local_costmap.local_costmap]: Creating Costmap
+[INFO] [1777348203.586341803] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1777348203.587833825] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348203.587885438] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348203.911975534] [general_1.lifecycle_manager_localization]: Creating
+[INFO] [1777348204.081962810] [general_1.lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1777348204.082029030] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1777348204.084087035] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348204.084131506] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348204.394348091] [general_1.lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1777348204.394423574] [general_1.lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1777348204.401790738] [general_1.map_server]: Configuring
+[INFO] [1777348204.401899420] [map_io]: Loading yaml file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.yaml
+[INFO] [1777348204.402272353] [map_io]: resolution: 0.05
+[INFO] [1777348204.402292100] [map_io]: origin[0]: -10
+[INFO] [1777348204.402296159] [map_io]: origin[1]: -10
+[INFO] [1777348204.402299119] [map_io]: origin[2]: 0
+[INFO] [1777348204.402302183] [map_io]: free_thresh: 0.196
+[INFO] [1777348204.402305131] [map_io]: occupied_thresh: 0.65
+[INFO] [1777348204.402309650] [map_io]: mode: trinary
+[INFO] [1777348204.402314241] [map_io]: negate: 0
+[INFO] [1777348204.402545700] [map_io]: Loading image_file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm
+[INFO] [1777348204.423197439] [map_io]: Read map /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm: 400 X 400 map @ 0.05 m/cell
+[INFO] [1777348204.584767903] [general_1.lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1777348204.586281891] [general_1.amcl]: Configuring
+[INFO] [1777348204.586447229] [general_1.amcl]: initTransforms
+[INFO] [1777348204.783277548] [general_1.amcl]: initPubSub
+[INFO] [1777348205.008235721] [general_1.smoother_server]: 
+	smoother_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348205.009531015] [general_1.smoother_server]: Creating smoother server
+[INFO] [1777348205.055779122] [general_1.amcl]: Subscribed to map topic.
+[INFO] [1777348205.118607463] [general_1.lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1777348205.121373523] [general_1.map_server]: Activating
+[INFO] [1777348205.122141930] [general_1.map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1777348205.124081606] [general_1.amcl]: Received a 400 X 400 map @ 0.050 m/pix
+[INFO] [1777348205.288536735] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1777348205.290122670] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348205.290176658] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348205.312731070] [general_1.lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1777348205.312820545] [general_1.lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1777348205.314698637] [general_1.amcl]: Activating
+[INFO] [1777348205.314806060] [general_1.amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1777348205.573235869] [general_1.lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1777348205.573313820] [general_1.lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1777348205.573342397] [general_1.lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1777348205.755706117] [general_1.planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348205.758798986] [general_1.planner_server]: Creating
+[INFO] [1777348206.042299905] [general_1.global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348206.048003961] [general_1.global_costmap.global_costmap]: Creating Costmap
+[INFO] [1777348206.088974782] [general_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libroute_server_core.so
+[INFO] [1777348206.098391199] [general_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348206.098471864] [general_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348206.331976443] [general_1.route_server]: 
+	route_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348206.850252235] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777348206.850437629] [general_1.amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1777348206.850549336] [general_1.amcl]: Deactivating
+[INFO] [1777348206.850580818] [general_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.862738068] [general_1.amcl]: Cleaning up
+[INFO] [1777348206.925836111] [general_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.925889077] [general_1.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777348206.925924786] [general_1.map_server]: Deactivating
+[INFO] [1777348206.925944589] [general_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.942112391] [general_1.map_server]: Cleaning up
+[INFO] [1777348206.942198055] [general_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.942218893] [general_1.controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1777348206.942236777] [general_1.controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1777348206.942255131] [general_1.lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[INFO] [1777348206.942285689] [general_1.lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1777348207.572798324] [general_1.smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[INFO] [1777348207.572875323] [general_1.smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1777348207.572884720] [general_1.planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1777348207.572893791] [general_1.planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1777348207.572903802] [general_1.route_server]: Running Nav2 LifecycleNode rcl preshutdown (route_server)
+[INFO] [1777348207.572912047] [general_1.route_server]: Destroying bond (route_server) to lifecycle manager.

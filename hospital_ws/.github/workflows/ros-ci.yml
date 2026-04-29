@@ -1,0 +1,62 @@
+name: ROS Integration CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ros-build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up ROS 2 (jazzy)
+        uses: ros-tooling/setup-ros@v0.3.0
+        with:
+          ros-distro: jazzy
+
+      - name: Install apt dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-venv python3-pip
+
+      - name: Create venv and install python deps
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -U colcon-common-extensions
+
+      - name: Install ROS package dependencies (rosdep)
+        run: |
+          sudo apt-get install -y python3-rosdep
+          sudo rosdep init || true
+          rosdep update || true
+          source /opt/ros/jazzy/setup.bash
+          rosdep install --from-paths src --ignore-src -r -y || true
+
+      - name: Build workspace with colcon
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -U colcon-common-extensions
+          colcon build --symlink-install --packages-select hospital_fleet_manager
+
+      - name: Python syntax check
+        run: |
+          source venv/bin/activate
+          python -m py_compile $(find src -name '*.py' || true)
+
+      - name: Headless smoke launch (short)
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          source install/setup.bash || true
+          source venv/bin/activate
+          export HOSPITAL_PYTHON=$(pwd)/venv/bin/python3
+          export HOSPITAL_USE_GUNICORN=0
+          timeout 20s bash -lc "USE_GAZEBO=false USE_NAV2=false USE_STATE_PUBLISHERS=false USE_GZ_GUI=false ros2 launch hospital_fleet_manager hospital_stack.launch.py & sleep 8; ps aux | egrep 'dashboard_visual|robot_simulator|fleet_scheduler' || true"

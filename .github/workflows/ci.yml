@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ros:jazzy-ros-base
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system deps
+        run: |
+          apt-get update
+          apt-get install -y python3-pip python3-venv
+
+      - name: Install python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pytest scipy networkx scikit-learn joblib pyyaml flask prometheus-client
+
+      - name: Run static compile checks
+        run: |
+          python3 -m py_compile hospital_ws/src/hospital_fleet_manager/hospital_fleet_manager/*.py
+
+      - name: Run tests
+        run: |
+          . /opt/ros/jazzy/setup.sh
+          export ROS_LOG_DIR=/tmp/ai_hospital_ros_logs
+          mkdir -p "$ROS_LOG_DIR"
+          cd hospital_ws/src/hospital_fleet_manager
+          python3 -m pytest -q

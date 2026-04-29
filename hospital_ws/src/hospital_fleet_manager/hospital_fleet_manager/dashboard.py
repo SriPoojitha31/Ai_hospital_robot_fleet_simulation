@@ -696,9 +696,13 @@ def ros_thread_main():
             rclpy.shutdown()
 
 
-if __name__ == '__main__':
+def main():
     thread = threading.Thread(target=ros_thread_main, daemon=True)
     thread.start()
     time.sleep(1.5)
     port = int(os.environ.get('DASHBOARD_PORT', '5000'))
     app.run(host='0.0.0.0', port=port, debug=False)
+
+
+if __name__ == '__main__':
+    main()

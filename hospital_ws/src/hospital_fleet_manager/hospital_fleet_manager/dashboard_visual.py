@@ -15,10 +15,14 @@ from collections import defaultdict
 
 import rclpy
 from flask import Flask, render_template_string, jsonify
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from std_msgs.msg import String
 
+from hospital_fleet_manager.scenario_loader import load_scenario
+
 app = Flask(__name__)
+VISUAL_SCENARIO = load_scenario()
 
 # Hospital room positions for map visualization (x, y in virtual coordinates)
 # Organized as a realistic floor plan blueprint
@@ -660,224 +664,362 @@ HTML_TEMPLATE = """
         };
         
         let charts = {};
+        let mapData = null;
+        let roomByName = {};
         let robotTrails = {};
+        let robotMotionState = {};
+        let mapReady = false;
+        let animationLoopStarted = false;
+        let lastAnimationTs = null;
+        let routePulsePhase = 0;
+        const TRANSIT_HUBS = {
+            'L1': { x: 790, y: 380 },
+            'L2': { x: 790, y: 255 },
+            'L3': { x: 790, y: 130 },
+        };
         
-        function drawHospitalMap(robots) {
-            console.log('🎯 drawHospitalMap called with robots:', robots);
-            
-            const svg = document.getElementById('hospitalMap');
-            if (!svg) {
-                console.error('❌ SVG element #hospitalMap not found!');
-                return;
+        function getBatteryColor(battery) {
+            if (battery >= 75) return '#27AE60';
+            if (battery >= 50) return '#F39C12';
+            if (battery >= 25) return '#E74C3C';
+            return '#C0392B';
+        }
+
+        function ensureMapData() {
+            if (mapData) {
+                return Promise.resolve(mapData);
             }
-            
-            const roomsGroup = svg.querySelector('#rooms');
-            const robotsGroup = svg.querySelector('#robots');
-            
-            if (!roomsGroup || !robotsGroup) {
-                console.error('❌ Room or robot groups not found in SVG');
-                return;
-            }
-            
-            // Clear previous content
-            roomsGroup.innerHTML = '';
-            robotsGroup.innerHTML = '';
-            
-            console.log('📊 Fetching room data from /api/map-data ...');
-            
-            // Fetch room data from server
-            fetch('/api/map-data')
-                .then(r => {
-                    console.log('✅ /api map-data response status:', r.status);
-                    return r.json();
-                })
+            return fetch('/api/map-data')
+                .then(r => r.json())
                 .then(data => {
-                    console.log('📍 Room data received:', data);
-                    
-                    if (!data.rooms || !Array.isArray(data.rooms)) {
-                        console.error('❌ Invalid room data:', data);
-                        return;
-                    }
-                    
-                    console.log(`✅ Drawing ${data.rooms.length} rooms...`);
-                    
-                    // Keep map background clean (no blueprint grid overlay).
+                    mapData = data;
+                    roomByName = {};
+                    (data.rooms || []).forEach(room => {
+                        roomByName[room.name] = room;
+                    });
+                    return mapData;
+                });
+        }
 
-                    // Draw floor overlays first so rooms/robots remain on top.
-                    if (Array.isArray(data.floors)) {
-                        data.floors.forEach(floor => {
-                            const floorGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                            floorGroup.innerHTML = `
-                                <rect
-                                    x="${floor.x}"
-                                    y="${floor.y}"
-                                    width="${floor.width}"
-                                    height="${floor.height}"
-                                    fill="${floor.fill}"
-                                    stroke="${floor.stroke}"
-                                    stroke-width="1.5"
-                                    rx="12"
-                                    opacity="0.85"
-                                />
-                                <text
-                                    x="${floor.x + 12}"
-                                    y="${floor.y + 18}"
-                                    font-size="11"
-                                    fill="${floor.stroke}"
-                                    font-weight="700"
-                                    letter-spacing="0.2"
-                                >${floor.name}</text>
-                            `;
-                            roomsGroup.appendChild(floorGroup);
-                        });
-                    }
+        function initializeStaticMap(data) {
+            if (mapReady) return;
+            const svg = document.getElementById('hospitalMap');
+            if (!svg) return;
+            const roomsGroup = svg.querySelector('#rooms');
+            if (!roomsGroup) return;
 
-                    // Draw rooms with blueprint styling
-                    data.rooms.forEach((room, idx) => {
-                        const roomColor = ROOM_TYPE_COLORS[room.name] || '#BDC3C7';
-                        const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                        
-                        // Outer wall (darker blue)
-                        let wallColor = '#2C3E50';
-                        let fillColor = roomColor;
-                        
-                        roomGroup.innerHTML = `
-                            <!-- Room walls (blueprint style) -->
-                            <rect 
-                                x="${room.x - 10}" 
-                                y="${room.y - 10}" 
-                                width="20" 
-                                height="20"
-                                fill="${fillColor}"
-                                stroke="${wallColor}"
-                                stroke-width="2"
-                                rx="1"
-                                opacity="0.8"
-                            />
-                            <!-- Inner wall detail -->
-                            <rect 
-                                x="${room.x - 9}" 
-                                y="${room.y - 9}" 
-                                width="18" 
-                                height="18"
+            roomsGroup.innerHTML = '';
+
+            if (Array.isArray(data.floors)) {
+                data.floors.forEach(floor => {
+                    const floorGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    floorGroup.innerHTML = `
+                        <rect
+                            x="${floor.x}"
+                            y="${floor.y}"
+                            width="${floor.width}"
+                            height="${floor.height}"
+                            fill="${floor.fill}"
+                            stroke="${floor.stroke}"
+                            stroke-width="1.5"
+                            rx="12"
+                            opacity="0.9"
+                        />
+                        <text
+                            x="${floor.x + 12}"
+                            y="${floor.y + 18}"
+                            font-size="11"
+                            fill="${floor.stroke}"
+                            font-weight="700"
+                            letter-spacing="0.2"
+                        >${floor.name}</text>
+                    `;
+                    roomsGroup.appendChild(floorGroup);
+                });
+            }
+
+            (data.rooms || []).forEach(room => {
+                const roomColor = room.color || '#BDC3C7';
+                const wallColor = '#2C3E50';
+                const roomGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                roomGroup.innerHTML = `
+                    <rect
+                        x="${room.x - 10}"
+                        y="${room.y - 10}"
+                        width="20"
+                        height="20"
+                        fill="${roomColor}"
+                        stroke="${wallColor}"
+                        stroke-width="2"
+                        rx="1"
+                        opacity="0.82"
+                    />
+                    <rect
+                        x="${room.x - 9}"
+                        y="${room.y - 9}"
+                        width="18"
+                        height="18"
+                        fill="none"
+                        stroke="${wallColor}"
+                        stroke-width="0.5"
+                        opacity="0.3"
+                        rx="1"
+                    />
+                    <text
+                        x="${room.x}"
+                        y="${room.y}"
+                        text-anchor="middle"
+                        dominant-baseline="middle"
+                        font-size="8"
+                        fill="#1A252F"
+                        font-weight="700"
+                        letter-spacing="0.3"
+                    >${room.name.substring(0, 5)}</text>
+                    <text
+                        x="${room.x}"
+                        y="${room.y + 24}"
+                        text-anchor="middle"
+                        font-size="7"
+                        fill="#34495E"
+                        font-weight="600"
+                        opacity="0.7"
+                    >${room.floor || ''}</text>
+                `;
+                roomsGroup.appendChild(roomGroup);
+            });
+
+            mapReady = true;
+            updateLegend();
+        }
+
+        function buildRobotPath(previousState, nextRoom) {
+            if (!previousState) return [{ x: nextRoom.x, y: nextRoom.y }];
+            const path = [];
+            const currentFloor = previousState.floor || nextRoom.floor;
+            const targetFloor = nextRoom.floor || currentFloor;
+            path.push({ x: previousState.x, y: previousState.y });
+            if (currentFloor !== targetFloor && TRANSIT_HUBS[currentFloor] && TRANSIT_HUBS[targetFloor]) {
+                path.push({ x: TRANSIT_HUBS[currentFloor].x, y: TRANSIT_HUBS[currentFloor].y });
+                path.push({ x: TRANSIT_HUBS[targetFloor].x, y: TRANSIT_HUBS[targetFloor].y });
+            }
+            path.push({ x: nextRoom.x, y: nextRoom.y });
+            return path;
+        }
+
+        function resolveRoomName(rawName, aliases) {
+            if (!rawName) return '';
+            return aliases[rawName] || rawName;
+        }
+
+        function parseTaskDestination(taskText, aliases) {
+            if (!taskText || typeof taskText !== 'string') return '';
+            const match = taskText.match(/\\(([^)]+)->([^)]+)\\)/);
+            if (!match) return '';
+            const destination = match[2].trim();
+            return resolveRoomName(destination, aliases);
+        }
+
+        function buildTransitRoutePoints(origin, originFloor, targetRoom) {
+            if (!targetRoom) return [];
+            const route = [{ x: origin.x, y: origin.y }];
+            const startFloor = originFloor || targetRoom.floor || 'L1';
+            const endFloor = targetRoom.floor || startFloor;
+            if (startFloor !== endFloor && TRANSIT_HUBS[startFloor] && TRANSIT_HUBS[endFloor]) {
+                route.push({ x: TRANSIT_HUBS[startFloor].x, y: TRANSIT_HUBS[startFloor].y });
+                route.push({ x: TRANSIT_HUBS[endFloor].x, y: TRANSIT_HUBS[endFloor].y });
+            }
+            route.push({ x: targetRoom.x, y: targetRoom.y });
+            return route;
+        }
+
+        function syncRobotTargets(robots) {
+            if (!mapData) return;
+            const aliases = mapData.location_aliases || {};
+            const activeIds = new Set();
+
+            Object.entries(robots || {}).forEach(([robotId, status]) => {
+                const normalizedLocation = aliases[status.location] || status.location;
+                const room = roomByName[normalizedLocation];
+                if (!room) return;
+
+                activeIds.add(robotId);
+                const existing = robotMotionState[robotId];
+                const color = ROBOT_COLORS[status.type] || '#6B7280';
+                const battery = Number(status.battery || 100);
+                const currentTask = status.current_task || '';
+                const destinationName = parseTaskDestination(currentTask, aliases);
+                const destinationRoom = roomByName[destinationName] || null;
+
+                if (!existing) {
+                    robotMotionState[robotId] = {
+                        x: room.x,
+                        y: room.y,
+                        floor: room.floor || 'L1',
+                        location: normalizedLocation,
+                        status: status.status || 'idle',
+                        type: status.type || 'general',
+                        color,
+                        battery,
+                        currentTask,
+                        destinationName,
+                        destinationRoom,
+                        path: [{ x: room.x, y: room.y }],
+                        pathIndex: 0,
+                    };
+                    robotTrails[robotId] = [{ x: room.x, y: room.y }];
+                    return;
+                }
+
+                existing.status = status.status || existing.status;
+                existing.type = status.type || existing.type;
+                existing.color = color;
+                existing.battery = battery;
+                existing.currentTask = currentTask;
+                existing.destinationName = destinationName;
+                existing.destinationRoom = destinationRoom;
+
+                if (existing.location !== normalizedLocation) {
+                    existing.path = buildRobotPath(existing, room);
+                    existing.pathIndex = 1;
+                    existing.location = normalizedLocation;
+                    existing.floor = room.floor || existing.floor;
+                }
+            });
+
+            Object.keys(robotMotionState).forEach(robotId => {
+                if (!activeIds.has(robotId)) {
+                    delete robotMotionState[robotId];
+                    delete robotTrails[robotId];
+                }
+            });
+        }
+
+        function stepRobotMotion(deltaSeconds) {
+            Object.entries(robotMotionState).forEach(([robotId, state]) => {
+                if (!state.path || state.pathIndex >= state.path.length) return;
+                const waypoint = state.path[state.pathIndex];
+                const dx = waypoint.x - state.x;
+                const dy = waypoint.y - state.y;
+                const distance = Math.hypot(dx, dy);
+                const speed = state.status === 'busy' ? 110 : 65;
+                const step = speed * deltaSeconds;
+
+                if (distance <= step || distance < 0.1) {
+                    state.x = waypoint.x;
+                    state.y = waypoint.y;
+                    state.pathIndex += 1;
+                } else {
+                    state.x += (dx / distance) * step;
+                    state.y += (dy / distance) * step;
+                }
+
+                if (!robotTrails[robotId]) robotTrails[robotId] = [];
+                robotTrails[robotId].push({ x: state.x, y: state.y });
+                if (robotTrails[robotId].length > 20) {
+                    robotTrails[robotId] = robotTrails[robotId].slice(-20);
+                }
+            });
+        }
+
+        function renderRobotLayer() {
+            const svg = document.getElementById('hospitalMap');
+            if (!svg) return;
+            const robotsGroup = svg.querySelector('#robots');
+            if (!robotsGroup) return;
+
+            let markup = '';
+            Object.entries(robotMotionState).forEach(([robotId, state]) => {
+                const trail = robotTrails[robotId] || [];
+                if (state.status === 'busy' && state.destinationRoom) {
+                    const routePoints = buildTransitRoutePoints(
+                        { x: state.x, y: state.y },
+                        state.floor,
+                        state.destinationRoom
+                    );
+                    if (routePoints.length > 1) {
+                        const routeText = routePoints.map(p => `${p.x},${p.y}`).join(' ');
+                        markup += `
+                            <polyline
+                                points="${routeText}"
                                 fill="none"
-                                stroke="${wallColor}"
-                                stroke-width="0.5"
-                                opacity="0.3"
-                                rx="1"
+                                stroke="${state.color}"
+                                stroke-width="1.6"
+                                stroke-dasharray="6 5"
+                                opacity="0.45"
                             />
-                            <!-- Room label -->
-                            <text 
-                                x="${room.x}" 
-                                y="${room.y}" 
-                                text-anchor="middle"
-                                dominant-baseline="middle"
-                                font-size="8"
-                                fill="#1A252F"
-                                font-weight="700"
-                                letter-spacing="0.3"
-                            >${room.name.substring(0, 5)}</text>
-                            <text 
-                                x="${room.x}" 
-                                y="${room.y + 24}" 
-                                text-anchor="middle"
-                                font-size="7"
-                                fill="#34495E"
-                                font-weight="500"
-                                opacity="0.7"
-                            >${room.floor || ''}</text>
                         `;
-                        roomsGroup.appendChild(roomGroup);
-                    });
-                    
-                    // Draw robots with enhanced visualization
-                    console.log('🤖 Drawing robots:', Object.keys(robots).length, 'total');
-                    let robotsDrawn = 0;
-                    let robotsSkipped = 0;
-                    
-                    Object.entries(robots).forEach(([robotId, status]) => {
-                        if (!status.location) {
-                            console.warn(`⚠️ Robot ${robotId} has no location:`, status);
-                            robotsSkipped++;
-                            return;
-                        }
-                        
-                        const normalizedLocation = (data.location_aliases && data.location_aliases[status.location]) || status.location;
-                        const room = data.rooms.find(r => r.name === normalizedLocation);
-                        if (room) {
-                            const color = ROBOT_COLORS[status.type] || '#6B7280';
-                            const battery = status.battery || 100;
-                            const getBatteryColor = (bat) => {
-                                if (bat >= 75) return '#27AE60';  // Blueprint green
-                                if (bat >= 50) return '#F39C12';  // Blueprint orange
-                                if (bat >= 25) return '#E74C3C';  // Blueprint red
-                                return '#C0392B';                  // Blueprint dark red
-                            };
-                            
-                            const robotGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                            robotGroup.innerHTML = `
-                                <!-- Battery ring indicator (outer ring) -->
-                                <circle 
-                                    cx="${room.x}" 
-                                    cy="${room.y}" 
-                                    r="9"
-                                    fill="none"
-                                    stroke="${getBatteryColor(battery)}"
-                                    stroke-width="2"
-                                    opacity="0.6"
-                                />
-                                <!-- Main robot circle -->
-                                <circle 
-                                    cx="${room.x}" 
-                                    cy="${room.y}" 
-                                    r="6"
-                                    fill="${color}"
-                                    stroke="#FFFFFF"
-                                    stroke-width="1.5"
-                                    opacity="${status.status === 'busy' ? 1 : 0.8}"
-                                />
-                                <!-- Pulsing animation ring for active robots -->
-                                ${status.status === 'busy' ? `
-                                <circle 
-                                    cx="${room.x}" 
-                                    cy="${room.y}" 
-                                    r="6"
-                                    fill="none"
-                                    stroke="${color}"
-                                    stroke-width="1"
-                                    opacity="0.4"
-                                >
-                                    <animate 
-                                        attributeName="r" 
-                                        from="6" 
-                                        to="13" 
-                                        dur="1.5s" 
-                                        repeatCount="indefinite"
-                                    />
-                                    <animate 
-                                        attributeName="opacity" 
-                                        from="0.6" 
-                                        to="0" 
-                                        dur="1.5s" 
-                                        repeatCount="indefinite"
-                                    />
-                                </circle>
-                                ` : ''}
-                                <title>${robotId} - ${status.type} - Battery: ${battery.toFixed(1)}% - ${status.status} - ${normalizedLocation}</title>
-                            `;
-                            robotsGroup.appendChild(robotGroup);
-                            robotsDrawn++;
-                            console.log(`✅ Robot ${robotId} drawn at ${normalizedLocation}`);
-                        } else {
-                            console.warn(`⚠️ Room "${status.location}" (normalized: "${normalizedLocation}") not found for robot ${robotId}`);
-                            robotsSkipped++;
-                        }
-                    });
-                    
-                    console.log(`🎨 Rendering complete: ${robotsDrawn} robots drawn, ${robotsSkipped} skipped`);
-                    
-                    // Update legend
-                    updateLegend();
+
+                        const routeProgress = routePulsePhase % (routePoints.length - 1);
+                        const segIndex = Math.floor(routeProgress);
+                        const segT = routeProgress - segIndex;
+                        const a = routePoints[segIndex];
+                        const b = routePoints[Math.min(routePoints.length - 1, segIndex + 1)];
+                        const pulseX = a.x + (b.x - a.x) * segT;
+                        const pulseY = a.y + (b.y - a.y) * segT;
+                        markup += `
+                            <circle
+                                cx="${pulseX}"
+                                cy="${pulseY}"
+                                r="3.2"
+                                fill="${state.color}"
+                                stroke="#ffffff"
+                                stroke-width="1"
+                                opacity="0.9"
+                            />
+                        `;
+                    }
+                }
+
+                if (trail.length > 1) {
+                    const points = trail.map(p => `${p.x},${p.y}`).join(' ');
+                    markup += `<polyline points="${points}" fill="none" stroke="${state.color}" stroke-width="1.8" opacity="0.35"/>`;
+                }
+
+                markup += `
+                    <g>
+                        <circle cx="${state.x}" cy="${state.y}" r="9" fill="none" stroke="${getBatteryColor(state.battery)}" stroke-width="2" opacity="0.65" />
+                        <circle cx="${state.x}" cy="${state.y}" r="6" fill="${state.color}" stroke="#FFFFFF" stroke-width="1.5" opacity="${state.status === 'busy' ? 1 : 0.8}" />
+                        ${state.status === 'busy' ? `
+                        <circle cx="${state.x}" cy="${state.y}" r="6" fill="none" stroke="${state.color}" stroke-width="1" opacity="0.45">
+                            <animate attributeName="r" from="6" to="13" dur="1.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" from="0.6" to="0" dur="1.5s" repeatCount="indefinite" />
+                        </circle>
+                        ` : ''}
+                        <text x="${state.x + 10}" y="${state.y - 10}" font-size="7" fill="#0f172a" font-weight="700">${robotId}</text>
+                        ${state.status === 'busy' && state.destinationName ? `
+                        <text x="${state.x + 10}" y="${state.y + 8}" font-size="6.3" fill="#1e293b" font-weight="600">→ ${state.destinationName}</text>
+                        ` : ''}
+                        <title>${robotId} - ${state.type} - ${state.location} - Battery: ${state.battery.toFixed(1)}%</title>
+                    </g>
+                `;
+            });
+
+            robotsGroup.innerHTML = markup;
+        }
+
+        function animationTick(timestamp) {
+            if (!lastAnimationTs) lastAnimationTs = timestamp;
+            const deltaSeconds = Math.min(0.08, (timestamp - lastAnimationTs) / 1000);
+            lastAnimationTs = timestamp;
+            routePulsePhase += deltaSeconds * 1.8;
+
+            stepRobotMotion(deltaSeconds);
+            renderRobotLayer();
+            requestAnimationFrame(animationTick);
+        }
+
+        function ensureAnimationLoop() {
+            if (animationLoopStarted) return;
+            animationLoopStarted = true;
+            requestAnimationFrame(animationTick);
+        }
+
+        function drawHospitalMap(robots) {
+            ensureMapData()
+                .then(data => {
+                    initializeStaticMap(data);
+                    syncRobotTargets(robots || {});
+                    ensureAnimationLoop();
                 })
                 .catch(err => {
                     console.error('❌ Error fetching map data:', err);
@@ -938,6 +1080,18 @@ HTML_TEMPLATE = """
                 `;
                 legendContainer.appendChild(item);
             });
+
+            const motionSpacer = document.createElement('div');
+            motionSpacer.style.gridColumn = '1/-1';
+            motionSpacer.style.height = '8px';
+            legendContainer.appendChild(motionSpacer);
+
+            const motionHint = document.createElement('div');
+            motionHint.style.gridColumn = '1/-1';
+            motionHint.style.fontSize = '0.82rem';
+            motionHint.style.color = '#93c5fd';
+            motionHint.textContent = 'Movement sim: robots glide between rooms, use elevator hubs for floor changes, and show dashed live task routes.';
+            legendContainer.appendChild(motionHint);
         }
         
         function updateDashboard() {
@@ -1178,6 +1332,7 @@ HTML_TEMPLATE = """
 class AdvancedDashboardNode(Node):
     def __init__(self):
         super().__init__('advanced_dashboard_node')
+        self._lock = threading.Lock()
         self.robot_status = {}
         self.task_history = []
         self.last_update = datetime.now()
@@ -1189,32 +1344,51 @@ class AdvancedDashboardNode(Node):
 
     def _status_callback(self, msg):
         try:
-            self.robot_status = json.loads(msg.data)
-            self.last_update = datetime.now()
+            status_payload = json.loads(msg.data)
+            if not isinstance(status_payload, dict):
+                raise ValueError('robot_status payload must be a JSON object')
+            with self._lock:
+                self.robot_status = status_payload
+                self.last_update = datetime.now()
         except json.JSONDecodeError:
             self.get_logger().error('Invalid JSON in robot_status message')
+        except ValueError as exc:
+            self.get_logger().error(str(exc))
 
     def _assignment_callback(self, msg):
         try:
             data = json.loads(msg.data) if msg.data.startswith('{') else {'task': msg.data}
-            self.task_history.append({
+            item = {
                 'timestamp': datetime.now().strftime('%H:%M:%S'),
                 'assignment': data.get('task', msg.data),
                 'robot': data.get('robot', 'Unknown'),
                 'priority': data.get('priority', 'medium'),
                 'generated': data.get('generated', False)
-            })
-            self.total_tasks_assigned += 1
-            if len(self.task_history) > 100:
-                self.task_history = self.task_history[-100:]
-        except:
-            self.task_history.append({
+            }
+        except (json.JSONDecodeError, TypeError, ValueError):
+            item = {
                 'timestamp': datetime.now().strftime('%H:%M:%S'),
                 'assignment': msg.data,
                 'robot': 'Unknown',
                 'priority': 'medium',
                 'generated': False
-            })
+            }
+
+        with self._lock:
+            self.task_history.append(item)
+            self.total_tasks_assigned += 1
+            if len(self.task_history) > 100:
+                self.task_history = self.task_history[-100:]
+
+    def snapshot(self):
+        with self._lock:
+            return {
+                'robot_status': dict(self.robot_status),
+                'task_history': list(self.task_history),
+                'last_update': self.last_update,
+                'total_tasks_assigned': self.total_tasks_assigned,
+                'pending_tasks': self.pending_tasks,
+            }
 
 
 dashboard_node = None
@@ -1229,13 +1403,17 @@ def map_data():
     map_scale = 14
     x_offset = 80
     y_offset = 110
+    layout = VISUAL_SCENARIO.get("room_positions", HOSPITAL_LAYOUT)
+    room_floors = VISUAL_SCENARIO.get("room_floors", ROOM_FLOORS)
     rooms = []
-    for room_name, (x, y) in HOSPITAL_LAYOUT.items():
+    for room_name, position in layout.items():
+        x, y = position
         rooms.append({
             'name': room_name,
             'x': x * map_scale + x_offset,
             'y': y * map_scale + y_offset,
-            'floor': ROOM_FLOORS.get(room_name, 'L1'),
+            'floor': room_floors.get(room_name, 'L1'),
+            'color': ROOM_TYPE_COLORS.get(room_name, '#BDC3C7'),
         })
     return {
         'rooms': rooms,
@@ -1247,23 +1425,26 @@ def map_data():
 def status():
     if dashboard_node is None:
         return {'error': 'Dashboard not initialized'}, 503
+    snap = dashboard_node.snapshot()
     return {
-        'robots': dashboard_node.robot_status,
-        'timestamp': dashboard_node.last_update.strftime('%H:%M:%S')
+        'robots': snap['robot_status'],
+        'timestamp': snap['last_update'].strftime('%H:%M:%S')
     }
 
 @app.route('/api/history')
 def history():
     if dashboard_node is None:
         return {'error': 'Dashboard not initialized'}, 503
-    return {'history': dashboard_node.task_history[-30:]}
+    snap = dashboard_node.snapshot()
+    return {'history': snap['task_history'][-30:]}
 
 @app.route('/api/stats')
 def stats():
     if dashboard_node is None:
         return {'error': 'Dashboard not initialized'}, 503
-    
-    robots = dashboard_node.robot_status
+
+    snap = dashboard_node.snapshot()
+    robots = snap['robot_status']
     total_robots = len(robots)
     busy_robots = sum(1 for status in robots.values() if status.get('status') == 'busy')
     idle_robots = total_robots - busy_robots
@@ -1284,7 +1465,7 @@ def stats():
         specialization_counts[spec] = specialization_counts.get(spec, 0) + 1
     
     priority_counts = {'critical': 0, 'high': 0, 'medium': 0, 'low': 0}
-    for task in dashboard_node.task_history:
+    for task in snap['task_history']:
         priority = task.get('priority', 'medium')
         if priority in priority_counts:
             priority_counts[priority] += 1
@@ -1294,8 +1475,8 @@ def stats():
         'busy_robots': busy_robots,
         'idle_robots': idle_robots,
         'avg_battery': avg_battery,
-        'total_tasks': dashboard_node.total_tasks_assigned,
-        'pending_tasks': dashboard_node.pending_tasks,
+        'total_tasks': snap['total_tasks_assigned'],
+        'pending_tasks': snap['pending_tasks'],
         'battery_ranges': battery_ranges,
         'specialization_counts': specialization_counts,
         'priority_counts': priority_counts
@@ -1308,20 +1489,41 @@ def ros_thread_main():
     dashboard_node = AdvancedDashboardNode()
     try:
         rclpy.spin(dashboard_node)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
-        dashboard_node.destroy_node()
-        rclpy.shutdown()
+        if dashboard_node is not None:
+            dashboard_node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
-if __name__ == '__main__':
-    # Get port from environment variable or use default
-    port = int(os.environ.get('DASHBOARD_PORT', 5000))
-    
+def main():
+    # Allow configurable port via environment and fallback if port busy
+    base_port = int(os.environ.get('HOSPITAL_DASHBOARD_PORT', os.environ.get('DASHBOARD_PORT', '5000')))
+    port = base_port
+
     thread = threading.Thread(target=ros_thread_main, daemon=True)
     thread.start()
     time.sleep(2)
-    
-    print(f"\n🌐 Dashboard running at http://localhost:{port}", flush=True)
-    app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
+
+    # Probe port availability with a test socket before starting Flask
+    import socket
+    for attempt in range(10):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            s.bind(('0.0.0.0', port))
+            s.close()
+            print(f"\n🌐 Dashboard running at http://localhost:{port}", flush=True)
+            app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
+            break
+        except OSError:
+            print(f"Port {port} is in use, trying next port...", flush=True)
+            port += 1
+            s.close()
+            continue
+
+
+if __name__ == '__main__':
+    main()

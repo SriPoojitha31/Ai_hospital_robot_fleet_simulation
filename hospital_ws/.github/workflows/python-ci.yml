@@ -1,0 +1,42 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  python-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Create venv
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Python syntax checks
+        run: |
+          source venv/bin/activate
+          python -m py_compile $(find src -name '*.py' || true)
+
+      - name: Run tests (if any)
+        run: |
+          source venv/bin/activate
+          if [ -f pytest.ini ] || [ -d tests ]; then pytest -q || true; else echo 'No tests to run'; fi
+
+      - name: Lint (optional)
+        run: |
+          source venv/bin/activate
+          pip install flake8
+          flake8 src || true

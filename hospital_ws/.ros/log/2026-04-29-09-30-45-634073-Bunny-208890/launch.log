@@ -1,0 +1,66 @@
+1777435245.6351147 [INFO] [launch]: All log files can be found below /home/india/Documents/ai-hospital/hospital_ws/.ros/log/2026-04-29-09-30-45-634073-Bunny-208890
+1777435245.6352713 [INFO] [launch]: Default logging verbosity is set to INFO
+1777435246.3325930 [INFO] [gazebo-1]: process started with pid [208932]
+1777435246.3327353 [INFO] [parameter_bridge-2]: process started with pid [208933]
+1777435246.3327863 [INFO] [fleet_scheduler-3]: process started with pid [208934]
+1777435246.3328342 [INFO] [robot_simulator-4]: process started with pid [208936]
+1777435246.3328695 [INFO] [dashboard_visual-5]: process started with pid [208937]
+1777435246.4399953 [parameter_bridge-2] [INFO] [1777435246.439516045] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_1/cmd_vel (gz.msgs.Twist) -> /delivery_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4439971 [parameter_bridge-2] [INFO] [1777435246.443602203] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_1/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4450915 [parameter_bridge-2] [INFO] [1777435246.444837178] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_1/odom (gz.msgs.Odometry) -> /delivery_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4485934 [parameter_bridge-2] [INFO] [1777435246.448272092] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_1/odom (nav_msgs/msg/Odometry) -> /delivery_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4495223 [parameter_bridge-2] [INFO] [1777435246.449307718] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_2/cmd_vel (gz.msgs.Twist) -> /delivery_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4503026 [parameter_bridge-2] [INFO] [1777435246.450116458] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_2/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4510334 [parameter_bridge-2] [INFO] [1777435246.450857430] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_2/odom (gz.msgs.Odometry) -> /delivery_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4518528 [parameter_bridge-2] [INFO] [1777435246.451584206] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_2/odom (nav_msgs/msg/Odometry) -> /delivery_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4526160 [parameter_bridge-2] [INFO] [1777435246.452418355] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_3/cmd_vel (gz.msgs.Twist) -> /delivery_3/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4533110 [parameter_bridge-2] [INFO] [1777435246.453131803] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_3/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_3/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4542224 [parameter_bridge-2] [INFO] [1777435246.453997288] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_3/odom (gz.msgs.Odometry) -> /delivery_3/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4549787 [parameter_bridge-2] [INFO] [1777435246.454685541] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_3/odom (nav_msgs/msg/Odometry) -> /delivery_3/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4557524 [parameter_bridge-2] [INFO] [1777435246.455487050] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_1/cmd_vel (gz.msgs.Twist) -> /cleaning_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4564018 [parameter_bridge-2] [INFO] [1777435246.456174670] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_1/cmd_vel (geometry_msgs/msg/Twist) -> /cleaning_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4571381 [parameter_bridge-2] [INFO] [1777435246.456930149] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_1/odom (gz.msgs.Odometry) -> /cleaning_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4578767 [parameter_bridge-2] [INFO] [1777435246.457629657] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_1/odom (nav_msgs/msg/Odometry) -> /cleaning_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4586191 [parameter_bridge-2] [INFO] [1777435246.458405588] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_2/cmd_vel (gz.msgs.Twist) -> /cleaning_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4593062 [parameter_bridge-2] [INFO] [1777435246.459086559] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_2/cmd_vel (geometry_msgs/msg/Twist) -> /cleaning_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4600096 [parameter_bridge-2] [INFO] [1777435246.459812643] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_2/odom (gz.msgs.Odometry) -> /cleaning_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4607415 [parameter_bridge-2] [INFO] [1777435246.460515590] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_2/odom (nav_msgs/msg/Odometry) -> /cleaning_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4616621 [parameter_bridge-2] [INFO] [1777435246.461448128] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_1/cmd_vel (gz.msgs.Twist) -> /patient_mover_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4624560 [parameter_bridge-2] [INFO] [1777435246.462183780] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_1/cmd_vel (geometry_msgs/msg/Twist) -> /patient_mover_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4631903 [parameter_bridge-2] [INFO] [1777435246.462973596] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_1/odom (gz.msgs.Odometry) -> /patient_mover_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4639862 [parameter_bridge-2] [INFO] [1777435246.463727785] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_1/odom (nav_msgs/msg/Odometry) -> /patient_mover_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4647624 [parameter_bridge-2] [INFO] [1777435246.464560236] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_2/cmd_vel (gz.msgs.Twist) -> /patient_mover_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4656744 [parameter_bridge-2] [INFO] [1777435246.465409656] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_2/cmd_vel (geometry_msgs/msg/Twist) -> /patient_mover_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4664364 [parameter_bridge-2] [INFO] [1777435246.466162099] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_2/odom (gz.msgs.Odometry) -> /patient_mover_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4671779 [parameter_bridge-2] [INFO] [1777435246.466969355] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_2/odom (nav_msgs/msg/Odometry) -> /patient_mover_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4682589 [parameter_bridge-2] [INFO] [1777435246.467862778] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/heavy_supply_1/cmd_vel (gz.msgs.Twist) -> /heavy_supply_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4690278 [parameter_bridge-2] [INFO] [1777435246.468680048] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/heavy_supply_1/cmd_vel (geometry_msgs/msg/Twist) -> /heavy_supply_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4709823 [parameter_bridge-2] [INFO] [1777435246.469548863] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/heavy_supply_1/odom (gz.msgs.Odometry) -> /heavy_supply_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4711902 [parameter_bridge-2] [INFO] [1777435246.470281978] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/heavy_supply_1/odom (nav_msgs/msg/Odometry) -> /heavy_supply_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4715443 [parameter_bridge-2] [INFO] [1777435246.471156100] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/lab_courier_1/cmd_vel (gz.msgs.Twist) -> /lab_courier_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4737308 [parameter_bridge-2] [INFO] [1777435246.472164007] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/lab_courier_1/cmd_vel (geometry_msgs/msg/Twist) -> /lab_courier_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4746354 [parameter_bridge-2] [INFO] [1777435246.474380266] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/lab_courier_1/odom (gz.msgs.Odometry) -> /lab_courier_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4755547 [parameter_bridge-2] [INFO] [1777435246.475303178] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/lab_courier_1/odom (nav_msgs/msg/Odometry) -> /lab_courier_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4765766 [parameter_bridge-2] [INFO] [1777435246.476358158] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/emergency_1/cmd_vel (gz.msgs.Twist) -> /emergency_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4779737 [parameter_bridge-2] [INFO] [1777435246.477169215] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/emergency_1/cmd_vel (geometry_msgs/msg/Twist) -> /emergency_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4789495 [parameter_bridge-2] [INFO] [1777435246.478085709] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/emergency_1/odom (gz.msgs.Odometry) -> /emergency_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4798176 [parameter_bridge-2] [INFO] [1777435246.478942875] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/emergency_1/odom (nav_msgs/msg/Odometry) -> /emergency_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4804900 [parameter_bridge-2] [INFO] [1777435246.479979721] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_1/cmd_vel (gz.msgs.Twist) -> /general_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4814270 [parameter_bridge-2] [INFO] [1777435246.480808656] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_1/cmd_vel (geometry_msgs/msg/Twist) -> /general_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4822080 [parameter_bridge-2] [INFO] [1777435246.481734381] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_1/odom (gz.msgs.Odometry) -> /general_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4829652 [parameter_bridge-2] [INFO] [1777435246.482473836] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_1/odom (nav_msgs/msg/Odometry) -> /general_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.4837646 [parameter_bridge-2] [INFO] [1777435246.483522027] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_2/cmd_vel (gz.msgs.Twist) -> /general_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777435246.4847198 [parameter_bridge-2] [INFO] [1777435246.484323680] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_2/cmd_vel (geometry_msgs/msg/Twist) -> /general_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777435246.4858744 [parameter_bridge-2] [INFO] [1777435246.485177513] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_2/odom (gz.msgs.Odometry) -> /general_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777435246.4878564 [parameter_bridge-2] [INFO] [1777435246.486752522] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_2/odom (nav_msgs/msg/Odometry) -> /general_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777435246.7956855 [INFO] [gazebo-1]: process has finished cleanly [pid 208932]
+1777435246.7960505 [INFO] [launch]: process[gazebo-1] was required: shutting down launched system
+1777435246.7982123 [INFO] [dashboard_visual-5]: sending signal 'SIGINT' to process[dashboard_visual-5]
+1777435246.8026283 [INFO] [robot_simulator-4]: sending signal 'SIGINT' to process[robot_simulator-4]
+1777435246.8034678 [INFO] [fleet_scheduler-3]: sending signal 'SIGINT' to process[fleet_scheduler-3]
+1777435246.8075409 [INFO] [parameter_bridge-2]: sending signal 'SIGINT' to process[parameter_bridge-2]
+1777435246.8254740 [parameter_bridge-2] [INFO] [1777435246.812221381] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777435246.8568037 [ERROR] [robot_simulator-4]: process has died [pid 208936, exit code -2, cmd '/home/india/venv-ai-hospital/bin/python3 -m hospital_fleet_manager.robot_simulator --ros-args -r __node:=robot_simulator'].
+1777435246.8634555 [ERROR] [fleet_scheduler-3]: process has died [pid 208934, exit code -2, cmd '/home/india/venv-ai-hospital/bin/python3 -m hospital_fleet_manager.fleet_scheduler --ros-args -r __node:=fleet_scheduler'].
+1777435246.9464395 [INFO] [parameter_bridge-2]: process has finished cleanly [pid 208933]
+1777435251.5166831 [ERROR] [dashboard_visual-5]: process has died [pid 208937, exit code 1, cmd '/home/india/venv-ai-hospital/bin/python3 -m gunicorn hospital_fleet_manager.dashboard_visual:app --bind 0.0.0.0:5000 --workers 1 --threads 2'].

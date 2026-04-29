@@ -1,0 +1,146 @@
+[INFO] [1777348202.160544613] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777348202.198182190] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777348202.198245201] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777348202.198255271] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348202.198268605] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348202.353618414] [delivery_3.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.353687639] [delivery_3.map_server]: Creating
+[INFO] [1777348202.356858609] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1777348202.374956898] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348202.375014489] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348202.544597670] [delivery_3.amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.545549912] [delivery_3.amcl]: Creating
+[INFO] [1777348202.578262861] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1777348202.583213297] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348202.583259427] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348202.801134648] [delivery_3.controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.808210992] [delivery_3.controller_server]: Creating controller server
+[INFO] [1777348203.073972890] [delivery_3.local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.074601603] [delivery_3.local_costmap.local_costmap]: Creating Costmap
+[INFO] [1777348203.103141308] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1777348203.107360636] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348203.107416636] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348203.336567269] [delivery_3.lifecycle_manager_localization]: Creating
+[INFO] [1777348203.418500850] [delivery_3.lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1777348203.424559084] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1777348203.432232637] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348203.434140799] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348203.542803363] [delivery_3.lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1777348203.592738139] [delivery_3.lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1777348203.593962771] [delivery_3.map_server]: Configuring
+[INFO] [1777348203.594138783] [map_io]: Loading yaml file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.yaml
+[INFO] [1777348203.594473900] [map_io]: resolution: 0.05
+[INFO] [1777348203.596370958] [map_io]: origin[0]: -10
+[INFO] [1777348203.596388982] [map_io]: origin[1]: -10
+[INFO] [1777348203.596394994] [map_io]: origin[2]: 0
+[INFO] [1777348203.596401377] [map_io]: free_thresh: 0.196
+[INFO] [1777348203.596406863] [map_io]: occupied_thresh: 0.65
+[INFO] [1777348203.596420920] [map_io]: mode: trinary
+[INFO] [1777348203.596427888] [map_io]: negate: 0
+[INFO] [1777348203.596951149] [map_io]: Loading image_file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm
+[INFO] [1777348203.610890000] [map_io]: Read map /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm: 400 X 400 map @ 0.05 m/cell
+[INFO] [1777348203.885059983] [delivery_3.lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1777348203.887873867] [delivery_3.amcl]: Configuring
+[INFO] [1777348203.889402920] [delivery_3.amcl]: initTransforms
+[INFO] [1777348204.096413985] [delivery_3.amcl]: initPubSub
+[INFO] [1777348204.268286947] [delivery_3.smoother_server]: 
+	smoother_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348204.270024279] [delivery_3.smoother_server]: Creating smoother server
+[INFO] [1777348204.339650468] [delivery_3.amcl]: Subscribed to map topic.
+[INFO] [1777348204.430485030] [delivery_3.lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1777348204.431775026] [delivery_3.map_server]: Activating
+[INFO] [1777348204.432145219] [delivery_3.map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1777348204.435636048] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1777348204.437387633] [delivery_3.amcl]: Received a 400 X 400 map @ 0.050 m/pix
+[INFO] [1777348204.440622943] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348204.440665849] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348204.682467572] [delivery_3.lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1777348204.682556272] [delivery_3.lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1777348204.684239646] [delivery_3.amcl]: Activating
+[INFO] [1777348204.684323779] [delivery_3.amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1777348205.048324416] [delivery_3.lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1777348205.049501688] [delivery_3.lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1777348205.049540311] [delivery_3.lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1777348205.085304490] [delivery_3.planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348205.087094911] [delivery_3.planner_server]: Creating
+[INFO] [1777348205.579224235] [delivery_3.global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348205.579827097] [delivery_3.global_costmap.global_costmap]: Creating Costmap
+[INFO] [1777348205.673401027] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libroute_server_core.so
+[INFO] [1777348205.676174741] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348205.676261788] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348206.084818053] [delivery_3.route_server]: 
+	route_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348206.114518153] [delivery_3.nav2_container]: Load Library: /opt/ros/jazzy/lib/libbehavior_server_core.so
+[INFO] [1777348206.116058264] [delivery_3.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1777348206.116111862] [delivery_3.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1777348206.661083275] [delivery_3.behavior_server]: 
+	behavior_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348206.933173390] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777348206.933334617] [delivery_3.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777348206.933448921] [delivery_3.map_server]: Deactivating
+[INFO] [1777348206.933485830] [delivery_3.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.949981284] [delivery_3.map_server]: Cleaning up
+[INFO] [1777348206.950061342] [delivery_3.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.950079626] [delivery_3.amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1777348206.950112728] [delivery_3.amcl]: Deactivating
+[INFO] [1777348206.950148547] [delivery_3.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.960440388] [delivery_3.amcl]: Cleaning up
+[INFO] [1777348207.049705763] [delivery_3.lifecycle_manager_localization]: [34m[1mHave not received a heartbeat from map_server.[0m[0m
+[ERROR] [1777348207.049799945] [delivery_3.lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1777348207.049898715] [delivery_3.lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1777348207.049917533] [delivery_3.lifecycle_manager_localization]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1777348207.049931825] [delivery_3.lifecycle_manager_localization]: [34m[1mDeactivating amcl[0m[0m
+[INFO] [1777348207.497750342] [delivery_3.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348207.497819549] [delivery_3.controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1777348207.497835555] [delivery_3.controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1777348207.497846853] [delivery_3.lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[WARN] [1777348207.708676803] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[WARN] [1777348207.708721330] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1777348207.708739214] [delivery_3.amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1777348207.713694521] [delivery_3.lifecycle_manager_localization]: Failed to change state for node: amcl
+[INFO] [1777348207.713840109] [delivery_3.lifecycle_manager_localization]: [34m[1mDeactivating map_server[0m[0m
+[WARN] [1777348207.715711561] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[WARN] [1777348207.715746208] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1777348207.715752933] [delivery_3.map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1777348207.717559664] [delivery_3.lifecycle_manager_localization]: Failed to change state for node: map_server
+[INFO] [1777348207.717782214] [delivery_3.lifecycle_manager_localization]: [34m[1mCleaning up amcl[0m[0m
+[WARN] [1777348207.724137811] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[WARN] [1777348207.724191008] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1777348207.724204042] [delivery_3.amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1777348207.735530072] [delivery_3.lifecycle_manager_localization]: [34m[1mCleaning up map_server[0m[0m
+[WARN] [1777348207.739109306] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[WARN] [1777348207.739148983] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1777348207.739158564] [delivery_3.map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1777348207.757671675] [delivery_3.lifecycle_manager_localization]: [34m[1mManaged nodes have been reset[0m[0m
+[INFO] [1777348207.841229644] [delivery_3.smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[INFO] [1777348207.841299800] [delivery_3.smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1777348207.841317390] [delivery_3.planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1777348207.841334396] [delivery_3.planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1777348207.841350404] [delivery_3.route_server]: Running Nav2 LifecycleNode rcl preshutdown (route_server)
+[INFO] [1777348207.841365952] [delivery_3.route_server]: Destroying bond (route_server) to lifecycle manager.
+[INFO] [1777348207.841380073] [delivery_3.behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[INFO] [1777348207.841396534] [delivery_3.behavior_server]: Destroying bond (behavior_server) to lifecycle manager.

@@ -1,0 +1,121 @@
+[INFO] [1777348200.686856872] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777348200.774433032] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777348200.774480364] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777348200.774489521] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348200.774497311] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348200.907951306] [heavy_supply_1.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348200.908011892] [heavy_supply_1.map_server]: Creating
+[INFO] [1777348200.908480064] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1777348200.927286367] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348200.927349994] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348201.132511133] [heavy_supply_1.amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348201.133027739] [heavy_supply_1.amcl]: Creating
+[INFO] [1777348201.169143679] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1777348201.179089857] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348201.179138214] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348201.341990952] [heavy_supply_1.controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348201.349119244] [heavy_supply_1.controller_server]: Creating controller server
+[INFO] [1777348201.508243783] [heavy_supply_1.local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348201.509214531] [heavy_supply_1.local_costmap.local_costmap]: Creating Costmap
+[INFO] [1777348201.710907626] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1777348201.712135504] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348201.712199964] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348202.115921281] [heavy_supply_1.lifecycle_manager_localization]: Creating
+[INFO] [1777348202.189151070] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1777348202.190931314] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1777348202.196362544] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348202.196404282] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348202.408746273] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1777348202.408803137] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1777348202.412006876] [heavy_supply_1.map_server]: Configuring
+[INFO] [1777348202.412096251] [map_io]: Loading yaml file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.yaml
+[INFO] [1777348202.412406939] [map_io]: resolution: 0.05
+[INFO] [1777348202.412424576] [map_io]: origin[0]: -10
+[INFO] [1777348202.412431977] [map_io]: origin[1]: -10
+[INFO] [1777348202.412437038] [map_io]: origin[2]: 0
+[INFO] [1777348202.412442259] [map_io]: free_thresh: 0.196
+[INFO] [1777348202.412447405] [map_io]: occupied_thresh: 0.65
+[INFO] [1777348202.412454189] [map_io]: mode: trinary
+[INFO] [1777348202.412460230] [map_io]: negate: 0
+[INFO] [1777348202.412678469] [map_io]: Loading image_file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm
+[INFO] [1777348202.426437333] [map_io]: Read map /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm: 400 X 400 map @ 0.05 m/cell
+[INFO] [1777348202.647110568] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1777348202.650146206] [heavy_supply_1.amcl]: Configuring
+[INFO] [1777348202.650298178] [heavy_supply_1.amcl]: initTransforms
+[INFO] [1777348202.856598658] [heavy_supply_1.amcl]: initPubSub
+[INFO] [1777348202.892832389] [heavy_supply_1.smoother_server]: 
+	smoother_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.894494691] [heavy_supply_1.smoother_server]: Creating smoother server
+[INFO] [1777348202.933449846] [heavy_supply_1.amcl]: Subscribed to map topic.
+[INFO] [1777348202.940050573] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1777348202.946201087] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348202.946274746] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348203.093480183] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1777348203.103005526] [heavy_supply_1.map_server]: Activating
+[INFO] [1777348203.103627289] [heavy_supply_1.map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1777348203.107491627] [heavy_supply_1.amcl]: Received a 400 X 400 map @ 0.050 m/pix
+[INFO] [1777348203.304797817] [heavy_supply_1.lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1777348203.304873570] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1777348203.306143667] [heavy_supply_1.amcl]: Activating
+[INFO] [1777348203.306220613] [heavy_supply_1.amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1777348203.448187301] [heavy_supply_1.planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.449907266] [heavy_supply_1.planner_server]: Creating
+[INFO] [1777348203.695629924] [heavy_supply_1.lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1777348203.695700531] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1777348203.695724018] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1777348204.100823388] [heavy_supply_1.global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348204.111470193] [heavy_supply_1.global_costmap.global_costmap]: Creating Costmap
+[INFO] [1777348206.886826450] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777348206.886992276] [heavy_supply_1.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777348206.887110257] [heavy_supply_1.map_server]: Deactivating
+[INFO] [1777348206.887138254] [heavy_supply_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.897209712] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mHave not received a heartbeat from map_server.[0m[0m
+[ERROR] [1777348206.897281853] [heavy_supply_1.lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1777348206.897385073] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1777348206.897409009] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1777348206.897423018] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mDeactivating amcl[0m[0m
+[INFO] [1777348206.899139223] [heavy_supply_1.amcl]: Deactivating
+[INFO] [1777348206.899219663] [heavy_supply_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.899321875] [heavy_supply_1.map_server]: Cleaning up
+[INFO] [1777348206.899350772] [heavy_supply_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.899357885] [heavy_supply_1.amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1777348206.899363264] [heavy_supply_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.899369852] [heavy_supply_1.controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1777348206.899380932] [heavy_supply_1.controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1777348206.899391250] [heavy_supply_1.lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[INFO] [1777348207.057662915] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mDeactivating map_server[0m[0m
+[WARN] [1777348207.061678512] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[WARN] [1777348207.061723571] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1777348207.061738400] [heavy_supply_1.map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1777348207.065928210] [heavy_supply_1.lifecycle_manager_localization]: Failed to change state for node: map_server
+[INFO] [1777348207.066031223] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mCleaning up amcl[0m[0m
+[INFO] [1777348207.069107849] [heavy_supply_1.amcl]: Cleaning up
+[INFO] [1777348207.551796594] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mCleaning up map_server[0m[0m
+[WARN] [1777348207.554234712] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[WARN] [1777348207.554279676] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1777348207.554290588] [heavy_supply_1.map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1777348207.560877602] [heavy_supply_1.lifecycle_manager_localization]: [34m[1mManaged nodes have been reset[0m[0m
+[INFO] [1777348207.607980265] [heavy_supply_1.smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[INFO] [1777348207.608046656] [heavy_supply_1.smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1777348207.608056820] [heavy_supply_1.planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1777348207.608066532] [heavy_supply_1.planner_server]: Destroying bond (planner_server) to lifecycle manager.

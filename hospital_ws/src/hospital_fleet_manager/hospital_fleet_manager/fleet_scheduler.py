@@ -1,298 +1,366 @@
-import time
+import json
 import logging
 import random
+import time
 from logging.handlers import TimedRotatingFileHandler
 
 import rclpy
-from rclpy.node import Node
 from rclpy.executors import ExternalShutdownException
-from std_msgs.msg import String
+from rclpy.node import Node
 from scipy.optimize import linear_sum_assignment
+from std_msgs.msg import String
 
-from hospital_fleet_manager.hospital_map import build_hospital_map, shortest_path_length
 from hospital_fleet_manager.ai_predictor import EnhancedAIPredictor
+from hospital_fleet_manager.hospital_map import build_hospital_map, shortest_path, shortest_path_length
+from hospital_fleet_manager.scenario_loader import load_scenario
+
+try:
+    from prometheus_client import Counter, Gauge, start_http_server
+except Exception:
+    Counter = None
+    Gauge = None
+    start_http_server = None
 
 
 class FleetScheduler(Node):
     def __init__(self):
-        super().__init__('fleet_scheduler')
-
-        self.publisher = self.create_publisher(String, 'task_assignments', 10)
+        super().__init__("fleet_scheduler")
+        self.publisher = self.create_publisher(String, "task_assignments", 10)
 
         self.hospital_map = build_hospital_map()
         self.predictor = EnhancedAIPredictor()
+        self.scenario = load_scenario()
 
-        # Setup file logging
-        logging.basicConfig(level=logging.INFO)
-        self.logger = logging.getLogger('fleet_scheduler')
-        handler = TimedRotatingFileHandler('/tmp/fleet_scheduler.log', when='midnight', interval=1, backupCount=7)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
+        self.logger = logging.getLogger("fleet_scheduler")
+        self.logger.setLevel(logging.INFO)
+        handler = TimedRotatingFileHandler("/tmp/fleet_scheduler.log", when="midnight", interval=1, backupCount=7)
+        handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+        if not self.logger.handlers:
+            self.logger.addHandler(handler)
 
-        # Diverse robot fleet with specializations
-        self.robots = {
-            'delivery_1': {'location': 'MainLobby', 'type': 'delivery', 'battery': 100.0},
-            'delivery_2': {'location': 'Pharmacy', 'type': 'delivery', 'battery': 100.0},
-            'delivery_3': {'location': 'ER', 'type': 'delivery', 'battery': 100.0},
-            'cleaning_1': {'location': 'WardA', 'type': 'cleaning', 'battery': 100.0},
-            'cleaning_2': {'location': 'ICU', 'type': 'cleaning', 'battery': 100.0},
-            'patient_mover_1': {'location': 'ER', 'type': 'patient_mover', 'battery': 100.0},
-            'patient_mover_2': {'location': 'Recovery', 'type': 'patient_mover', 'battery': 100.0},
-            'heavy_supply_1': {'location': 'Supply', 'type': 'heavy_supply', 'battery': 100.0},
-            'lab_courier_1': {'location': 'Lab', 'type': 'lab_courier', 'battery': 100.0},
-            'emergency_1': {'location': 'ER', 'type': 'emergency_response', 'battery': 100.0},
-            'general_1': {'location': 'MainLobby', 'type': 'general', 'battery': 100.0},
-            'general_2': {'location': 'Cafeteria', 'type': 'general', 'battery': 100.0},
-        }
+        self.robots = self.scenario.get("robots", {})
+        self.tasks = list(self.scenario.get("initial_tasks", []))
+        self.room_floors = self.scenario.get("room_floors", {})
+        self.priority_rank = self.scenario["sla"]["priority_rank"]
+        self.deadlines = self.scenario["sla"]["deadline_secs"]
 
-        self.tasks = [
-            # Medication delivery (high-priority)
-            {'task_id': 'med_delivery_1', 'from': 'Pharmacy', 'to': 'WardB', 'priority': 'high', 'type': 'delivery', 'duration': 8},
-            {'task_id': 'med_delivery_2', 'from': 'Pharmacy', 'to': 'ICU', 'priority': 'critical', 'type': 'delivery', 'duration': 10},
-            # Cleaning tasks
-            {'task_id': 'clean_ward_a', 'from': 'WardA', 'to': 'WardA', 'priority': 'medium', 'type': 'cleaning', 'duration': 20},
-            {'task_id': 'clean_er', 'from': 'ER', 'to': 'ER', 'priority': 'high', 'type': 'cleaning', 'duration': 15},
-            # Patient transport (critical)
-            {'task_id': 'patient_move_1', 'from': 'ER', 'to': 'ICU', 'priority': 'critical', 'type': 'patient_mover', 'duration': 12},
-            {'task_id': 'patient_move_2', 'from': 'Trauma', 'to': 'Recovery', 'priority': 'critical', 'type': 'patient_mover', 'duration': 15},
-            # Lab work
-            {'task_id': 'lab_samples_1', 'from': 'Lab', 'to': 'Radiology', 'priority': 'high', 'type': 'lab_courier', 'duration': 8},
-            {'task_id': 'lab_samples_2', 'from': 'Lab', 'to': 'ER', 'priority': 'critical', 'type': 'lab_courier', 'duration': 6},
-            # Supply delivery
-            {'task_id': 'supply_stock_1', 'from': 'Supply', 'to': 'Pharmacy', 'priority': 'medium', 'type': 'heavy_supply', 'duration': 12},
-            {'task_id': 'supply_stock_2', 'from': 'Supply', 'to': 'OperatingRoom1', 'priority': 'high', 'type': 'heavy_supply', 'duration': 10},
-            # Equipment
-            {'task_id': 'equip_move_1', 'from': 'Radiology', 'to': 'ICU', 'priority': 'medium', 'type': 'heavy_supply', 'duration': 14},
-            # Food/cafeteria
-            {'task_id': 'food_delivery_1', 'from': 'Cafeteria', 'to': 'WardA', 'priority': 'low', 'type': 'delivery', 'duration': 10},
-            {'task_id': 'food_delivery_2', 'from': 'Cafeteria', 'to': 'Recovery', 'priority': 'medium', 'type': 'delivery', 'duration': 10},
-            # Document/report delivery
-            {'task_id': 'document_delivery_1', 'from': 'Administration', 'to': 'ER', 'priority': 'low', 'type': 'delivery', 'duration': 5},
-        ]
-
-        self.get_logger().info('Fleet scheduler initialized with enhanced AI and periodic scheduling')
-        self.logger.info('Fleet scheduler initialized with enhanced AI and periodic scheduling')
-
-        # Periodic scheduling
-        self.timer = self.create_timer(30.0, self.run_scheduler_cycle)  # Every 30 seconds
-        
-        # Task tracking
         self.assignment_history = []
+        self.active_assignments = {}
+        self.edge_load = {}
         self.task_counter = 0
-        
-    def generate_dynamic_tasks(self):
-        """Generate new tasks based on hospital patterns."""
-        new_tasks = []
-        task_types_by_specialty = {
-            'delivery': [
-                {'from_pool': ['Pharmacy', 'Supply'], 'to_pool': ['WardA', 'WardB', 'WardC', 'WardD', 'WardE', 'ICU']},
-            ],
-            'cleaning': [
-                {'from_pool': ['WardA', 'WardB', 'WardC', 'WardD', 'WardE', 'ER'], 'to_pool': ['WardA', 'WardB', 'WardC', 'WardD', 'WardE', 'ER']},
-            ],
-            'patient_mover': [
-                {'from_pool': ['ER', 'Trauma'], 'to_pool': ['ICU', 'PICU', 'Recovery', 'WardA', 'WardB']},
-            ],
-            'lab_courier': [
-                {'from_pool': ['Lab'], 'to_pool': ['Radiology', 'ER', 'ICU', 'OperatingRoom1']},
-            ],
-            'heavy_supply': [
-                {'from_pool': ['Supply', 'Sterilization'], 'to_pool': ['OperatingRoom1', 'OperatingRoom2', 'ER', 'ICU']},
-            ],
-        }
-        
-        priorities = ['critical', 'high', 'medium', 'low']
-        priority_weights = [0.1, 0.3, 0.4, 0.2]  # Higher chance of medium/low in random generation
-        
-        # Generate 1-3 new tasks randomly
-        num_new_tasks = random.randint(1, 3)
-        for _ in range(num_new_tasks):
-            if random.random() < 0.6:  # 60% chance to add a task
-                specialty = random.choice(list(task_types_by_specialty.keys()))
-                route = random.choice(task_types_by_specialty[specialty])
-                from_loc = random.choice(route['from_pool'])
-                to_loc = random.choice(route['to_pool'])
-                priority = random.choices(priorities, weights=priority_weights)[0]
-                self.task_counter += 1
-                
-                task = {
-                    'task_id': f'{specialty}_task_{self.task_counter}',
-                    'from': from_loc,
-                    'to': to_loc,
-                    'priority': priority,
-                    'type': specialty,
-                    'duration': random.randint(5, 20),
-                    'generated': True,  # Mark as dynamically generated
+
+        self._metrics_started = False
+        self._metric_cycle = None
+        self._metric_reject = None
+        self._metric_preempt = None
+        self._metric_queue = None
+        self._metric_busy = None
+        self._init_metrics()
+
+        self.timer = self.create_timer(20.0, self.run_scheduler_cycle)
+        self.get_logger().info(f"Scheduler started with scenario: {self.scenario.get('_scenario_path')}")
+
+    def _init_metrics(self):
+        if Counter is None or Gauge is None or start_http_server is None:
+            return
+        try:
+            if not self._metrics_started:
+                start_http_server(9101)
+                self._metrics_started = True
+            self._metric_cycle = Counter("fleet_scheduler_cycles_total", "Scheduler cycle count")
+            self._metric_reject = Counter("fleet_scheduler_rejections_total", "Task rejections due to policy")
+            self._metric_preempt = Counter("fleet_scheduler_preemptions_total", "Task preemptions")
+            self._metric_queue = Gauge("fleet_scheduler_queue_size", "Task queue size")
+            self._metric_busy = Gauge("fleet_scheduler_busy_robots", "Busy robot count")
+        except Exception:
+            self._metrics_started = False
+
+    def _emit_structured(self, event, **kwargs):
+        record = {"event": event, "ts": round(time.time(), 3)}
+        record.update(kwargs)
+        self.logger.info(json.dumps(record))
+
+    def _refresh_active_assignments(self):
+        now = time.time()
+        completed = [r for r, data in self.active_assignments.items() if data.get("finish_time", 0.0) <= now]
+        for robot in completed:
+            self.active_assignments.pop(robot, None)
+
+    def _nearest_charging_station(self, location):
+        stations = self.scenario["charging"]["stations"]
+        best = stations[0]
+        best_dist = float("inf")
+        for station in stations:
+            try:
+                dist = shortest_path_length(self.hospital_map, location, station)
+                if dist < best_dist:
+                    best_dist = dist
+                    best = station
+            except Exception:
+                continue
+        return best
+
+    def _inject_charge_tasks(self):
+        threshold = self.scenario["charging"]["dispatch_threshold"]
+        existing = {t.get("task_id", "") for t in self.tasks}
+        for robot_name, robot_info in self.robots.items():
+            if robot_info.get("battery", 100.0) >= threshold:
+                continue
+            if robot_name in self.active_assignments:
+                continue
+            task_id = f"charge_{robot_name}"
+            if task_id in existing:
+                continue
+            station = self._nearest_charging_station(robot_info["location"])
+            self.tasks.append(
+                {
+                    "task_id": task_id,
+                    "from": robot_info["location"],
+                    "to": station,
+                    "priority": "critical",
+                    "type": "charge",
+                    "duration": 20,
+                    "assigned_robot": robot_name,
+                    "deadline": int(time.time()) + self.deadlines["critical"],
                 }
-                new_tasks.append(task)
-        
+            )
+            existing.add(task_id)
+
+    def generate_dynamic_tasks(self):
+        new_tasks = []
+        templates = [
+            ("delivery", ["Pharmacy", "Supply"], ["WardA", "WardB", "WardC", "ICU"]),
+            ("cleaning", ["WardA", "WardB", "WardC", "ER"], ["WardA", "WardB", "WardC", "ER"]),
+            ("patient_mover", ["ER", "Trauma"], ["ICU", "PICU", "Recovery"]),
+            ("lab_courier", ["Lab"], ["Radiology", "ER", "ICU"]),
+            ("heavy_supply", ["Supply", "Sterilization"], ["OperatingRoom1", "OperatingRoom2", "ER"]),
+        ]
+        priorities = ["critical", "high", "medium", "low"]
+        weights = [0.15, 0.3, 0.35, 0.2]
+
+        for _ in range(random.randint(1, 3)):
+            if random.random() > 0.6:
+                continue
+            task_type, src_pool, dst_pool = random.choice(templates)
+            self.task_counter += 1
+            prio = random.choices(priorities, weights=weights)[0]
+            new_tasks.append(
+                {
+                    "task_id": f"{task_type}_{self.task_counter}",
+                    "from": random.choice(src_pool),
+                    "to": random.choice(dst_pool),
+                    "priority": prio,
+                    "type": task_type,
+                    "duration": random.randint(5, 20),
+                    "generated": True,
+                    "deadline": int(time.time()) + self.deadlines.get(prio, 180),
+                }
+            )
         return new_tasks
+
+    def _priority_value(self, priority):
+        return self.priority_rank.get(priority, 1)
+
+    def _route_penalties(self, robot_location, task):
+        path_to_pickup = shortest_path(self.hospital_map, robot_location, task["from"])
+        path_task = shortest_path(self.hospital_map, task["from"], task["to"])
+        full_path = path_to_pickup + path_task[1:]
+
+        nav_cfg = self.scenario["navigation"]
+        cap = nav_cfg["corridor_capacity"]
+        edge_penalty_weight = nav_cfg["edge_over_capacity_penalty"]
+
+        edge_penalty = 0.0
+        for i in range(len(full_path) - 1):
+            a, b = full_path[i], full_path[i + 1]
+            edge = tuple(sorted((a, b)))
+            projected = self.edge_load.get(edge, 0) + 1
+            if projected > cap:
+                edge_penalty += (projected - cap) * edge_penalty_weight
+
+        floor_transfers = 0
+        for i in range(len(full_path) - 1):
+            if self.room_floors.get(full_path[i]) != self.room_floors.get(full_path[i + 1]):
+                floor_transfers += 1
+        floor_penalty = floor_transfers * nav_cfg["floor_transfer_penalty"]
+
+        return edge_penalty + floor_penalty, full_path
+
+    def _battery_reject(self, robot_info, total_distance):
+        charging = self.scenario["charging"]
+        required = total_distance * charging["energy_per_distance"] + charging["reserve_percent"]
+        return robot_info["battery"] < required
 
     def compute_cost_matrix(self):
         robot_names = list(self.robots.keys())
         tasks = self.tasks
         cost_matrix = []
 
-        # Specialization compatibility rules
-        specialty_match_bonus = {
-            'delivery': ['delivery', 'general'],
-            'cleaning': ['cleaning', 'general'],
-            'patient_mover': ['patient_mover', 'emergency_response', 'general'],
-            'lab_courier': ['lab_courier', 'delivery', 'general'],
-            'heavy_supply': ['heavy_supply', 'general'],
-            'emergency_response': ['emergency_response', 'patient_mover', 'general'],
-        }
-        
-        # Priority penalty multipliers (higher = more penalized)
-        priority_weights = {
-            'critical': 0.5,   # Avoid robots with low battery for critical tasks
-            'high': 0.7,
-            'medium': 0.9,
-            'low': 1.0,
+        specialty_match = {
+            "delivery": ["delivery", "general", "lab_courier"],
+            "cleaning": ["cleaning", "general"],
+            "patient_mover": ["patient_mover", "emergency_response", "general"],
+            "lab_courier": ["lab_courier", "delivery", "general"],
+            "heavy_supply": ["heavy_supply", "general"],
+            "charge": ["delivery", "cleaning", "patient_mover", "lab_courier", "heavy_supply", "emergency_response", "general"],
         }
 
-        for robot in robot_names:
-            robot_info = self.robots[robot]
-            robot_location = robot_info['location']
-            robot_type = robot_info['type']
-            robot_battery = robot_info['battery']
-            
+        for robot_name in robot_names:
+            robot = self.robots[robot_name]
             row = []
             for task in tasks:
-                # Base distance cost
-                distance_to_pickup = shortest_path_length(self.hospital_map, robot_location, task['from'])
-                distance_task = shortest_path_length(self.hospital_map, task['from'], task['to'])
+                if task.get("assigned_robot") and task["assigned_robot"] != robot_name:
+                    row.append(1e9)
+                    continue
+
+                distance_to_pickup = shortest_path_length(self.hospital_map, robot["location"], task["from"])
+                distance_task = shortest_path_length(self.hospital_map, task["from"], task["to"])
                 total_distance = distance_to_pickup + distance_task
 
+                if self._battery_reject(robot, total_distance):
+                    row.append(1e9)
+                    if self._metric_reject:
+                        self._metric_reject.inc()
+                    continue
+
+                penalty, _ = self._route_penalties(robot["location"], task)
                 congestion = self.estimate_congestion(total_distance)
                 predicted_time = self.predictor.predict(total_distance, congestion)
-                
-                # Specialization matching bonus (reduce cost for matched specialties)
-                spec_bonus = 0.0
-                if task['type'] in specialty_match_bonus.get(robot_type, ['general']):
-                    spec_bonus = -2.0  # Reduce cost for matched specialty
-                
-                # Battery penalty for critical tasks
-                battery_penalty = 0.0
-                if robot_battery < 30.0 and task['priority'] == 'critical':
-                    battery_penalty = 50.0  # Large penalty for low battery on critical tasks
-                elif robot_battery < 50.0 and task['priority'] == 'high':
-                    battery_penalty = 15.0
-                
-                # Priority weight (make cost relative to priority)
-                priority_weight = priority_weights.get(task['priority'], 1.0)
-                
-                # Total cost
-                cost = (predicted_time * priority_weight) + spec_bonus + battery_penalty
-                
+
+                spec_bonus = -2.0 if robot["type"] in specialty_match.get(task["type"], ["general"]) else 0.0
+                slack = max(1, task.get("deadline", int(time.time()) + 180) - int(time.time()))
+                sla_urgency = 12.0 / slack
+
+                busy_penalty = 0.0
+                current = self.active_assignments.get(robot_name)
+                if current:
+                    incoming_prio = task.get("priority", "medium")
+                    if incoming_prio == "critical" and current.get("priority") in self.scenario["sla"]["preemptable_levels"]:
+                        busy_penalty = 8.0
+                    else:
+                        row.append(1e9)
+                        continue
+
+                cost = predicted_time + penalty + busy_penalty + sla_urgency + spec_bonus
                 row.append(cost)
-
-                self.get_logger().info(
-                    f'Cost for {robot}(type={robot_type}) -> {task["task_id"]}(priority={task["priority"]}): '
-                    f'distance={total_distance}, time={predicted_time:.2f}, spec_bonus={spec_bonus:.2f}, '
-                    f'battery_penalty={battery_penalty:.2f}, total={cost:.2f}'
-                )
-                self.logger.info(
-                    f'Cost for {robot}(type={robot_type}) -> {task["task_id"]}(priority={task["priority"]}): '
-                    f'distance={total_distance}, time={predicted_time:.2f}, spec_bonus={spec_bonus:.2f}, '
-                    f'battery_penalty={battery_penalty:.2f}, total={cost:.2f}'
-                )
-
             cost_matrix.append(row)
 
         return robot_names, tasks, cost_matrix
 
     @staticmethod
     def estimate_congestion(distance):
-        # simple congestion model: longer path = higher congestion index
         return max(0.0, distance - 2.0)
 
     def assign_tasks(self):
-        robot_names, tasks, cost_matrix = self.compute_cost_matrix()
+        if not self.tasks:
+            return []
 
-        if not cost_matrix:
-            self.get_logger().warn('No tasks to assign')
-            self.logger.warning('No tasks to assign')
+        robot_names, tasks, cost_matrix = self.compute_cost_matrix()
+        if not cost_matrix or not cost_matrix[0]:
             return []
 
         row_ind, col_ind = linear_sum_assignment(cost_matrix)
-
         assignments = []
         for r, t in zip(row_ind, col_ind):
+            if cost_matrix[r][t] >= 1e8:
+                continue
             robot_name = robot_names[r]
-            task_detail = tasks[t]
-            assignment_msg = f'{robot_name}: {task_detail["task_id"]} ({task_detail["from"]} -> {task_detail["to"]})'
-            assignments.append((robot_name, task_detail, assignment_msg))
+            task = tasks[t]
+
+            # Preemption for critical tasks.
+            current = self.active_assignments.get(robot_name)
+            if current and task.get("priority") == "critical":
+                if self._priority_value(current.get("priority", "low")) < self._priority_value("critical"):
+                    self._emit_structured("preempt", robot=robot_name, from_task=current.get("task_id"), to_task=task["task_id"])
+                    if self._metric_preempt:
+                        self._metric_preempt.inc()
+
+            assignment_msg = (
+                f"{robot_name}: {task['task_id']} ({task['from']} -> {task['to']}) "
+                f"[priority={task.get('priority', 'medium')},type={task.get('type', 'general')}]"
+            )
+            assignments.append((robot_name, task, assignment_msg))
 
         return assignments
 
+    def _update_corridor_load(self, robot_name, task):
+        path_to_pickup = shortest_path(self.hospital_map, self.robots[robot_name]["location"], task["from"])
+        path_task = shortest_path(self.hospital_map, task["from"], task["to"])
+        full_path = path_to_pickup + path_task[1:]
+        for i in range(len(full_path) - 1):
+            edge = tuple(sorted((full_path[i], full_path[i + 1])))
+            self.edge_load[edge] = self.edge_load.get(edge, 0) + 1
+
     def publish_assignments(self, assignments):
-        for robot_name, task_detail, assignment_msg in assignments:
+        now = time.time()
+        for robot_name, task, assignment_msg in assignments:
             msg = String()
             msg.data = assignment_msg
             self.publisher.publish(msg)
-            self.get_logger().info(f'Published assignment: {assignment_msg}')
-            self.logger.info(f'Published assignment: {assignment_msg}')
+
+            duration = task.get("duration", 10)
+            self.active_assignments[robot_name] = {
+                "task_id": task["task_id"],
+                "priority": task.get("priority", "medium"),
+                "finish_time": now + duration,
+            }
+            self._update_corridor_load(robot_name, task)
+
+            self.get_logger().info(f"Published assignment: {assignment_msg}")
+            self._emit_structured("assignment", robot=robot_name, task=task["task_id"], priority=task.get("priority"), task_type=task.get("type"))
 
     def update_robot_locations(self, assignments):
-        for robot_name, task_detail, _ in assignments:
-            self.robots[robot_name]['location'] = task_detail['to']
-            # Simulate battery drain: ~2-3% per task
-            self.robots[robot_name]['battery'] = max(0.0, self.robots[robot_name]['battery'] - random.uniform(2.0, 3.0))
+        for robot_name, task, _ in assignments:
+            self.robots[robot_name]["location"] = task["to"]
+            if task.get("type") == "charge":
+                self.robots[robot_name]["battery"] = self.scenario["charging"]["target_percent"]
+            else:
+                self.robots[robot_name]["battery"] = max(0.0, self.robots[robot_name]["battery"] - random.uniform(2.0, 3.5))
+
+    def _prune_task_queue(self, assignments):
+        assigned_ids = {task["task_id"] for _, task, _ in assignments}
+        self.tasks = [t for t in self.tasks if t.get("task_id") not in assigned_ids]
+        if len(self.tasks) > 40:
+            self.tasks = self.tasks[-40:]
 
     def run_scheduler_cycle(self):
-        self.get_logger().info('Starting scheduler cycle')
-        self.logger.info('Starting scheduler cycle')
-        
-        # Generate new dynamic tasks
+        self._refresh_active_assignments()
+        self._inject_charge_tasks()
+
         new_tasks = self.generate_dynamic_tasks()
         self.tasks.extend(new_tasks)
-        if new_tasks:
-            self.get_logger().info(f'Generated {len(new_tasks)} new tasks')
-            self.logger.info(f'Generated {len(new_tasks)} new tasks')
-        
-        # Clean up completed/old tasks (keep only last 30)
-        if len(self.tasks) > 30:
-            self.tasks = self.tasks[-30:]
-        
         assignments = self.assign_tasks()
-        if not assignments:
-            self.get_logger().warn('No assignments generated')
-            self.logger.warning('No assignments generated')
-            return
+        if assignments:
+            self.publish_assignments(assignments)
+            self.update_robot_locations(assignments)
+            self._prune_task_queue(assignments)
 
-        self.publish_assignments(assignments)
-        self.update_robot_locations(assignments)
-        
-        # Track assignments
-        for robot_name, task_detail, msg in assignments:
-            self.assignment_history.append({
-                'timestamp': time.time(),
-                'robot': robot_name,
-                'task': task_detail['task_id'],
-                'message': msg
-            })
-        
-        # Keep only last 100 assignments
-        if len(self.assignment_history) > 100:
-            self.assignment_history = self.assignment_history[-100:]
-        
-        # Log battery status
-        self.get_logger().info('Robot battery status:')
-        self.logger.info('Robot battery status:')
-        for robot_name, robot_info in self.robots.items():
-            self.get_logger().info(f'  {robot_name}: {robot_info["battery"]:.1f}% (type={robot_info["type"]})')
-            self.logger.info(f'  {robot_name}: {robot_info["battery"]:.1f}% (type={robot_info["type"]})')
-        
-        self.get_logger().info('Scheduler cycle completed')
-        self.logger.info('Scheduler cycle completed')
+            for robot_name, task, msg in assignments:
+                self.assignment_history.append(
+                    {
+                        "timestamp": time.time(),
+                        "robot": robot_name,
+                        "task": task["task_id"],
+                        "message": msg,
+                    }
+                )
+            if len(self.assignment_history) > 150:
+                self.assignment_history = self.assignment_history[-150:]
+
+        if self._metric_cycle:
+            self._metric_cycle.inc()
+        if self._metric_queue:
+            self._metric_queue.set(len(self.tasks))
+        if self._metric_busy:
+            self._metric_busy.set(len(self.active_assignments))
+
+        self.get_logger().info(f"Cycle done: queued_tasks={len(self.tasks)}, busy={len(self.active_assignments)}")
 
 
 def main(args=None):
     rclpy.init(args=args)
     node = FleetScheduler()
-    node.get_logger().info('Fleet scheduler node started')
+    node.get_logger().info("Fleet scheduler node started")
     try:
         rclpy.spin(node)
     except (KeyboardInterrupt, ExternalShutdownException):
@@ -303,5 +371,5 @@ def main(args=None):
             rclpy.shutdown()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

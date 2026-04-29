@@ -1,0 +1,10 @@
+setuptools
+numpy
+scipy
+networkx
+scikit-learn
+joblib
+pyyaml
+flask
+prometheus-client
+gunicorn

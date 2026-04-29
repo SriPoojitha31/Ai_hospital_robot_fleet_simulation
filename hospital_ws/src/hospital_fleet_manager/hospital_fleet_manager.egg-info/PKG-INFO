@@ -4,6 +4,14 @@ Version: 0.1.0
 Summary: AI-Based Hospital Robot Fleet Simulation package
 Author: AI Hospital Team
 Requires-Dist: setuptools
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: networkx
+Requires-Dist: scikit-learn
+Requires-Dist: joblib
+Requires-Dist: pyyaml
+Requires-Dist: flask
+Requires-Dist: prometheus-client
 Dynamic: author
 Dynamic: requires-dist
 Dynamic: summary

@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing hospital_fleet_manager.egg-info/PKG-INFO
+writing dependency_links to hospital_fleet_manager.egg-info/dependency_links.txt
+writing entry points to hospital_fleet_manager.egg-info/entry_points.txt
+writing requirements to hospital_fleet_manager.egg-info/requires.txt
+writing top-level names to hospital_fleet_manager.egg-info/top_level.txt
+reading manifest file 'hospital_fleet_manager.egg-info/SOURCES.txt'
+writing manifest file 'hospital_fleet_manager.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/python3.12/site-packages/hospital-fleet-manager.egg-link (link to .)
+Installing dashboard script to /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager
+Installing dashboard_visual script to /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager
+Installing fleet_scheduler script to /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager
+Installing robot_simulator script to /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager
+
+Installed /home/india/Documents/ai-hospital/hospital_ws/build/hospital_fleet_manager
+running install_data
+copying hospital_fleet_manager/launch/hospital_stack.launch.py -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/launch
+copying hospital_fleet_manager/launch/gazebo_hospital.launch.py -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/launch
+copying hospital_fleet_manager/models/model.sdf -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/models
+copying hospital_fleet_manager/models/hospital_robot/hospital_robot.urdf -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/models
+copying hospital_fleet_manager/models/hospital_robot/model.sdf -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/models
+copying hospital_fleet_manager/models/hospital_robot/model.config -> /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/models

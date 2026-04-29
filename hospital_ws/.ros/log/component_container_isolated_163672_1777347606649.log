@@ -1,0 +1,16 @@
+[INFO] [1777347608.161224151] [patient_mover_2.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777347608.223055201] [patient_mover_2.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777347608.223112220] [patient_mover_2.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777347608.223118434] [patient_mover_2.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777347608.223123725] [patient_mover_2.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777347608.461112107] [patient_mover_2.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777347608.461192211] [patient_mover_2.map_server]: Creating
+[INFO] [1777347608.475417755] [patient_mover_2.nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1777347608.512938553] [patient_mover_2.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777347608.513005745] [patient_mover_2.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777347608.557975656] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777347608.558115892] [patient_mover_2.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777347608.558195293] [patient_mover_2.map_server]: Destroying bond (map_server) to lifecycle manager.

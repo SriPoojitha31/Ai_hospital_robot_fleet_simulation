@@ -1,0 +1,130 @@
+[INFO] [1777348200.153445765] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777348200.229169753] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777348200.229216675] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777348200.229226713] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348200.229234417] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777348200.326969987] [patient_mover_1.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348200.327134944] [patient_mover_1.map_server]: Creating
+[INFO] [1777348200.327713690] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1777348200.337911147] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348200.337964422] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1777348200.773436041] [patient_mover_1.amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348200.773823212] [patient_mover_1.amcl]: Creating
+[INFO] [1777348200.817501956] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1777348200.828663920] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348200.828720127] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777348201.141520982] [patient_mover_1.controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348201.155841537] [patient_mover_1.controller_server]: Creating controller server
+[INFO] [1777348201.327883125] [patient_mover_1.local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348201.328594715] [patient_mover_1.local_costmap.local_costmap]: Creating Costmap
+[INFO] [1777348201.613243078] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1777348201.614975958] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348201.615048329] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1777348201.770887537] [patient_mover_1.lifecycle_manager_localization]: Creating
+[INFO] [1777348201.825946904] [patient_mover_1.lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1777348201.933921473] [patient_mover_1.lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1777348201.933983209] [patient_mover_1.lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1777348201.934550400] [patient_mover_1.map_server]: Configuring
+[INFO] [1777348201.935034889] [map_io]: Loading yaml file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.yaml
+[INFO] [1777348201.938443347] [map_io]: resolution: 0.05
+[INFO] [1777348201.938482522] [map_io]: origin[0]: -10
+[INFO] [1777348201.940064272] [map_io]: origin[1]: -10
+[INFO] [1777348201.940092106] [map_io]: origin[2]: 0
+[INFO] [1777348201.940099366] [map_io]: free_thresh: 0.196
+[INFO] [1777348201.940104980] [map_io]: occupied_thresh: 0.65
+[INFO] [1777348201.940374367] [map_io]: mode: trinary
+[INFO] [1777348201.940415636] [map_io]: negate: 0
+[INFO] [1777348201.940766766] [map_io]: Loading image_file: /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm
+[INFO] [1777348201.949396410] [map_io]: Read map /home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/share/hospital_fleet_manager/maps/hospital_map.pgm: 400 X 400 map @ 0.05 m/cell
+[INFO] [1777348201.989811571] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1777348202.013427877] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348202.013506204] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1777348202.042493173] [patient_mover_1.lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1777348202.044029526] [patient_mover_1.amcl]: Configuring
+[INFO] [1777348202.044197367] [patient_mover_1.amcl]: initTransforms
+[INFO] [1777348202.189907321] [patient_mover_1.amcl]: initPubSub
+[INFO] [1777348202.398065239] [patient_mover_1.amcl]: Subscribed to map topic.
+[INFO] [1777348202.473204984] [patient_mover_1.smoother_server]: 
+	smoother_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348202.474893891] [patient_mover_1.smoother_server]: Creating smoother server
+[INFO] [1777348202.648519252] [patient_mover_1.lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1777348202.649336321] [patient_mover_1.map_server]: Activating
+[INFO] [1777348202.649822512] [patient_mover_1.map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1777348202.653347263] [patient_mover_1.amcl]: Received a 400 X 400 map @ 0.050 m/pix
+[INFO] [1777348202.719374340] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1777348202.720884883] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348202.720939765] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1777348202.801012748] [patient_mover_1.lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1777348202.801074457] [patient_mover_1.lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1777348202.803896584] [patient_mover_1.amcl]: Activating
+[INFO] [1777348202.803964581] [patient_mover_1.amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1777348203.041618866] [patient_mover_1.lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1777348203.041673755] [patient_mover_1.lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1777348203.041695500] [patient_mover_1.lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1777348203.191372224] [patient_mover_1.planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.196169678] [patient_mover_1.planner_server]: Creating
+[INFO] [1777348203.776816770] [patient_mover_1.global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348203.777350522] [patient_mover_1.global_costmap.global_costmap]: Creating Costmap
+[INFO] [1777348206.372282361] [patient_mover_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libroute_server_core.so
+[INFO] [1777348206.375088919] [patient_mover_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348206.375143183] [patient_mover_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_route::RouteServer>
+[INFO] [1777348206.903876723] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777348206.903989157] [patient_mover_1.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777348206.904083263] [patient_mover_1.map_server]: Deactivating
+[INFO] [1777348206.904099318] [patient_mover_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.914659567] [patient_mover_1.map_server]: Cleaning up
+[INFO] [1777348206.914713027] [patient_mover_1.map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1777348206.914724404] [patient_mover_1.amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1777348206.914751253] [patient_mover_1.amcl]: Deactivating
+[INFO] [1777348206.914790843] [patient_mover_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348206.915116429] [patient_mover_1.route_server]: 
+	route_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777348206.925772322] [patient_mover_1.amcl]: Cleaning up
+[INFO] [1777348207.041936261] [patient_mover_1.lifecycle_manager_localization]: [34m[1mHave not received a heartbeat from map_server.[0m[0m
+[ERROR] [1777348207.042021128] [patient_mover_1.lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1777348207.042120720] [patient_mover_1.lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1777348207.042143771] [patient_mover_1.lifecycle_manager_localization]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1777348207.042159392] [patient_mover_1.lifecycle_manager_localization]: [34m[1mDeactivating amcl[0m[0m
+[WARN] [1777348207.760715902] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+[WARN] [1777348207.760770675] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+[ERROR] [1777348207.760794364] [patient_mover_1.amcl]: Unable to start transition 4 from current state cleaningup: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1777348207.768353721] [patient_mover_1.lifecycle_manager_localization]: Failed to change state for node: amcl
+[INFO] [1777348207.768486645] [patient_mover_1.lifecycle_manager_localization]: [34m[1mDeactivating map_server[0m[0m
+[WARN] [1777348207.770588120] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[WARN] [1777348207.770639541] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1777348207.770650850] [patient_mover_1.map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1777348207.772906895] [patient_mover_1.amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1777348207.772994066] [patient_mover_1.controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1777348207.773017001] [patient_mover_1.controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1777348207.773030916] [patient_mover_1.lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[ERROR] [1777348207.777875670] [patient_mover_1.lifecycle_manager_localization]: Failed to change state for node: map_server
+[INFO] [1777348207.777973191] [patient_mover_1.lifecycle_manager_localization]: [34m[1mCleaning up amcl[0m[0m
+[WARN] [1777348207.786332090] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[WARN] [1777348207.786369073] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1777348207.786381508] [patient_mover_1.amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1777348207.795460841] [patient_mover_1.lifecycle_manager_localization]: [34m[1mCleaning up map_server[0m[0m
+[WARN] [1777348207.799621587] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[WARN] [1777348207.799672472] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1777348207.799682373] [patient_mover_1.map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355

@@ -1,0 +1,191 @@
+1777347601.4454672 [INFO] [launch]: All log files can be found below /home/india/Documents/ai-hospital/hospital_ws/.ros/log/2026-04-28-09-10-01-434190-Bunny-163535
+1777347601.4457388 [INFO] [launch]: Default logging verbosity is set to INFO
+1777347606.5739942 [INFO] [gazebo-1]: process started with pid [163635]
+1777347606.5747366 [INFO] [parameter_bridge-2]: process started with pid [163636]
+1777347606.5780511 [INFO] [robot_state_publisher-3]: process started with pid [163638]
+1777347606.5782666 [INFO] [robot_state_publisher-4]: process started with pid [163639]
+1777347606.5784023 [INFO] [robot_state_publisher-5]: process started with pid [163640]
+1777347606.5785131 [INFO] [robot_state_publisher-6]: process started with pid [163641]
+1777347606.5786214 [INFO] [robot_state_publisher-7]: process started with pid [163642]
+1777347606.5787234 [INFO] [robot_state_publisher-8]: process started with pid [163643]
+1777347606.5788491 [INFO] [robot_state_publisher-9]: process started with pid [163644]
+1777347606.5789447 [INFO] [robot_state_publisher-10]: process started with pid [163645]
+1777347606.5790455 [INFO] [robot_state_publisher-11]: process started with pid [163646]
+1777347606.5791545 [INFO] [robot_state_publisher-12]: process started with pid [163647]
+1777347606.5792718 [INFO] [robot_state_publisher-13]: process started with pid [163648]
+1777347606.5793788 [INFO] [robot_state_publisher-14]: process started with pid [163649]
+1777347606.5794806 [INFO] [component_container_isolated-15]: process started with pid [163650]
+1777347606.5795779 [INFO] [component_container_isolated-16]: process started with pid [163651]
+1777347606.5796874 [INFO] [component_container_isolated-17]: process started with pid [163652]
+1777347606.5798106 [INFO] [component_container_isolated-18]: process started with pid [163653]
+1777347606.5800583 [INFO] [component_container_isolated-19]: process started with pid [163660]
+1777347606.5801892 [INFO] [component_container_isolated-20]: process started with pid [163667]
+1777347606.5803063 [INFO] [component_container_isolated-21]: process started with pid [163672]
+1777347606.5804198 [INFO] [component_container_isolated-22]: process started with pid [163677]
+1777347606.5806146 [INFO] [component_container_isolated-23]: process started with pid [163680]
+1777347606.5808971 [INFO] [component_container_isolated-24]: process started with pid [163685]
+1777347606.5828063 [INFO] [component_container_isolated-25]: process started with pid [163688]
+1777347606.5831096 [INFO] [component_container_isolated-26]: process started with pid [163693]
+1777347606.5833118 [INFO] [fleet_scheduler-27]: process started with pid [163698]
+1777347606.5834773 [INFO] [robot_simulator-28]: process started with pid [163699]
+1777347606.5836270 [INFO] [dashboard_visual-29]: process started with pid [163703]
+1777347606.6949654 [robot_state_publisher-9] [WARN] [1777347606.684126563] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347606.6951590 [robot_state_publisher-9] [INFO] [1777347606.684342935] [patient_mover_2.patient_mover_2_state_publisher]: Robot initialized
+1777347606.6955991 [robot_state_publisher-14] [WARN] [1777347606.685263338] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347606.6956842 [robot_state_publisher-14] [INFO] [1777347606.685418561] [general_2.general_2_state_publisher]: Robot initialized
+1777347606.6959829 [robot_state_publisher-5] [WARN] [1777347606.685905939] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347606.6960402 [robot_state_publisher-5] [INFO] [1777347606.686080163] [delivery_3.delivery_3_state_publisher]: Robot initialized
+1777347606.7235565 [robot_state_publisher-10] [WARN] [1777347606.720394512] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347606.7238123 [robot_state_publisher-10] [INFO] [1777347606.720544631] [heavy_supply_1.heavy_supply_1_state_publisher]: Robot initialized
+1777347606.9488106 [robot_state_publisher-7] [WARN] [1777347606.945646493] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347606.9495368 [robot_state_publisher-7] [INFO] [1777347606.945850903] [cleaning_2.cleaning_2_state_publisher]: Robot initialized
+1777347607.1594689 [ERROR] [dashboard_visual-29]: process has died [pid 163703, exit code 1, cmd '/home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager/dashboard_visual --ros-args -r __node:=dashboard_visual'].
+1777347607.2010458 [robot_state_publisher-6] [WARN] [1777347607.196279397] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.2049830 [robot_state_publisher-6] [INFO] [1777347607.201722055] [cleaning_1.cleaning_1_state_publisher]: Robot initialized
+1777347607.2378223 [robot_state_publisher-8] [WARN] [1777347607.236707312] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.2381055 [robot_state_publisher-8] [INFO] [1777347607.236947716] [patient_mover_1.patient_mover_1_state_publisher]: Robot initialized
+1777347607.3920469 [robot_state_publisher-4] [WARN] [1777347607.386471817] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.3924625 [robot_state_publisher-4] [INFO] [1777347607.386703389] [delivery_2.delivery_2_state_publisher]: Robot initialized
+1777347607.3943162 [robot_state_publisher-13] [WARN] [1777347607.386577419] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.4053349 [robot_state_publisher-13] [INFO] [1777347607.386732584] [general_1.general_1_state_publisher]: Robot initialized
+1777347607.4267983 [robot_state_publisher-11] [WARN] [1777347607.426015051] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.4301872 [robot_state_publisher-11] [INFO] [1777347607.426221763] [lab_courier_1.lab_courier_1_state_publisher]: Robot initialized
+1777347607.4618545 [robot_state_publisher-3] [WARN] [1777347607.459909824] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.4668906 [robot_state_publisher-3] [INFO] [1777347607.460808350] [delivery_1.delivery_1_state_publisher]: Robot initialized
+1777347607.5083432 [parameter_bridge-2] [INFO] [1777347607.506604328] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_1/cmd_vel (gz.msgs.Twist) -> /delivery_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347607.5180128 [robot_state_publisher-12] [WARN] [1777347607.516434406] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+1777347607.5182748 [robot_state_publisher-12] [INFO] [1777347607.516649417] [emergency_1.emergency_1_state_publisher]: Robot initialized
+1777347607.5391388 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/delivery_3/map_server' in container 'delivery_3/nav2_container'
+1777347607.5519786 [parameter_bridge-2] [INFO] [1777347607.542775621] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_1/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347607.5678647 [parameter_bridge-2] [INFO] [1777347607.566545716] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_1/odom (gz.msgs.Odometry) -> /delivery_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347607.5900390 [parameter_bridge-2] [INFO] [1777347607.588523779] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_1/odom (nav_msgs/msg/Odometry) -> /delivery_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347607.6097093 [parameter_bridge-2] [INFO] [1777347607.606203804] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_2/cmd_vel (gz.msgs.Twist) -> /delivery_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347607.6339021 [parameter_bridge-2] [INFO] [1777347607.631365025] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_2/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347607.6644130 [parameter_bridge-2] [INFO] [1777347607.651552325] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_2/odom (gz.msgs.Odometry) -> /delivery_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347607.6646821 [parameter_bridge-2] [INFO] [1777347607.653428701] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_2/odom (nav_msgs/msg/Odometry) -> /delivery_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347607.6940532 [parameter_bridge-2] [INFO] [1777347607.689990751] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_3/cmd_vel (gz.msgs.Twist) -> /delivery_3/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347607.7107954 [parameter_bridge-2] [INFO] [1777347607.709859903] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_3/cmd_vel (geometry_msgs/msg/Twist) -> /delivery_3/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347607.7369900 [parameter_bridge-2] [INFO] [1777347607.736454507] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/delivery_3/odom (gz.msgs.Odometry) -> /delivery_3/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347607.7574086 [parameter_bridge-2] [INFO] [1777347607.756869035] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/delivery_3/odom (nav_msgs/msg/Odometry) -> /delivery_3/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347607.7792830 [parameter_bridge-2] [INFO] [1777347607.777796508] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_1/cmd_vel (gz.msgs.Twist) -> /cleaning_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347607.8014445 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/patient_mover_1/amcl' in container 'patient_mover_1/nav2_container'
+1777347607.8067944 [parameter_bridge-2] [INFO] [1777347607.801433667] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_1/cmd_vel (geometry_msgs/msg/Twist) -> /cleaning_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347607.8173676 [parameter_bridge-2] [INFO] [1777347607.811265920] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_1/odom (gz.msgs.Odometry) -> /cleaning_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347607.8181720 [INFO] [gazebo-1]: process has finished cleanly [pid 163635]
+1777347607.8188453 [INFO] [launch]: process[gazebo-1] was required: shutting down launched system
+1777347608.4294727 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'cleaning_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.4407878 [INFO] [robot_simulator-28]: sending signal 'SIGINT' to process[robot_simulator-28]
+1777347608.4481952 [ERROR] [fleet_scheduler-27]: process has died [pid 163698, exit code 1, cmd '/home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager/fleet_scheduler --ros-args -r __node:=fleet_scheduler'].
+1777347608.4630301 [INFO] [component_container_isolated-26]: sending signal 'SIGINT' to process[component_container_isolated-26]
+1777347608.4738510 [INFO] [component_container_isolated-25]: sending signal 'SIGINT' to process[component_container_isolated-25]
+1777347608.4804566 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'cleaning_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.4859247 [INFO] [component_container_isolated-24]: sending signal 'SIGINT' to process[component_container_isolated-24]
+1777347608.5160534 [INFO] [component_container_isolated-23]: sending signal 'SIGINT' to process[component_container_isolated-23]
+1777347608.5374076 [INFO] [component_container_isolated-22]: sending signal 'SIGINT' to process[component_container_isolated-22]
+1777347608.5544014 [INFO] [component_container_isolated-21]: sending signal 'SIGINT' to process[component_container_isolated-21]
+1777347608.5701933 [INFO] [component_container_isolated-20]: sending signal 'SIGINT' to process[component_container_isolated-20]
+1777347608.5803359 [INFO] [component_container_isolated-19]: sending signal 'SIGINT' to process[component_container_isolated-19]
+1777347608.5853548 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'patient_mover_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.5893879 [INFO] [component_container_isolated-18]: sending signal 'SIGINT' to process[component_container_isolated-18]
+1777347608.6047935 [INFO] [component_container_isolated-17]: sending signal 'SIGINT' to process[component_container_isolated-17]
+1777347608.6112158 [INFO] [component_container_isolated-16]: sending signal 'SIGINT' to process[component_container_isolated-16]
+1777347608.6198478 [INFO] [component_container_isolated-15]: sending signal 'SIGINT' to process[component_container_isolated-15]
+1777347608.6264977 [INFO] [robot_state_publisher-14]: sending signal 'SIGINT' to process[robot_state_publisher-14]
+1777347608.6336024 [INFO] [robot_state_publisher-13]: sending signal 'SIGINT' to process[robot_state_publisher-13]
+1777347608.6411874 [INFO] [robot_state_publisher-12]: sending signal 'SIGINT' to process[robot_state_publisher-12]
+1777347608.6439521 [INFO] [component_container_isolated-26]: process has finished cleanly [pid 163693]
+1777347608.6481552 [INFO] [robot_state_publisher-11]: sending signal 'SIGINT' to process[robot_state_publisher-11]
+1777347608.6549075 [INFO] [robot_state_publisher-10]: sending signal 'SIGINT' to process[robot_state_publisher-10]
+1777347608.6614122 [INFO] [robot_state_publisher-9]: sending signal 'SIGINT' to process[robot_state_publisher-9]
+1777347608.6689923 [INFO] [robot_state_publisher-8]: sending signal 'SIGINT' to process[robot_state_publisher-8]
+1777347608.6710651 [INFO] [component_container_isolated-25]: process has finished cleanly [pid 163688]
+1777347608.6714029 [INFO] [component_container_isolated-24]: process has finished cleanly [pid 163685]
+1777347608.6767454 [INFO] [robot_state_publisher-7]: sending signal 'SIGINT' to process[robot_state_publisher-7]
+1777347608.6836035 [INFO] [robot_state_publisher-6]: sending signal 'SIGINT' to process[robot_state_publisher-6]
+1777347608.6910205 [INFO] [robot_state_publisher-5]: sending signal 'SIGINT' to process[robot_state_publisher-5]
+1777347608.6977036 [INFO] [robot_state_publisher-4]: sending signal 'SIGINT' to process[robot_state_publisher-4]
+1777347608.7050657 [INFO] [robot_state_publisher-3]: sending signal 'SIGINT' to process[robot_state_publisher-3]
+1777347608.7122633 [INFO] [parameter_bridge-2]: sending signal 'SIGINT' to process[parameter_bridge-2]
+1777347608.7162747 [parameter_bridge-2] [INFO] [1777347607.837692501] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_1/odom (nav_msgs/msg/Odometry) -> /cleaning_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7165537 [parameter_bridge-2] [INFO] [1777347607.860037117] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_2/cmd_vel (gz.msgs.Twist) -> /cleaning_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7166703 [parameter_bridge-2] [INFO] [1777347607.879914358] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_2/cmd_vel (geometry_msgs/msg/Twist) -> /cleaning_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7168028 [parameter_bridge-2] [INFO] [1777347607.896376258] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cleaning_2/odom (gz.msgs.Odometry) -> /cleaning_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7169080 [parameter_bridge-2] [INFO] [1777347607.923384717] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cleaning_2/odom (nav_msgs/msg/Odometry) -> /cleaning_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7169933 [parameter_bridge-2] [INFO] [1777347607.938444820] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_1/cmd_vel (gz.msgs.Twist) -> /patient_mover_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7170937 [parameter_bridge-2] [INFO] [1777347607.961791148] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_1/cmd_vel (geometry_msgs/msg/Twist) -> /patient_mover_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7171884 [parameter_bridge-2] [INFO] [1777347607.986004695] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_1/odom (gz.msgs.Odometry) -> /patient_mover_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7172885 [parameter_bridge-2] [INFO] [1777347607.992310412] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_1/odom (nav_msgs/msg/Odometry) -> /patient_mover_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7173874 [parameter_bridge-2] [INFO] [1777347608.017320155] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_2/cmd_vel (gz.msgs.Twist) -> /patient_mover_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7174785 [parameter_bridge-2] [INFO] [1777347608.025195389] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_2/cmd_vel (geometry_msgs/msg/Twist) -> /patient_mover_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7175677 [parameter_bridge-2] [INFO] [1777347608.039679246] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/patient_mover_2/odom (gz.msgs.Odometry) -> /patient_mover_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7176545 [parameter_bridge-2] [INFO] [1777347608.051034689] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/patient_mover_2/odom (nav_msgs/msg/Odometry) -> /patient_mover_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7177439 [parameter_bridge-2] [INFO] [1777347608.056079066] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/heavy_supply_1/cmd_vel (gz.msgs.Twist) -> /heavy_supply_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7178605 [parameter_bridge-2] [INFO] [1777347608.080056164] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/heavy_supply_1/cmd_vel (geometry_msgs/msg/Twist) -> /heavy_supply_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7179525 [parameter_bridge-2] [INFO] [1777347608.096071739] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/heavy_supply_1/odom (gz.msgs.Odometry) -> /heavy_supply_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7180409 [parameter_bridge-2] [INFO] [1777347608.102075148] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/heavy_supply_1/odom (nav_msgs/msg/Odometry) -> /heavy_supply_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7181251 [parameter_bridge-2] [INFO] [1777347608.111599324] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/lab_courier_1/cmd_vel (gz.msgs.Twist) -> /lab_courier_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7182126 [parameter_bridge-2] [INFO] [1777347608.123835877] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/lab_courier_1/cmd_vel (geometry_msgs/msg/Twist) -> /lab_courier_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7182949 [parameter_bridge-2] [INFO] [1777347608.126843343] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/lab_courier_1/odom (gz.msgs.Odometry) -> /lab_courier_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7183795 [parameter_bridge-2] [INFO] [1777347608.139339120] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/lab_courier_1/odom (nav_msgs/msg/Odometry) -> /lab_courier_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7184730 [parameter_bridge-2] [INFO] [1777347608.150086946] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/emergency_1/cmd_vel (gz.msgs.Twist) -> /emergency_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7185559 [parameter_bridge-2] [INFO] [1777347608.162191710] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/emergency_1/cmd_vel (geometry_msgs/msg/Twist) -> /emergency_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7186592 [parameter_bridge-2] [INFO] [1777347608.164324785] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/emergency_1/odom (gz.msgs.Odometry) -> /emergency_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7187390 [parameter_bridge-2] [INFO] [1777347608.177872344] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/emergency_1/odom (nav_msgs/msg/Odometry) -> /emergency_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7188404 [parameter_bridge-2] [INFO] [1777347608.186874026] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_1/cmd_vel (gz.msgs.Twist) -> /general_1/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7189212 [parameter_bridge-2] [INFO] [1777347608.209097945] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_1/cmd_vel (geometry_msgs/msg/Twist) -> /general_1/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7190084 [parameter_bridge-2] [INFO] [1777347608.220432454] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_1/odom (gz.msgs.Odometry) -> /general_1/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7190998 [parameter_bridge-2] [INFO] [1777347608.247578337] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_1/odom (nav_msgs/msg/Odometry) -> /general_1/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7191894 [parameter_bridge-2] [INFO] [1777347608.262304555] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_2/cmd_vel (gz.msgs.Twist) -> /general_2/cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+1777347608.7192910 [parameter_bridge-2] [INFO] [1777347608.264783620] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_2/cmd_vel (geometry_msgs/msg/Twist) -> /general_2/cmd_vel (gz.msgs.Twist)] (Lazy 0)
+1777347608.7193844 [parameter_bridge-2] [INFO] [1777347608.266893726] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/general_2/odom (gz.msgs.Odometry) -> /general_2/odom (nav_msgs/msg/Odometry)] (Lazy 0)
+1777347608.7194703 [parameter_bridge-2] [INFO] [1777347608.269788402] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/general_2/odom (nav_msgs/msg/Odometry) -> /general_2/odom (gz.msgs.Odometry)] (Lazy 0)
+1777347608.7317405 [INFO] [component_container_isolated-19]: process has finished cleanly [pid 163660]
+1777347608.7437315 [robot_state_publisher-14] [INFO] [1777347608.626872492] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7442577 [robot_state_publisher-13] [INFO] [1777347608.634207012] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7449508 [robot_state_publisher-12] [INFO] [1777347608.641858094] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7453973 [robot_state_publisher-11] [INFO] [1777347608.648681346] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7458153 [robot_state_publisher-10] [INFO] [1777347608.655982244] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7462349 [robot_state_publisher-9] [INFO] [1777347608.661794231] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7476909 [robot_state_publisher-8] [INFO] [1777347608.670313871] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7481768 [robot_state_publisher-7] [INFO] [1777347608.677375508] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7486007 [robot_state_publisher-6] [INFO] [1777347608.685288845] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7490153 [robot_state_publisher-5] [INFO] [1777347608.692278283] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7498395 [robot_state_publisher-4] [INFO] [1777347608.700403532] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7502728 [robot_state_publisher-3] [INFO] [1777347608.705424823] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.7506928 [parameter_bridge-2] [INFO] [1777347608.715159821] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+1777347608.8052971 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'patient_mover_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.8166769 [INFO] [component_container_isolated-15]: process has finished cleanly [pid 163650]
+1777347608.8171246 [INFO] [component_container_isolated-23]: process has finished cleanly [pid 163680]
+1777347608.8682213 [INFO] [robot_state_publisher-14]: process has finished cleanly [pid 163649]
+1777347608.8749411 [INFO] [robot_state_publisher-13]: process has finished cleanly [pid 163648]
+1777347608.8765218 [INFO] [robot_state_publisher-12]: process has finished cleanly [pid 163647]
+1777347608.8916495 [INFO] [robot_state_publisher-10]: process has finished cleanly [pid 163645]
+1777347608.8972130 [INFO] [robot_simulator-28]: process has finished cleanly [pid 163699]
+1777347608.8994346 [INFO] [robot_state_publisher-5]: process has finished cleanly [pid 163640]
+1777347608.9023378 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'delivery_2/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.9099121 [INFO] [robot_state_publisher-6]: process has finished cleanly [pid 163641]
+1777347608.9180579 [INFO] [robot_state_publisher-7]: process has finished cleanly [pid 163642]
+1777347608.9209700 [INFO] [parameter_bridge-2]: process has finished cleanly [pid 163636]
+1777347608.9274623 [INFO] [robot_state_publisher-11]: process has finished cleanly [pid 163646]
+1777347608.9320157 [INFO] [robot_state_publisher-8]: process has finished cleanly [pid 163643]
+1777347608.9336457 [INFO] [robot_state_publisher-3]: process has finished cleanly [pid 163638]
+1777347608.9372067 [INFO] [robot_state_publisher-9]: process has finished cleanly [pid 163644]
+1777347608.9421601 [INFO] [robot_state_publisher-4]: process has finished cleanly [pid 163639]
+1777347608.9441080 [INFO] [component_container_isolated-22]: process has finished cleanly [pid 163677]
+1777347608.9466720 [INFO] [component_container_isolated-21]: process has finished cleanly [pid 163672]
+1777347608.9754088 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'delivery_2/nav2_container/_container/load_node' service response, due to shutdown.
+1777347608.9775870 [INFO] [component_container_isolated-20]: process has finished cleanly [pid 163667]
+1777347608.9949176 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'delivery_2/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.0018699 [INFO] [component_container_isolated-17]: process has finished cleanly [pid 163652]
+1777347609.0127087 [INFO] [component_container_isolated-16]: process has finished cleanly [pid 163651]
+1777347609.1194987 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'delivery_3/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.1590266 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'delivery_3/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.1601555 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'patient_mover_2/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.2074063 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'patient_mover_2/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.2230763 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'heavy_supply_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.2405062 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'heavy_supply_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.2582014 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'lab_courier_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347609.4123905 [WARNING] [launch_ros.actions.load_composable_nodes]: Abandoning wait for the 'cleaning_1/nav2_container/_container/load_node' service response, due to shutdown.
+1777347613.4296210 [ERROR] [component_container_isolated-18]: process[component_container_isolated-18] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+1777347613.4348431 [INFO] [component_container_isolated-18]: sending signal 'SIGTERM' to process[component_container_isolated-18]
+1777347616.3416176 [ERROR] [component_container_isolated-18]: process has died [pid 163653, exit code -6, cmd '/opt/ros/jazzy/lib/rclcpp_components/component_container_isolated --ros-args --log-level info --ros-args -r __node:=nav2_container -r __ns:=/cleaning_1 --params-file /tmp/launch_params_zipb27n1 --params-file /tmp/launch_params_vr9jo3zc -r /tf:=tf -r /tf_static:=tf_static'].

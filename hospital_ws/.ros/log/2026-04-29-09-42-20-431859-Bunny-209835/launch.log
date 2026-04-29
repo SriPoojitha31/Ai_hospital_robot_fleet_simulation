@@ -1,0 +1,5 @@
+1777435940.4327803 [INFO] [launch]: All log files can be found below /home/india/Documents/ai-hospital/hospital_ws/.ros/log/2026-04-29-09-42-20-431859-Bunny-209835
+1777435940.4329014 [INFO] [launch]: Default logging verbosity is set to INFO
+1777435940.8821101 [INFO] [fleet_scheduler-1]: process started with pid [209872]
+1777435940.8826048 [INFO] [robot_simulator-2]: process started with pid [209873]
+1777435940.8829489 [INFO] [dashboard_visual-3]: process started with pid [209874]

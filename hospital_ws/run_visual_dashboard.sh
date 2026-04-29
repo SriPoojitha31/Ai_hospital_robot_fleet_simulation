@@ -16,8 +16,8 @@ fi
 WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$WORKSPACE_DIR"
 
-# Export Python path
-export PYTHONPATH="${WORKSPACE_DIR}/src:${PYTHONPATH}"
+# Export Python path (actual python package root is src/hospital_fleet_manager)
+export PYTHONPATH="${WORKSPACE_DIR}/src/hospital_fleet_manager:${PYTHONPATH}"
 export ROS_LOG_DIR="${WORKSPACE_DIR}/.ros/log"
 mkdir -p "${ROS_LOG_DIR}"
 

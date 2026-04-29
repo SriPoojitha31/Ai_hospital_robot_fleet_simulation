@@ -1,0 +1,16 @@
+[INFO] [1777347608.222539168] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1777347608.261521616] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1777347608.261591086] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1777347608.261606620] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777347608.261618614] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1777347608.495746685] [heavy_supply_1.map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1777347608.495862800] [heavy_supply_1.map_server]: Creating
+[INFO] [1777347608.496938845] [heavy_supply_1.nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1777347608.536629494] [heavy_supply_1.nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777347608.536702707] [heavy_supply_1.nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1777347608.538703944] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1777347608.538845066] [heavy_supply_1.map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1777347608.538920286] [heavy_supply_1.map_server]: Destroying bond (map_server) to lifecycle manager.

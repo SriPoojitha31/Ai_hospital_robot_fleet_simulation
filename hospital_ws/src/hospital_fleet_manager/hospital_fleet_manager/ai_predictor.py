@@ -1,7 +1,15 @@
 import numpy as np
-from sklearn.linear_model import LinearRegression
-import joblib
 import os
+
+try:
+    from sklearn.linear_model import LinearRegression
+except Exception:
+    LinearRegression = None
+
+try:
+    import joblib
+except Exception:
+    joblib = None
 
 try:
     from ament_index_python.packages import get_package_share_directory
@@ -25,12 +33,21 @@ class EnhancedAIPredictor:
                 base_dir = os.path.dirname(__file__)
             EnhancedAIPredictor.MODEL_PATH = os.path.join(base_dir, 'models', 'ai_model.joblib')
         self.model_path = EnhancedAIPredictor.MODEL_PATH
-        if os.path.exists(self.model_path):
-            self.model = joblib.load(self.model_path)
+        if os.path.exists(self.model_path) and joblib is not None:
+            try:
+                self.model = joblib.load(self.model_path)
+            except Exception:
+                # Handle model incompatibilities (e.g., saved sklearn model without sklearn runtime).
+                self.train_model()
         else:
             self.train_model()
 
     def train_model(self):
+        if LinearRegression is None:
+            # Runtime-safe fallback when sklearn isn't available in ROS system Python.
+            self.model = _FallbackLinearModel(intercept=5.0, distance_coeff=2.0, congestion_coeff=4.0)
+            return
+
         print('Training new AI model...')
         np.random.seed(42)
         n_samples = 1000
@@ -40,12 +57,28 @@ class EnhancedAIPredictor:
         X = np.column_stack((distance, congestion))
         y = 5.0 + 2.0 * distance + 4.0 * congestion + noise
         self.model = LinearRegression().fit(X, y)
-        os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
-        joblib.dump(self.model, self.model_path)
-        print(f'Model saved to {self.model_path}')
+        if joblib is not None:
+            os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
+            joblib.dump(self.model, self.model_path)
+            print(f'Model saved to {self.model_path}')
 
     def predict(self, distance, congestion):
         if distance < 0 or congestion < 0:
             raise ValueError('Distance and congestion must be non-negative')
         return float(self.model.predict([[distance, congestion]])[0])
 
+
+class _FallbackLinearModel:
+    """Minimal drop-in replacement for sklearn model when sklearn isn't installed."""
+
+    def __init__(self, intercept=5.0, distance_coeff=2.0, congestion_coeff=4.0):
+        self.intercept = float(intercept)
+        self.distance_coeff = float(distance_coeff)
+        self.congestion_coeff = float(congestion_coeff)
+
+    def predict(self, X):
+        preds = []
+        for row in X:
+            distance, congestion = row
+            preds.append(self.intercept + self.distance_coeff * distance + self.congestion_coeff * congestion)
+        return np.array(preds, dtype=float)

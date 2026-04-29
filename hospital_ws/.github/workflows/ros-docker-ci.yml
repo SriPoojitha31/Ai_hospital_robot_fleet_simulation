@@ -1,0 +1,38 @@
+name: ROS Docker CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-in-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t ros-jazzy-ci -f .github/docker/Dockerfile .
+
+      - name: Run colcon build inside container
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE":/workspace -w /workspace -e DEBIAN_FRONTEND=noninteractive ros-jazzy-ci /bin/bash -lc "\
+            set -euo pipefail; \
+            python3 -m venv ~/venv && source ~/venv/bin/activate; \
+            pip install -U pip setuptools wheel; \
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi; \
+            source /opt/ros/jazzy/setup.bash; \
+            rosdep update || true; \
+            sudo rosdep install --from-paths src --ignore-src -r -y || true; \
+            colcon build --symlink-install --packages-select hospital_fleet_manager; \
+            echo 'Build finished'; \
+            timeout 20s bash -lc \"source install/setup.bash || true; \
+              export HOSPITAL_PYTHON=~/venv/bin/python3; export HOSPITAL_USE_GUNICORN=0; \
+              USE_GAZEBO=false USE_NAV2=false USE_STATE_PUBLISHERS=false USE_GZ_GUI=false ros2 launch hospital_fleet_manager hospital_stack.launch.py & sleep 8; ps aux | egrep 'dashboard_visual|robot_simulator|fleet_scheduler' || true\"; \
+          "

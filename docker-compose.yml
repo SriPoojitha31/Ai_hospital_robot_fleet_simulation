@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  ai-hospital:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-hospital-stack
+    ports:
+      - "5000:5000"
+      - "9101:9101"
+      - "9102:9102"
+    environment:
+      - HOSPITAL_SCENARIO_FILE=/workspace/hospital_ws/src/hospital_fleet_manager/hospital_fleet_manager/config/scenario_default.yaml

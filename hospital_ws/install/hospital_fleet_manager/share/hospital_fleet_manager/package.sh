@@ -79,6 +79,7 @@ _colcon_package_sh_source_script() {
 
 # source sh hooks
 _colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/hospital_fleet_manager/hook/pythonpath.sh"
+_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/hospital_fleet_manager/hook/ament_prefix_path.sh"
 _colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/../../build/hospital_fleet_manager/share/hospital_fleet_manager/hook/pythonpath_develop.sh"
 
 unset _colcon_package_sh_source_script
