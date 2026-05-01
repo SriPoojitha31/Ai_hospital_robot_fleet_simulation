@@ -1,33 +1,117 @@
-[INFO] [1777436909.488979559] [fleet_scheduler]: Scheduler started with scenario: /home/india/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager/hospital_fleet_manager/config/scenario_default.yaml
-[INFO] [1777436909.489553499] [fleet_scheduler]: Fleet scheduler node started
-[INFO] [1777436930.625458814] [fleet_scheduler]: Published assignment: delivery_1: delivery_3 (Pharmacy -> ICU) [priority=high,type=delivery]
-[INFO] [1777436930.626072442] [fleet_scheduler]: Published assignment: delivery_2: med_delivery_1 (Pharmacy -> WardB) [priority=high,type=delivery]
-[INFO] [1777436930.626528460] [fleet_scheduler]: Published assignment: delivery_3: med_delivery_2 (Pharmacy -> ICU) [priority=critical,type=delivery]
-[INFO] [1777436930.626859702] [fleet_scheduler]: Published assignment: cleaning_1: clean_ward_a (WardA -> WardA) [priority=medium,type=cleaning]
-[INFO] [1777436930.627200278] [fleet_scheduler]: Published assignment: cleaning_2: lab_samples_1 (Lab -> Radiology) [priority=high,type=lab_courier]
-[INFO] [1777436930.627649396] [fleet_scheduler]: Published assignment: patient_mover_1: clean_er (ER -> ER) [priority=high,type=cleaning]
-[INFO] [1777436930.628357011] [fleet_scheduler]: Published assignment: patient_mover_2: patient_mover_2 (Trauma -> PICU) [priority=critical,type=patient_mover]
-[INFO] [1777436930.628820991] [fleet_scheduler]: Published assignment: heavy_supply_1: supply_stock_2 (Supply -> OperatingRoom1) [priority=high,type=heavy_supply]
-[INFO] [1777436930.629329240] [fleet_scheduler]: Published assignment: lab_courier_1: lab_samples_2 (Lab -> ER) [priority=critical,type=lab_courier]
-[INFO] [1777436930.629987917] [fleet_scheduler]: Published assignment: emergency_1: patient_move_1 (ER -> ICU) [priority=critical,type=patient_mover]
-[INFO] [1777436930.630691812] [fleet_scheduler]: Published assignment: general_1: delivery_1 (Pharmacy -> WardA) [priority=critical,type=delivery]
-[INFO] [1777436930.631329411] [fleet_scheduler]: Published assignment: general_2: supply_stock_1 (Supply -> Pharmacy) [priority=medium,type=heavy_supply]
-[INFO] [1777436930.631966042] [fleet_scheduler]: Cycle done: queued_tasks=1, busy=12
-[INFO] [1777436949.447672607] [fleet_scheduler]: Published assignment: patient_mover_1: patient_move_2 (Trauma -> Recovery) [priority=critical,type=patient_mover]
-[INFO] [1777436949.448165849] [fleet_scheduler]: Published assignment: lab_courier_1: patient_mover_4 (Trauma -> ICU) [priority=low,type=patient_mover]
-[INFO] [1777436949.448785979] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=3
-[INFO] [1777436969.445207774] [fleet_scheduler]: Published assignment: general_1: patient_mover_5 (Trauma -> ICU) [priority=critical,type=patient_mover]
-[INFO] [1777436969.445663569] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
-[INFO] [1777436989.445340129] [fleet_scheduler]: Published assignment: cleaning_1: cleaning_6 (WardA -> WardB) [priority=low,type=cleaning]
-[INFO] [1777436989.445765229] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
-[INFO] [1777437009.445488789] [fleet_scheduler]: Published assignment: general_2: delivery_7 (Pharmacy -> ICU) [priority=high,type=delivery]
-[INFO] [1777437009.446075921] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
-[INFO] [1777437029.446433879] [fleet_scheduler]: Published assignment: patient_mover_1: cleaning_9 (WardC -> ER) [priority=medium,type=cleaning]
-[INFO] [1777437029.447107381] [fleet_scheduler]: Published assignment: emergency_1: patient_mover_8 (Trauma -> Recovery) [priority=high,type=patient_mover]
-[INFO] [1777437029.447510980] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
-[INFO] [1777437049.443990479] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
-[INFO] [1777437069.444116264] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
-[INFO] [1777437089.445409976] [fleet_scheduler]: Published assignment: cleaning_2: lab_courier_10 (Lab -> ER) [priority=high,type=lab_courier]
-[INFO] [1777437089.445818434] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
-[INFO] [1777437109.448795398] [fleet_scheduler]: Published assignment: cleaning_2: cleaning_11 (ER -> WardB) [priority=high,type=cleaning]
-[INFO] [1777437109.449494949] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449402.463562294] [fleet_scheduler]: Scheduler started with scenario: /home/india/Documents/ai-hospital/hospital_ws/src/hospital_fleet_manager/hospital_fleet_manager/config/scenario_default.yaml
+[INFO] [1777449402.463924306] [fleet_scheduler]: Fleet scheduler node started
+[INFO] [1777449422.441100459] [fleet_scheduler]: Published assignment: delivery_1: med_delivery_1 (Pharmacy -> WardB) [priority=high,type=delivery]
+[INFO] [1777449422.442607084] [fleet_scheduler]: Published assignment: delivery_2: med_delivery_2 (Pharmacy -> ICU) [priority=critical,type=delivery]
+[INFO] [1777449422.443507944] [fleet_scheduler]: Published assignment: delivery_3: patient_mover_1 (Trauma -> Recovery) [priority=critical,type=patient_mover]
+[INFO] [1777449422.444178514] [fleet_scheduler]: Published assignment: cleaning_1: clean_ward_a (WardA -> WardA) [priority=medium,type=cleaning]
+[INFO] [1777449422.444842705] [fleet_scheduler]: Published assignment: cleaning_2: lab_samples_1 (Lab -> Radiology) [priority=high,type=lab_courier]
+[INFO] [1777449422.445775093] [fleet_scheduler]: Published assignment: patient_mover_1: patient_move_1 (ER -> ICU) [priority=critical,type=patient_mover]
+[INFO] [1777449422.446671561] [fleet_scheduler]: Published assignment: heavy_supply_1: supply_stock_2 (Supply -> OperatingRoom1) [priority=high,type=heavy_supply]
+[INFO] [1777449422.447301660] [fleet_scheduler]: Published assignment: lab_courier_1: lab_samples_2 (Lab -> ER) [priority=critical,type=lab_courier]
+[INFO] [1777449422.448008337] [fleet_scheduler]: Published assignment: emergency_1: patient_move_2 (Trauma -> Recovery) [priority=critical,type=patient_mover]
+[INFO] [1777449422.448749815] [fleet_scheduler]: Published assignment: general_1: clean_er (ER -> ER) [priority=high,type=cleaning]
+[INFO] [1777449422.449381770] [fleet_scheduler]: Published assignment: general_2: supply_stock_1 (Supply -> Pharmacy) [priority=medium,type=heavy_supply]
+[INFO] [1777449422.449969893] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=11
+[INFO] [1777449442.426041200] [fleet_scheduler]: Published assignment: general_2: delivery_2 (Pharmacy -> WardB) [priority=high,type=delivery]
+[INFO] [1777449442.427083512] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=3
+[INFO] [1777449462.425852167] [fleet_scheduler]: Published assignment: heavy_supply_1: heavy_supply_3 (Sterilization -> ER) [priority=high,type=heavy_supply]
+[INFO] [1777449462.426974213] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449482.424400850] [fleet_scheduler]: Published assignment: general_1: patient_mover_4 (ER -> PICU) [priority=medium,type=patient_mover]
+[INFO] [1777449482.425204749] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449502.424501585] [fleet_scheduler]: Published assignment: heavy_supply_1: patient_mover_5 (ER -> Recovery) [priority=medium,type=patient_mover]
+[INFO] [1777449502.427853423] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449522.424673831] [fleet_scheduler]: Published assignment: cleaning_1: cleaning_6 (WardC -> ER) [priority=low,type=cleaning]
+[INFO] [1777449522.425510004] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449542.426789032] [fleet_scheduler]: Published assignment: cleaning_1: patient_mover_7 (Trauma -> ICU) [priority=high,type=patient_mover]
+[INFO] [1777449542.427650772] [fleet_scheduler]: Published assignment: lab_courier_1: delivery_8 (Pharmacy -> WardB) [priority=medium,type=delivery]
+[INFO] [1777449542.428343748] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777449562.427302532] [fleet_scheduler]: Published assignment: lab_courier_1: cleaning_10 (ER -> WardB) [priority=medium,type=cleaning]
+[INFO] [1777449562.428262290] [fleet_scheduler]: Published assignment: general_2: cleaning_9 (WardB -> WardA) [priority=critical,type=cleaning]
+[INFO] [1777449562.428957805] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777449582.424076854] [fleet_scheduler]: Published assignment: general_2: patient_mover_11 (ER -> PICU) [priority=high,type=patient_mover]
+[INFO] [1777449582.424875112] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449602.425548871] [fleet_scheduler]: Published assignment: heavy_supply_1: heavy_supply_12 (Supply -> ER) [priority=critical,type=heavy_supply]
+[INFO] [1777449602.426395894] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449622.424383939] [fleet_scheduler]: Published assignment: delivery_3: heavy_supply_13 (Sterilization -> OperatingRoom2) [priority=critical,type=heavy_supply]
+[INFO] [1777449622.425152420] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449642.424485632] [fleet_scheduler]: Published assignment: delivery_3: heavy_supply_14 (Sterilization -> OperatingRoom1) [priority=medium,type=heavy_supply]
+[INFO] [1777449642.425273813] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449662.425147170] [fleet_scheduler]: Published assignment: heavy_supply_1: delivery_15 (Pharmacy -> WardB) [priority=critical,type=delivery]
+[INFO] [1777449662.425960228] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449682.421753641] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449702.422995052] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449722.426895628] [fleet_scheduler]: Published assignment: cleaning_2: lab_courier_16 (Lab -> ER) [priority=low,type=lab_courier]
+[INFO] [1777449722.428149639] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449742.422987843] [fleet_scheduler]: Published assignment: delivery_3: heavy_supply_17 (Sterilization -> OperatingRoom1) [priority=high,type=heavy_supply]
+[INFO] [1777449742.423518165] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449762.423811880] [fleet_scheduler]: Published assignment: delivery_2: lab_courier_19 (Lab -> Radiology) [priority=medium,type=lab_courier]
+[INFO] [1777449762.424326937] [fleet_scheduler]: Published assignment: cleaning_2: patient_mover_18 (Trauma -> ICU) [priority=high,type=patient_mover]
+[INFO] [1777449762.424680751] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777449782.423336666] [fleet_scheduler]: Published assignment: delivery_3: patient_mover_20 (ER -> PICU) [priority=low,type=patient_mover]
+[INFO] [1777449782.423810145] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449802.421596346] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449823.097760908] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449842.869754343] [fleet_scheduler]: Published assignment: delivery_1: delivery_21 (Pharmacy -> WardB) [priority=medium,type=delivery]
+[INFO] [1777449842.870199297] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449862.424192915] [fleet_scheduler]: Published assignment: patient_mover_2: cleaning_22 (WardC -> WardC) [priority=low,type=cleaning]
+[INFO] [1777449862.424982083] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449882.421944492] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449902.421637183] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777449922.425759031] [fleet_scheduler]: Published assignment: patient_mover_2: cleaning_23 (ER -> ER) [priority=critical,type=cleaning]
+[INFO] [1777449922.427234693] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449942.856871163] [fleet_scheduler]: Published assignment: delivery_1: cleaning_24 (WardB -> WardB) [priority=low,type=cleaning]
+[INFO] [1777449942.857750955] [fleet_scheduler]: Published assignment: delivery_2: lab_courier_25 (Lab -> ICU) [priority=critical,type=lab_courier]
+[INFO] [1777449942.858379096] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777449962.424167285] [fleet_scheduler]: Published assignment: patient_mover_2: heavy_supply_26 (Supply -> ER) [priority=low,type=heavy_supply]
+[INFO] [1777449962.424936032] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777449982.427577832] [fleet_scheduler]: Published assignment: delivery_2: lab_courier_28 (Lab -> ER) [priority=medium,type=lab_courier]
+[INFO] [1777449982.434113085] [fleet_scheduler]: Published assignment: cleaning_1: lab_courier_27 (Lab -> Radiology) [priority=low,type=lab_courier]
+[INFO] [1777449982.434512707] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=3
+[INFO] [1777450002.430185140] [fleet_scheduler]: Published assignment: emergency_1: heavy_supply_29 (Sterilization -> OperatingRoom1) [priority=medium,type=heavy_supply]
+[INFO] [1777450002.432335154] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450022.428358016] [fleet_scheduler]: Published assignment: delivery_2: delivery_31 (Pharmacy -> WardA) [priority=high,type=delivery]
+[INFO] [1777450022.429473989] [fleet_scheduler]: Published assignment: patient_mover_2: patient_mover_30 (ER -> ICU) [priority=high,type=patient_mover]
+[INFO] [1777450022.430379340] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450042.421601493] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777450062.423744375] [fleet_scheduler]: Published assignment: emergency_1: patient_mover_32 (ER -> ICU) [priority=high,type=patient_mover]
+[INFO] [1777450062.424480231] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450082.425698466] [fleet_scheduler]: Published assignment: delivery_2: heavy_supply_33 (Sterilization -> ER) [priority=medium,type=heavy_supply]
+[INFO] [1777450082.426749686] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450102.423982593] [fleet_scheduler]: Published assignment: cleaning_1: lab_courier_34 (Lab -> ER) [priority=critical,type=lab_courier]
+[INFO] [1777450102.425768865] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450122.422777123] [fleet_scheduler]: Published assignment: cleaning_2: lab_courier_35 (Lab -> Radiology) [priority=low,type=lab_courier]
+[INFO] [1777450122.423221319] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450142.421538918] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=0
+[INFO] [1777450162.426530336] [fleet_scheduler]: Published assignment: delivery_2: delivery_36 (Supply -> WardC) [priority=medium,type=delivery]
+[INFO] [1777450162.427389099] [fleet_scheduler]: Published assignment: cleaning_1: delivery_37 (Supply -> WardA) [priority=low,type=delivery]
+[INFO] [1777450162.427983264] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450182.427732909] [fleet_scheduler]: Published assignment: cleaning_2: lab_courier_39 (Lab -> ICU) [priority=medium,type=lab_courier]
+[INFO] [1777450182.428868447] [fleet_scheduler]: Published assignment: patient_mover_1: patient_mover_38 (Trauma -> Recovery) [priority=high,type=patient_mover]
+[INFO] [1777450182.429799444] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450202.423681109] [fleet_scheduler]: Published assignment: patient_mover_2: patient_mover_40 (Trauma -> PICU) [priority=critical,type=patient_mover]
+[INFO] [1777450202.424403504] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450222.428860707] [fleet_scheduler]: Published assignment: cleaning_1: delivery_41 (Supply -> WardA) [priority=high,type=delivery]
+[INFO] [1777450222.432854288] [fleet_scheduler]: Published assignment: patient_mover_1: heavy_supply_42 (Supply -> ER) [priority=high,type=heavy_supply]
+[INFO] [1777450222.433846339] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450242.426702838] [fleet_scheduler]: Published assignment: delivery_1: delivery_43 (Supply -> ICU) [priority=high,type=delivery]
+[INFO] [1777450242.427569621] [fleet_scheduler]: Published assignment: patient_mover_1: delivery_44 (Supply -> ICU) [priority=low,type=delivery]
+[INFO] [1777450242.428208872] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450262.434898901] [fleet_scheduler]: Published assignment: delivery_1: lab_courier_47 (Lab -> ER) [priority=critical,type=lab_courier]
+[INFO] [1777450262.436553493] [fleet_scheduler]: Published assignment: cleaning_2: lab_courier_45 (Lab -> ER) [priority=high,type=lab_courier]
+[INFO] [1777450262.438070161] [fleet_scheduler]: Published assignment: lab_courier_1: delivery_46 (Supply -> WardB) [priority=medium,type=delivery]
+[INFO] [1777450262.439507307] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=3
+[INFO] [1777450282.434091597] [fleet_scheduler]: Published assignment: delivery_1: delivery_49 (Pharmacy -> WardC) [priority=low,type=delivery]
+[INFO] [1777450282.435675840] [fleet_scheduler]: Published assignment: patient_mover_1: lab_courier_48 (Lab -> Radiology) [priority=medium,type=lab_courier]
+[INFO] [1777450282.437076742] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450302.430336139] [fleet_scheduler]: Published assignment: cleaning_1: heavy_supply_51 (Sterilization -> OperatingRoom2) [priority=medium,type=heavy_supply]
+[INFO] [1777450302.431645680] [fleet_scheduler]: Published assignment: patient_mover_1: lab_courier_50 (Lab -> ER) [priority=medium,type=lab_courier]
+[INFO] [1777450302.432612626] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=2
+[INFO] [1777450322.506070300] [fleet_scheduler]: Published assignment: cleaning_1: delivery_52 (Supply -> ICU) [priority=medium,type=delivery]
+[INFO] [1777450322.518428170] [fleet_scheduler]: Published assignment: cleaning_2: delivery_53 (Pharmacy -> WardB) [priority=critical,type=delivery]
+[INFO] [1777450322.520946871] [fleet_scheduler]: Published assignment: emergency_1: lab_courier_54 (Lab -> Radiology) [priority=medium,type=lab_courier]
+[INFO] [1777450322.523046322] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=3
+[INFO] [1777450342.471331093] [fleet_scheduler]: Published assignment: patient_mover_1: patient_mover_55 (Trauma -> PICU) [priority=medium,type=patient_mover]
+[INFO] [1777450342.493380583] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450367.342819857] [fleet_scheduler]: Published assignment: cleaning_1: patient_mover_56 (Trauma -> ICU) [priority=medium,type=patient_mover]
+[INFO] [1777450367.642674465] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1
+[INFO] [1777450383.632755567] [fleet_scheduler]: Cycle done: queued_tasks=0, busy=1

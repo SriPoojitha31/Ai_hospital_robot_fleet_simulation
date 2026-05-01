@@ -21,6 +21,7 @@ setup(
         (os.path.join('share', package_name, 'worlds'), _files(os.path.join(package_name, 'worlds', '*'))),
         (os.path.join('share', package_name, 'models'), _files(os.path.join(package_name, 'models', '*'))),
         (os.path.join('share', package_name, 'models'), _files(os.path.join(package_name, 'models', '**', '*'), recursive=True)),
+        (os.path.join('share', package_name, 'models', 'hospital_robot'), _files(os.path.join(package_name, 'models', 'hospital_robot', '*'))),
         (os.path.join('share', package_name, 'config'), _files(os.path.join(package_name, 'config', '*'))),
         (os.path.join('share', package_name, 'maps'), _files(os.path.join(package_name, 'maps', '*'))),
         (os.path.join('share', package_name, 'config'), _files(os.path.join(package_name, 'config', '**', '*'), recursive=True)),

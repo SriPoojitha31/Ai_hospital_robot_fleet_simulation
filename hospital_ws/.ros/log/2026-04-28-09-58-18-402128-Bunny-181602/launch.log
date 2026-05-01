@@ -1,6 +1,0 @@
-1777350498.4029152 [INFO] [launch]: All log files can be found below /home/india/Documents/ai-hospital/hospital_ws/.ros/log/2026-04-28-09-58-18-402128-Bunny-181602
-1777350498.4030228 [INFO] [launch]: Default logging verbosity is set to INFO
-1777350498.6695998 [INFO] [fleet_scheduler-1]: process started with pid [181626]
-1777350498.6697092 [INFO] [robot_simulator-2]: process started with pid [181627]
-1777350498.6697528 [INFO] [dashboard_visual-3]: process started with pid [181628]
-1777350501.2819967 [ERROR] [dashboard_visual-3]: process has died [pid 181628, exit code 1, cmd '/home/india/Documents/ai-hospital/hospital_ws/install/hospital_fleet_manager/lib/hospital_fleet_manager/dashboard_visual --ros-args -r __node:=dashboard_visual'].

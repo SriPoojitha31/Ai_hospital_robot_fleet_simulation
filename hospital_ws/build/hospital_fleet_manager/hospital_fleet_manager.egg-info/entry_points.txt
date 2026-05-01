@@ -1,5 +1,0 @@
-[console_scripts]
-dashboard = hospital_fleet_manager.dashboard:main
-dashboard_visual = hospital_fleet_manager.dashboard_visual:main
-fleet_scheduler = hospital_fleet_manager.fleet_scheduler:main
-robot_simulator = hospital_fleet_manager.robot_simulator:main

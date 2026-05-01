@@ -1,9 +1,0 @@
-source;share/hospital_fleet_manager/hook/pythonpath.ps1
-source;share/hospital_fleet_manager/hook/pythonpath.dsv
-source;share/hospital_fleet_manager/hook/pythonpath.sh
-source;share/hospital_fleet_manager/hook/ament_prefix_path.ps1
-source;share/hospital_fleet_manager/hook/ament_prefix_path.dsv
-source;share/hospital_fleet_manager/hook/ament_prefix_path.sh
-source;../../build/hospital_fleet_manager/share/hospital_fleet_manager/hook/pythonpath_develop.ps1
-source;../../build/hospital_fleet_manager/share/hospital_fleet_manager/hook/pythonpath_develop.dsv
-source;../../build/hospital_fleet_manager/share/hospital_fleet_manager/hook/pythonpath_develop.sh

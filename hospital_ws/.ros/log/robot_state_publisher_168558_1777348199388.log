@@ -1,3 +1,0 @@
-[WARN] [1777348199.949095273] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
-[INFO] [1777348199.950550469] [cleaning_1.cleaning_1_state_publisher]: Robot initialized
-[INFO] [1777348207.198406571] [rclcpp]: signal_handler(SIGINT/SIGTERM)
